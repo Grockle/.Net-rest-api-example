@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\tugay\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tugay\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_BackendService.941957942.00" t="ExcludeRecursive" />
+    <e p="D:\projects\App\git\BackendService\budgetMan" t="IncludeFlat">
+      <e p="BackendService" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="BackendService.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Context" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="ExpenseController.cs" t="Include" />
+          <e p="GroupController.cs" t="Include" />
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="DTOs" t="Include">
+            <e p="AccessToken.cs" t="Include" />
+            <e p="BaseResponse.cs" t="Include" />
+            <e p="Expense" t="Include">
+              <e p="Request" t="Include">
+                <e p="AddExpensiveRequestDto.cs" t="Include" />
+              </e>
+              <e p="Response" t="Include" />
+            </e>
+            <e p="Group" t="Include">
+              <e p="Request" t="Include">
+                <e p="AddGroupRequest.cs" t="Include" />
+                <e p="GroupJoinRequestDto.cs" t="Include" />
+                <e p="ReplyGroupJoinRequestDto.cs" t="Include" />
+              </e>
+              <e p="Response" t="Include">
+                <e p="GetGroupJoinRequestsDto.cs" t="Include" />
+                <e p="GetUserGroupsDto.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Response.cs" t="Include" />
+            <e p="TokenOptions.cs" t="Include" />
+            <e p="User" t="Include">
+              <e p="RefreshToken.cs" t="Include" />
+              <e p="Request" t="Include">
+                <e p="AuthenticateRequestDto.cs" t="Include" />
+                <e p="ConfirmEmailRequest.cs" t="Include" />
+                <e p="LoginRequest.cs" t="Include" />
+                <e p="RegisterUserRequest.cs" t="Include" />
+                <e p="ResetPasswordRequest.cs" t="Include" />
+                <e p="UpdateEmailVerificationCodeRequest.cs" t="Include" />
+              </e>
+              <e p="Response" t="Include">
+                <e p="AuthenticateResponse.cs" t="Include" />
+                <e p="GetGroupUsersInfoDto.cs" t="Include" />
+                <e p="LoginResponse.cs" t="Include" />
+                <e p="RegisterUserResponse.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Entities" t="Include">
+            <e p="AuditableBaseEntity.cs" t="Include" />
+            <e p="Expense.cs" t="Include" />
+            <e p="Group.cs" t="Include" />
+            <e p="GroupJoinRequest.cs" t="Include" />
+            <e p="GroupUsers.cs" t="Include" />
+            <e p="RelatedExpense.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
+          <e p="Enums" t="Include" />
+          <e p="Repository" t="Include">
+            <e p="IExpenseRepository.cs" t="Include" />
+            <e p="IGenericRepositoryAsync.cs" t="Include" />
+            <e p="IGroupJoinRequestRepository.cs" t="Include" />
+            <e p="IGroupRepository.cs" t="Include" />
+            <e p="IGroupUserRepository.cs" t="Include" />
+            <e p="Implementations" t="Include">
+              <e p="ExpenseRepository.cs" t="Include" />
+              <e p="GenericRepositoryAsync.cs" t="Include" />
+              <e p="GroupJoinRequestRepository.cs" t="Include" />
+              <e p="GroupRepository.cs" t="Include" />
+              <e p="GroupUserRepository.cs" t="Include" />
+              <e p="RelatedExpenseRepository.cs" t="Include" />
+              <e p="UserRepository.cs" t="Include" />
+            </e>
+            <e p="IRelatedExpenseRepository.cs" t="Include" />
+            <e p="IUserRepository.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="ApiException.cs" t="Include" />
+          <e p="ValidationException.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include">
+          <e p="ServiceExtensions.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="AuthOperationFilter.cs" t="Include" />
+          <e p="IDateTimeService.cs" t="Include" />
+          <e p="IEmailService.cs" t="Include" />
+          <e p="IHashService.cs" t="Include" />
+          <e p="Implementations" t="Include">
+            <e p="DateTimeService.cs" t="Include" />
+            <e p="EmailService.cs" t="Include" />
+            <e p="HashService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Mappings" t="Include">
+          <e p="GeneralMapping.cs" t="Include" />
+          <e p="GeneralProfile.cs" t="Include" />
+        </e>
+        <e p="Middlewares" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20201108134248_Initial.cs" t="Include" />
+          <e p="20201108134248_Initial.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="EmailRequest.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="IAccountService.cs" t="Include" />
+          <e p="IExpenseService.cs" t="Include" />
+          <e p="IGroupService.cs" t="Include" />
+          <e p="Implementations" t="Include">
+            <e p="AccountService.cs" t="Include" />
+            <e p="ExpenseService.cs" t="Include" />
+            <e p="GroupService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Settings" t="Include">
+          <e p="JwtSettings.cs" t="Include" />
+          <e p="MailSettings.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="BackendService.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
