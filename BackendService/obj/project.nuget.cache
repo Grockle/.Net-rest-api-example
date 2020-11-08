@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KJhBm3FKyO6VZizREvjJJHVI90SE11KPR1rARf8mkpdmF5XWe5HOxfqh7KGeqEN6ql/z8dxhMP9L2lnlVeXKgw==",
+  "dgSpecHash": "uITYxQt/06RRP4zEqMscJYDr+3d5sXi1qIk5q271m2/7i4Jpd3Q2Uu5+RyMDaYzQPmaoJeTTkad7FQI2toEE1A==",
   "success": true,
-  "projectFilePath": "D:\\projects\\App\\BackendService\\BackendService\\BackendService.csproj",
+  "projectFilePath": "D:\\projects\\App\\git\\BackendService\\budgetMan\\BackendService\\BackendService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tugay\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\tugay\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",

@@ -10471,11 +10471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\App\\BackendService\\BackendService\\BackendService.csproj",
+      "projectUniqueName": "D:\\projects\\App\\git\\BackendService\\budgetMan\\BackendService\\BackendService.csproj",
       "projectName": "BackendService",
-      "projectPath": "D:\\projects\\App\\BackendService\\BackendService\\BackendService.csproj",
+      "projectPath": "D:\\projects\\App\\git\\BackendService\\budgetMan\\BackendService\\BackendService.csproj",
       "packagesPath": "C:\\Users\\tugay\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\App\\BackendService\\BackendService\\obj\\",
+      "outputPath": "D:\\projects\\App\\git\\BackendService\\budgetMan\\BackendService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tugay\\AppData\\Roaming\\NuGet\\NuGet.Config",
