@@ -25,14 +25,29 @@ namespace BackendService.Data.Repository.Implementations
                 var sharedAmount = expense.Amount / userIds.Count();
                 foreach (var userId in userIds)
                 {
-                    relatedExpenses.Add(new RelatedExpense
+                    if (expense.CreatedBy == userId)
                     {
-                        CreatedBy = expense.CreatedBy,
-                        ExpenseId = expense.Id,
-                        GroupId = expense.Id,
-                        RelatedAmount = expense.Amount,
-                        RelatedUserId = userId
-                    });
+                        relatedExpenses.Add(new RelatedExpense
+                        {
+                            CreatedBy = expense.CreatedBy,
+                            ExpenseId = expense.Id,
+                            GroupId = expense.Id,
+                            RelatedAmount = expense.Amount - sharedAmount,
+                            RelatedUserId = userId
+                        });
+                    }
+                    else
+                    {
+                        relatedExpenses.Add(new RelatedExpense
+                        {
+                            CreatedBy = expense.CreatedBy,
+                            ExpenseId = expense.Id,
+                            GroupId = expense.Id,
+                            RelatedAmount = -sharedAmount,
+                            RelatedUserId = userId
+                        });
+                    }
+                    
                 }
                 await _relatedExpenses.AddRangeAsync(relatedExpenses);
                 return true;

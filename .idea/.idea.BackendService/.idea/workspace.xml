@@ -5,75 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AutoMapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BouncyCastle.Crypto.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FluentValidation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.AspNetCore.Mvc.Razor.Host.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Bcl.HashCode.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.DotNet.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Globalization.CultureInfoCache.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MimeKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.Collections.Immutable.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vonage.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jose-jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win-arm64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win-x64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win-x86/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/ExpenseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/ExpenseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedExpenseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedExpenseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/IExpenseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/IExpenseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/ExpenseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/ExpenseService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,12 +47,8 @@
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IExpensiveRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/ExpensiveRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IExpenseRepository.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/ExpenseRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/RelatedExpenseRepository.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/IExpenseService.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/ExpenseService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Expense/Request/AddExpensiveRequestDto.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedExpenseRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IRelatedExpenseRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Settings/AppSettings.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/User.cs" />
@@ -140,9 +73,13 @@
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IUserRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Controllers/ExpenseController.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/ExpenseRepository.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/ExpenseService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/IExpenseService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Controllers/ExpenseController.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedExpenseRepository.cs" />
       </list>
     </option>
   </component>
@@ -224,6 +161,7 @@
       <workItem from="1604423451200" duration="1715000" />
       <workItem from="1604676548026" duration="15918000" />
       <workItem from="1604843270701" duration="1082000" />
+      <workItem from="1604859113224" duration="1923000" />
     </task>
     <servers />
   </component>
