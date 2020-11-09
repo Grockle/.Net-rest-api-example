@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BackendService.Data.DTOs.Expense.Request
+namespace BackendService.Data.DTOs.Transaction.Request
 {
-    public class AddExpensiveRequestDto
+    public class AddTransactionRequestDto
     {
         [Required]
         public int WhoAdded { get; set; }

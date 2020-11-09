@@ -3,15 +3,17 @@ using System;
 using BackendService.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BackendService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201109163109_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,9 +40,6 @@ namespace BackendService.Migrations
                     b.Property<string>("GroupName")
                         .HasColumnType("text");
 
-                    b.Property<string>("MoneyType")
-                        .HasColumnType("text");
-
                     b.Property<string>("ShareCode")
                         .HasColumnType("text");
 
@@ -53,39 +52,6 @@ namespace BackendService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Groups");
-                });
-
-            modelBuilder.Entity("BackendService.Data.Entities.GroupBudgetBalance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18,6)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("UpdateTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GroupBudgetBalances");
                 });
 
             modelBuilder.Entity("BackendService.Data.Entities.GroupJoinRequest", b =>
@@ -171,9 +137,6 @@ namespace BackendService.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<int>("RelatedUserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TransactionId")
                         .HasColumnType("integer");
 
                     b.Property<int>("UpdateBy")

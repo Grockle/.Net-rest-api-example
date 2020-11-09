@@ -14,20 +14,14 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
-          <e p="ExpenseController.cs" t="Include" />
           <e p="GroupController.cs" t="Include" />
+          <e p="TransactionController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="DTOs" t="Include">
             <e p="AccessToken.cs" t="Include" />
             <e p="BaseResponse.cs" t="Include" />
-            <e p="Expense" t="Include">
-              <e p="Request" t="Include">
-                <e p="AddExpensiveRequestDto.cs" t="Include" />
-              </e>
-              <e p="Response" t="Include" />
-            </e>
             <e p="Group" t="Include">
               <e p="Request" t="Include">
                 <e p="AddGroupRequest.cs" t="Include" />
@@ -41,6 +35,11 @@
             </e>
             <e p="Response.cs" t="Include" />
             <e p="TokenOptions.cs" t="Include" />
+            <e p="Transaction" t="Include">
+              <e p="Request" t="Include">
+                <e p="AddTransactionRequestDto.cs" t="Include" />
+              </e>
+            </e>
             <e p="User" t="Include">
               <e p="RefreshToken.cs" t="Include" />
               <e p="Request" t="Include">
@@ -61,30 +60,31 @@
           </e>
           <e p="Entities" t="Include">
             <e p="AuditableBaseEntity.cs" t="Include" />
-            <e p="Expense.cs" t="Include" />
             <e p="Group.cs" t="Include" />
+            <e p="GroupBudgetBalance.cs" t="Include" />
             <e p="GroupJoinRequest.cs" t="Include" />
             <e p="GroupUsers.cs" t="Include" />
-            <e p="RelatedExpense.cs" t="Include" />
+            <e p="RelatedTransaction.cs" t="Include" />
+            <e p="Transaction.cs" t="Include" />
             <e p="User.cs" t="Include" />
           </e>
           <e p="Enums" t="Include" />
           <e p="Repository" t="Include">
-            <e p="IExpenseRepository.cs" t="Include" />
             <e p="IGenericRepositoryAsync.cs" t="Include" />
             <e p="IGroupJoinRequestRepository.cs" t="Include" />
             <e p="IGroupRepository.cs" t="Include" />
             <e p="IGroupUserRepository.cs" t="Include" />
             <e p="Implementations" t="Include">
-              <e p="ExpenseRepository.cs" t="Include" />
               <e p="GenericRepositoryAsync.cs" t="Include" />
               <e p="GroupJoinRequestRepository.cs" t="Include" />
               <e p="GroupRepository.cs" t="Include" />
               <e p="GroupUserRepository.cs" t="Include" />
-              <e p="RelatedExpenseRepository.cs" t="Include" />
+              <e p="RelatedTranstionRepository.cs" t="Include" />
+              <e p="TransactionRepository.cs" t="Include" />
               <e p="UserRepository.cs" t="Include" />
             </e>
-            <e p="IRelatedExpenseRepository.cs" t="Include" />
+            <e p="IRelatedTransactionRepository.cs" t="Include" />
+            <e p="ITransactionRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
           </e>
         </e>
@@ -113,8 +113,12 @@
         </e>
         <e p="Middlewares" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20201108134248_Initial.cs" t="Include" />
-          <e p="20201108134248_Initial.Designer.cs" t="Include" />
+          <e p="20201109163109_Initial.cs" t="Include" />
+          <e p="20201109163109_Initial.Designer.cs" t="Include" />
+          <e p="20201109163346_TransactionsUpdate.cs" t="Include" />
+          <e p="20201109163346_TransactionsUpdate.Designer.cs" t="Include" />
+          <e p="20201109163643_GroupBudgetBalance.cs" t="Include" />
+          <e p="20201109163643_GroupBudgetBalance.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -133,13 +137,13 @@
         </e>
         <e p="Services" t="Include">
           <e p="IAccountService.cs" t="Include" />
-          <e p="IExpenseService.cs" t="Include" />
           <e p="IGroupService.cs" t="Include" />
           <e p="Implementations" t="Include">
             <e p="AccountService.cs" t="Include" />
-            <e p="ExpenseService.cs" t="Include" />
             <e p="GroupService.cs" t="Include" />
+            <e p="TransactionService.cs" t="Include" />
           </e>
+          <e p="ITransactionService.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
           <e p="JwtSettings.cs" t="Include" />

@@ -9,25 +9,6 @@ namespace BackendService.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Expenses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedBy = table.Column<int>(nullable: false),
-                    CreateTime = table.Column<DateTime>(nullable: false),
-                    UpdateBy = table.Column<int>(nullable: false),
-                    UpdateTime = table.Column<DateTime>(nullable: true),
-                    GroupId = table.Column<int>(nullable: false),
-                    Amount = table.Column<double>(nullable: false),
-                    Description = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Expenses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "GroupJoinRequests",
                 columns: table => new
                 {
@@ -84,7 +65,7 @@ namespace BackendService.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RelatedExpenses",
+                name: "RelatedTransactions",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -95,12 +76,31 @@ namespace BackendService.Migrations
                     UpdateTime = table.Column<DateTime>(nullable: true),
                     RelatedUserId = table.Column<int>(nullable: false),
                     GroupId = table.Column<int>(nullable: false),
-                    ExpenseId = table.Column<int>(nullable: false),
                     RelatedAmount = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RelatedExpenses", x => x.Id);
+                    table.PrimaryKey("PK_RelatedTransactions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Transactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    CreatedBy = table.Column<int>(nullable: false),
+                    CreateTime = table.Column<DateTime>(nullable: false),
+                    UpdateBy = table.Column<int>(nullable: false),
+                    UpdateTime = table.Column<DateTime>(nullable: true),
+                    GroupId = table.Column<int>(nullable: false),
+                    Amount = table.Column<double>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transactions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,9 +135,6 @@ namespace BackendService.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Expenses");
-
-            migrationBuilder.DropTable(
                 name: "GroupJoinRequests");
 
             migrationBuilder.DropTable(
@@ -147,7 +144,10 @@ namespace BackendService.Migrations
                 name: "GroupUsers");
 
             migrationBuilder.DropTable(
-                name: "RelatedExpenses");
+                name: "RelatedTransactions");
+
+            migrationBuilder.DropTable(
+                name: "Transactions");
 
             migrationBuilder.DropTable(
                 name: "Users");

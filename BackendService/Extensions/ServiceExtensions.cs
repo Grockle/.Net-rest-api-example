@@ -68,7 +68,7 @@ namespace BackendService.Extensions
             services.AddTransient<IHashService, HashService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IGroupService, GroupService>();
-            services.AddTransient<IExpenseService, ExpenseService>();
+            services.AddTransient<ITransactionService, TransactionService>();
             #endregion
 
             #region Repositories
@@ -77,8 +77,8 @@ namespace BackendService.Extensions
             services.AddTransient<IGroupRepository, GroupRepository>();
             services.AddTransient<IGroupUserRepository, GroupUserRepository>();
             services.AddTransient<IGroupJoinRequestRepository, GroupJoinRequestRepository>();
-            services.AddTransient<IExpenseRepository, ExpenseRepository>();
-            services.AddTransient<IRelatedExpenseRepository, RelatedExpenseRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IRelatedTransactionRepository, RelatedTransactionRepository>();
             #endregion
             
         }

@@ -2,7 +2,7 @@
 
 namespace BackendService.Data.Repository
 {
-    public interface IExpenseRepository : IGenericRepositoryAsync<Expense>
+    public interface ITransactionRepository : IGenericRepositoryAsync<Transaction>
     {
         
     }

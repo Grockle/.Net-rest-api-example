@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackendService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201108134248_Initial")]
-    partial class Initial
+    [Migration("20201109163346_TransactionsUpdate")]
+    partial class TransactionsUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,39 +20,6 @@ namespace BackendService.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            modelBuilder.Entity("BackendService.Data.Entities.Expense", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<double>("Amount")
-                        .HasColumnType("double precision");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("UpdateTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Expenses");
-                });
 
             modelBuilder.Entity("BackendService.Data.Entities.Group", b =>
                 {
@@ -71,6 +38,9 @@ namespace BackendService.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("GroupName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MoneyType")
                         .HasColumnType("text");
 
                     b.Property<string>("ShareCode")
@@ -150,7 +120,7 @@ namespace BackendService.Migrations
                     b.ToTable("GroupUsers");
                 });
 
-            modelBuilder.Entity("BackendService.Data.Entities.RelatedExpense", b =>
+            modelBuilder.Entity("BackendService.Data.Entities.RelatedTransaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -163,9 +133,6 @@ namespace BackendService.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ExpenseId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("GroupId")
                         .HasColumnType("integer");
 
@@ -173,6 +140,9 @@ namespace BackendService.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<int>("RelatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TransactionId")
                         .HasColumnType("integer");
 
                     b.Property<int>("UpdateBy")
@@ -183,7 +153,43 @@ namespace BackendService.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RelatedExpenses");
+                    b.ToTable("RelatedTransactions");
+                });
+
+            modelBuilder.Entity("BackendService.Data.Entities.Transaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("double precision");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("BackendService.Data.Entities.User", b =>
