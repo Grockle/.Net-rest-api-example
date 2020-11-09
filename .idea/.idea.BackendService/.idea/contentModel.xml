@@ -71,11 +71,13 @@
           <e p="Enums" t="Include" />
           <e p="Repository" t="Include">
             <e p="IGenericRepositoryAsync.cs" t="Include" />
+            <e p="IGroupBudgetBalanceRepository.cs" t="Include" />
             <e p="IGroupJoinRequestRepository.cs" t="Include" />
             <e p="IGroupRepository.cs" t="Include" />
             <e p="IGroupUserRepository.cs" t="Include" />
             <e p="Implementations" t="Include">
               <e p="GenericRepositoryAsync.cs" t="Include" />
+              <e p="GroupBudgetBalanceRepository.cs" t="Include" />
               <e p="GroupJoinRequestRepository.cs" t="Include" />
               <e p="GroupRepository.cs" t="Include" />
               <e p="GroupUserRepository.cs" t="Include" />

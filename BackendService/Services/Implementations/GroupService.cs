@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using BackendService.Data.DTOs;
+using BackendService.Data.DTOs.Group.Request;
 using BackendService.Data.DTOs.Group.Response;
 using BackendService.Data.DTOs.User.Response;
 using BackendService.Data.Entities;
@@ -33,14 +34,14 @@ namespace BackendService.Services.Implementations
             _userRepository = userRepository;
         }
 
-        public async Task<BaseResponse<bool>> AddGroupAsync(int userId, string groupName, string description)
+        public async Task<BaseResponse<bool>> AddGroupAsync(AddGroupRequest model)
         {
-            if (userId == 0)
+            if (model.UserId == 0)
             {
                 return new GeneralMapping<bool>().MapBaseResponse(true, "UserId is required", false);
             }
             
-            var existGroup = await _groupRepository.GetGroupWithSameNameAsync(groupName, userId);
+            var existGroup = await _groupRepository.GetGroupWithSameNameAsync(model.GroupName, model.UserId);
             
             if (existGroup != null)
             {
@@ -49,17 +50,18 @@ namespace BackendService.Services.Implementations
 
             var group = await _groupRepository.AddAsync(new Group
             {
-                CreatedBy = userId,
-                ShareCode = _hashService.EncryptString(userId.ToString() + _hashService.GenerateCode()),
-                GroupName = groupName,
-                Description = description
+                CreatedBy = model.UserId,
+                ShareCode = _hashService.EncryptString(model.UserId + _hashService.GenerateCode()),
+                GroupName = model.GroupName,
+                Description = model.Description,
+                MoneyType = model.MoneyShortCut
             });
 
             if (group != null)
             {
                 var groupUser = await _groupUserRepository.AddAsync(new GroupUsers
                 {
-                    UserId = userId,
+                    UserId = model.UserId,
                     GroupId = group.Id,
                 });
                 return new GeneralMapping<bool>().MapBaseResponse(false, "", true);

@@ -173,11 +173,6 @@ namespace BackendService.Services.Implementations
                 throw new ApiException($"Invalid Credentials for '{email}'.");
             }
             
-            if (!user.EmailConfirmed)
-            {
-                throw new ApiException($"Account Not Confirmed for '{email}'.");
-            }
-
             // Authentication(Yetkilendirme) başarılı ise JWT token üretilir.
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Secret);

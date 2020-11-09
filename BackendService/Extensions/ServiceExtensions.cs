@@ -79,6 +79,7 @@ namespace BackendService.Extensions
             services.AddTransient<IGroupJoinRequestRepository, GroupJoinRequestRepository>();
             services.AddTransient<ITransactionRepository, TransactionRepository>();
             services.AddTransient<IRelatedTransactionRepository, RelatedTransactionRepository>();
+            services.AddTransient<IGroupBudgetBalanceRepository, GroupBudgetBalanceRepository>();
             #endregion
             
         }

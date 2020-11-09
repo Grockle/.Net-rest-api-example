@@ -25,7 +25,7 @@ namespace BackendService.Controllers
         [HttpPost("Add")]
         public async Task<BaseResponse<bool>> AddGroupAsync(AddGroupRequest model)
         {
-            return await _groupService.AddGroupAsync(model.UserId, model.GroupName, model.Description);
+            return await _groupService.AddGroupAsync(model);
         }
         
         [HttpGet("GetGroups")]
