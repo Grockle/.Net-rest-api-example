@@ -3,6 +3,7 @@ using BackendService.Data.Repository;
 using BackendService.Data.Repository.Implementations;
 using BackendService.Helpers;
 using BackendService.Helpers.Implementations;
+using BackendService.Hubs;
 using BackendService.Services;
 using BackendService.Services.Implementations;
 using BackendService.Settings;

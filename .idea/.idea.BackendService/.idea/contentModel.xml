@@ -109,6 +109,9 @@
             <e p="HashService.cs" t="Include" />
           </e>
         </e>
+        <e p="Hubs" t="Include">
+          <e p="ConnectHub.cs" t="Include" />
+        </e>
         <e p="Mappings" t="Include">
           <e p="GeneralMapping.cs" t="Include" />
           <e p="GeneralProfile.cs" t="Include" />

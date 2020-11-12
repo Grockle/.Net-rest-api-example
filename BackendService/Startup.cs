@@ -1,6 +1,6 @@
 using System.Text;
 using BackendService.Extensions;
-using BackendService.Settings;
+using BackendService.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +23,9 @@ namespace BackendService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
+            services.AddSignalR();
             services.AddSwaggerExtension();
             services.AddDbContext(Configuration);
             services.ServiceRegistration(Configuration);
@@ -83,7 +85,10 @@ namespace BackendService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ConnectHub>("/connectHub");
             });
+
         }
     }
+
 }
