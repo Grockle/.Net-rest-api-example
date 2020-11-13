@@ -7,15 +7,16 @@ namespace BackendService.Hubs
 {
     public class ConnectHub : Hub
     {
-        public override async Task OnConnectedAsync(){
-            await Clients.Caller.SendAsync("GetConnectionId",this.Context.ConnectionId);
-        }
-        
         public Task JoinGroup(string group)
         {
             return Groups.AddToGroupAsync(Context.ConnectionId, group);
         }
 
+        public async Task RemoveFromGroup(string groupName)
+        {
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+        }
+        
         public async Task SendMessage(string sender, string message)
         {
             await Clients.All.SendAsync("SendMessage", sender, message);
@@ -24,6 +25,12 @@ namespace BackendService.Hubs
         public Task TriggerFunction(string groupName, string function)
         {
             return Clients.Group(groupName).SendAsync(function);
+        }
+        
+        
+        public Task DirectMessageToGroup(string groupName, string message)
+        {
+            return Clients.Group(groupName).SendAsync("ReceiveMessage", message);
         }
     }
 }

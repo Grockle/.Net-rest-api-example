@@ -23,13 +23,18 @@ namespace BackendService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
             services.AddControllers();
             services.AddSignalR();
             services.AddSwaggerExtension();
             services.AddDbContext(Configuration);
             services.ServiceRegistration(Configuration);
-
+            services.AddCors(options => options.AddPolicy("CorsPolicy", 
+                builder => 
+                {
+                    builder.AllowAnyMethod().AllowAnyHeader()
+                        .WithOrigins("http://localhost:4200")
+                        .AllowCredentials();
+                }));
 
              // JWT authentication Aayarlaması
             var secret = Configuration.GetSection("JwtSettings").GetSection("Secret").Value;
@@ -60,13 +65,6 @@ namespace BackendService
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            // global cors policy
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
             app.UseAuthentication();
             
             app.UseSwagger();
@@ -82,10 +80,15 @@ namespace BackendService
 
             app.UseAuthorization();
 
+            app.UseCors("CorsPolicy"); 
+            app.UseSignalR(routes => 
+            {
+                routes.MapHub<ConnectHub>("/ConnectHub");
+            });
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ConnectHub>("/connectHub");
             });
 
         }
