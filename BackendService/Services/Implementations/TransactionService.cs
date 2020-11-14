@@ -33,7 +33,7 @@ namespace BackendService.Services.Implementations
 
         public async Task<BaseResponse<bool>> AddExpenseAsync(AddExpenseRequestDto request)
         {
-            if (request.RelatedUserIds == null || request.RelatedUserIds.Count == 0)
+            if (request.RelatedUserIds == null || !request.RelatedUserIds.Any())
             {
                 return new GeneralMapping<bool>().MapBaseResponse(true, "Related users can not be empty", false);
             }
@@ -66,7 +66,7 @@ namespace BackendService.Services.Implementations
         
         public async Task<BaseResponse<bool>> AddTransferAsync(AddTransferRequestDto request)
         {
-            if (request.RelatedUsers == null || request.RelatedUsers.Count == 0)
+            if (request.RelatedUsers == null || !request.RelatedUsers.Any())
             {
                 return new GeneralMapping<bool>().MapBaseResponse(true, "Related users can not be empty", false);
             }

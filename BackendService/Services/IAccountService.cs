@@ -12,10 +12,10 @@ namespace BackendService.Services
         Task<BaseResponse<LoginResponse>> ConfirmEmail(ConfirmEmailRequest confirmModel);
         Task<BaseResponse<bool>> UpdateVerificationCodeAsync(UpdateEmailVerificationCodeRequest model);
         Task<BaseResponse<LoginResponse>> LoginAsync(LoginRequest loginModel);
-        Task<BaseResponse<bool>> ControlEmailResetCodeAsync(string email, string resetCode);
+        Task<BaseResponse<bool>> ControlResetCodeAsync(string email, string resetCode);
         Task<BaseResponse<bool>> SendPasswordResetRequestAsync(string email);
         Task<BaseResponse<bool>> ChangePasswordAsync(ResetPasswordRequest resetRequestModel);
-        Task<LoginResponse> Authenticate(string email, string password);
+        Task<BaseResponse<LoginResponse>> Authenticate(string email, string password);
         Task<BaseResponse<LoginResponse>> LoginWithTokenAsync(string token);
     }
 }

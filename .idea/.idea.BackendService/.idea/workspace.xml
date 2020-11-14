@@ -23,44 +23,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/TransferDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/Enums/TransactionType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BackendService/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/BackendService/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/TransactionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransactionRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Entities/GroupBudgetBalance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Entities/GroupBudgetBalance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Entities/RelatedTransaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Entities/RelatedTransaction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Response.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Response.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/User/Response/LoginResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/User/Response/LoginResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupBudgetBalanceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupBudgetBalanceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupUserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IRelatedTransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IRelatedTransactionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IUserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupBudgetBalanceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupBudgetBalanceRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedTranstionRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/ITransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/ITransactionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedTransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedTransactionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Exceptions/ValidationException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Newtonsoft.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Newtonsoft.Json.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Newtonsoft.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Newtonsoft.Json.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,19 +75,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/User/Response/AuthenticateResponse.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/User/RefreshToken.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/AccessToken.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/TokenOptions.cs" />
         <option value="$PROJECT_DIR$/BackendService/Helpers/Implementations/JwtHelper.cs" />
         <option value="$PROJECT_DIR$/BackendService/Helpers/ITokenHelper.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Helpers/AuthOperationFilter.cs" />
         <option value="$PROJECT_DIR$/BackendService/appsettings.Development.json" />
         <option value="$PROJECT_DIR$/BackendService/appsettings.json" />
         <option value="$PROJECT_DIR$/BackendService/Program.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/UserRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IUserRepository.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/ExpenseRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/ExpenseService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/IExpenseService.cs" />
@@ -108,11 +92,6 @@
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/Group.cs" />
         <option value="$PROJECT_DIR$/BackendService/Context/ApplicationDbContext.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/ValuesController.cs" />
         <option value="$PROJECT_DIR$/BackendService/Hubs/InformHub.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/ConnectHubController.cs" />
@@ -133,9 +112,20 @@
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/TransferDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/RelatedTransaction.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IRelatedTransactionRepository.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/User/Response/LoginResponse.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GenericRepositoryAsync.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/Repository/IGenericRepositoryAsync.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/RelatedTransactionRepository.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Exceptions/ValidationException.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Helpers/AuthOperationFilter.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" />
       </list>
     </option>
   </component>
@@ -253,30 +243,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="496" height="464" key="DebuggerActiveHint/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605042362173" />
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1605347352166">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1605369346257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.bottom/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605347352166" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1605347352166">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605369346257" />
+    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1605369346257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.center/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605347352166" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1605347352165">
+    <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605369346257" />
+    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1605369346257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.left/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605347352165" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1605347352166">
+    <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605369346257" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1605369346257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.right/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605347352166" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605369346257" />
     <state width="1877" height="198" key="GridCell.Tab.1.bottom" timestamp="1605347352166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -405,11 +395,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="dock-window-4/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604261163807" />
-    <state x="637" y="253" width="646" height="592" key="find.popup" timestamp="1604939129183">
+    <state x="637" y="253" width="646" height="592" key="find.popup" timestamp="1605372207691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1283" y="253" width="646" height="534" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1604688603354" />
-    <state x="637" y="253" width="646" height="592" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604939129183" />
+    <state x="637" y="253" width="646" height="592" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605372207691" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605043372673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -430,58 +420,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BackendService/Controllers/AccountController.cs</url>
-          <line>35</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Controllers\AccountController.cs" initialLine="35">
-            <startOffsets>
-              <option value="1141" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1224" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs</url>
-          <line>161</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\AccountService.cs" initialLine="161">
-            <startOffsets>
-              <option value="6444" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6504" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs</url>
-          <line>163</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\AccountService.cs" initialLine="163">
-            <startOffsets>
-              <option value="6518" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6535" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs</url>
-          <line>170</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\AccountService.cs" initialLine="170">
-            <startOffsets>
-              <option value="6776" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6797" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService/Hubs/ConnectHub.cs</url>

@@ -13,7 +13,7 @@ namespace BackendService.Data.Repository
         Task<User> GetUserWithoutEmailConfirmedAsync(string email, string password);
         Task<bool> ControlPasswordResetCodeAsync(string email, string resetCode);
         IQueryable<User> GetUsersById(IQueryable<int> ids);
-        IQueryable<User> GetUsersById(List<int> ids);
+        IQueryable<User> GetUsersById(IEnumerable<int> ids);
         Task<User> GetUserByToken(string token);
     }
 }

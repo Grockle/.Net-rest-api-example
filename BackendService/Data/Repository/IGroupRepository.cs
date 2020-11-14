@@ -9,7 +9,7 @@ namespace BackendService.Data.Repository
     public interface IGroupRepository : IGenericRepositoryAsync<Group>
     {
         Task<Group> GetGroupWithSameNameAsync(string groupName, int userId);
-        List<GetUserGroupsDto> GetGroupsByUserId(int userId);
+        IEnumerable<GetUserGroupsDto> GetGroupsByUserId(int userId);
         Task<Group> GetGroupByShareCode(string shareCode);
     }
 }

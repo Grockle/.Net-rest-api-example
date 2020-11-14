@@ -67,33 +67,33 @@ namespace BackendService.Services.Implementations
                 return new GeneralMapping<bool>().MapBaseResponse(false, "", true);
             }
             
-            await _groupRepository.DeleteAsync(group);
             return new GeneralMapping<bool>().MapBaseResponse(true, "Unable to add group", false);
         }
 
-        public async Task<BaseResponse<List<GetUserGroupsDto>>> GetUserGroupsAsync(int userId)
+        public async Task<BaseResponse<IEnumerable<GetUserGroupsDto>>> GetUserGroupsAsync(int userId)
         {
             if (userId == 0)
             {
-                return new GeneralMapping<List<GetUserGroupsDto>>().MapBaseResponse(true, "UserId is required ", null);
+                return new GeneralMapping<IEnumerable<GetUserGroupsDto>>().MapBaseResponse(true, "UserId is required ", null);
             }
 
             var groups = _groupRepository.GetGroupsByUserId(userId);
             
-            return new GeneralMapping<List<GetUserGroupsDto>>().MapBaseResponse(false, "", groups);
+            return new GeneralMapping<IEnumerable<GetUserGroupsDto>>().MapBaseResponse(false, "", groups);
         }
         
-        public async Task<BaseResponse<List<GetGroupJoinRequestsDto>>> GetGroupJoinRequests(string shareCode)
+        public async Task<BaseResponse<IEnumerable<GetGroupJoinRequestsDto>>> GetGroupJoinRequests(string shareCode)
         {
             if (string.IsNullOrEmpty(shareCode))
             {
-                return new GeneralMapping<List<GetGroupJoinRequestsDto>>().MapBaseResponse(true, "Share code is required", null);
+                return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(true, "Share code is required", null);
             }
+            
             var groupJoinRequests = _groupJoinRequestRepository.GetRequestsByShareCode(shareCode);
             
             if (groupJoinRequests == null)
             {
-                return new GeneralMapping<List<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "No request", null);
+                return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "No request", null);
             }
 
             var users = _userRepository.GetUsersById(groupJoinRequests.Select(x => x.FromUserId)).Select(x =>
@@ -106,7 +106,7 @@ namespace BackendService.Services.Implementations
                     RequestId = groupJoinRequests.FirstOrDefault(y => y.FromUserId == x.Id).Id
                 }).ToList();
             
-            return new GeneralMapping<List<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "", users);
+            return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "", users);
         }
         
         public async Task<BaseResponse<bool>>SendGroupJoinRequest(int userId, string shareCode)
@@ -147,11 +147,11 @@ namespace BackendService.Services.Implementations
             return new GeneralMapping<bool>().MapBaseResponse(false, "Request send", true);
         }
 
-        public async Task<BaseResponse<List<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId)
+        public async Task<BaseResponse<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId)
         {
             if (groupId == 0)
             {
-                return new GeneralMapping<List<GetGroupUsersInfoDto>>().MapBaseResponse(true, "Group Id is required", null);
+                return new GeneralMapping<IEnumerable<GetGroupUsersInfoDto>>().MapBaseResponse(true, "Group Id is required", null);
             }
 
             var groupUsers = _groupUserRepository.GetByGroupId(groupId);
@@ -163,7 +163,7 @@ namespace BackendService.Services.Implementations
                 LastName = x.LastName
             }).ToList();
             
-            return new GeneralMapping<List<GetGroupUsersInfoDto>>().MapBaseResponse(false, "", users);
+            return new GeneralMapping<IEnumerable<GetGroupUsersInfoDto>>().MapBaseResponse(false, "", users);
         }
 
         public async Task<BaseResponse<bool>> ReplyGroupJoinRequestAsync(int requestId, int groupId, int adminId,bool isApproved)

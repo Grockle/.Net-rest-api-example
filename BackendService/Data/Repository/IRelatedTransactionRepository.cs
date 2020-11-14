@@ -8,6 +8,6 @@ namespace BackendService.Data.Repository
 {
     public interface IRelatedTransactionRepository : IGenericRepositoryAsync<RelatedTransaction>
     {
-        Task<bool> InsertAndUpdateBulkExpenses(Transaction transaction, List<int> userIds);
+        Task<bool> InsertAndUpdateBulkExpenses(Transaction transaction, IEnumerable<int> userIds);
     }
 }

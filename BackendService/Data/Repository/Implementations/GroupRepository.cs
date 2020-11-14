@@ -29,7 +29,7 @@ namespace BackendService.Data.Repository.Implementations
             return await _groups.FirstOrDefaultAsync(x => x.ShareCode == shareCode);
         }
 
-        public List<GetUserGroupsDto> GetGroupsByUserId(int userId)
+        public IEnumerable<GetUserGroupsDto> GetGroupsByUserId(int userId)
         {
             var groupUserIds = _groupUserRepository.GetByUserId(userId).Select(x => x.GroupId);
             var groups = _groups.Where(x => groupUserIds.Contains(x.Id)).Select(x => new GetUserGroupsDto

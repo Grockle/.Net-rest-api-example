@@ -29,33 +29,78 @@ namespace BackendService.Controllers
         }
         
         [HttpGet("GetGroups")]
-        public async Task<BaseResponse<List<GetUserGroupsDto>>> GetGroupsAsync(int userId)
+        public async Task<ActionResult<IEnumerable<GetUserGroupsDto>>> GetGroupsAsync(int userId)
         {
-            return await _groupService.GetUserGroupsAsync(userId);
+            var response = await _groupService.GetUserGroupsAsync(userId);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(response.Data);
         }
 
         [HttpGet("GetJoinRequests")]
-        public async Task<BaseResponse<List<GetGroupJoinRequestsDto>>> GetJoinRequestsAsync(string shareCode)
+        public async Task<ActionResult<IEnumerable<GetGroupJoinRequestsDto>>> GetJoinRequestsAsync(string shareCode)
         {
-            return await _groupService.GetGroupJoinRequests(shareCode);
+            var response = await _groupService.GetGroupJoinRequests(shareCode);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(response.Data);
         }
         
         [HttpPost("SendJoinRequest")]
-        public async Task<BaseResponse<bool>> SendGroupJoinRequestAsync(GroupJoinRequestDto model)
+        public async Task<ActionResult<bool>> SendGroupJoinRequestAsync(GroupJoinRequestDto model)
         {
-            return await _groupService.SendGroupJoinRequest(model.UserId, model.ShareCode);
+            var response = await _groupService.SendGroupJoinRequest(model.UserId, model.ShareCode);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
         
         [HttpPost("ReplyJoinRequest")]
-        public async Task<BaseResponse<bool>> ReplyJoinRequestAsync(ReplyGroupJoinRequestDto model)
+        public async Task<ActionResult<bool>> ReplyJoinRequestAsync(ReplyGroupJoinRequestDto model)
         {
-            return await _groupService.ReplyGroupJoinRequestAsync(model.RequestId, model.GroupId, model.AdminId, model.IsApproved);
+            var response = await _groupService.ReplyGroupJoinRequestAsync(model.RequestId, model.GroupId, model.AdminId, model.IsApproved);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
         
         [HttpGet("GetGroupUsers")]
-        public async Task<BaseResponse<List<GetGroupUsersInfoDto>>> GetGroupUsersAsync(int groupId)
+        public async Task<ActionResult<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsersAsync(int groupId)
         {
-            return await _groupService.GetGroupUsers(groupId);
+            var response = await _groupService.GetGroupUsers(groupId);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
     }
 }

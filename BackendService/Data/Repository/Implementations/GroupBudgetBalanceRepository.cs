@@ -22,12 +22,12 @@ namespace BackendService.Data.Repository.Implementations
             return _groupBudgetBalances.Where(x => x.GroupId == groupId);
         }
 
-        public void UpdateRange(List<GroupBudgetBalance> groupBalances)
+        public void UpdateRange(IEnumerable<GroupBudgetBalance> groupBalances)
         {
             _groupBudgetBalances.UpdateRange(groupBalances);
         }
         
-        public async Task AddRange(List<GroupBudgetBalance> groupBalances)
+        public async Task AddRange(IEnumerable<GroupBudgetBalance> groupBalances)
         {
             await _groupBudgetBalances.AddRangeAsync(groupBalances);
         }

@@ -47,7 +47,7 @@ namespace BackendService.Data.Repository.Implementations
             return _users.Where(x => ids.Contains(x.Id));
         }
         
-        public IQueryable<User> GetUsersById(List<int> ids)
+        public IQueryable<User> GetUsersById(IEnumerable<int> ids)
         {
             return _users.Where(x => ids.Contains(x.Id));
         }

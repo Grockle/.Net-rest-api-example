@@ -30,62 +30,148 @@ namespace BackendService.Controllers
         }
         
         [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public async Task<IActionResult > Authenticate(LoginRequest userParam)
+        [HttpPost("Authenticate")]
+        public async Task<ActionResult<LoginResponse>> Authenticate(LoginRequest userParam)
         {
-            var user = await _accountService.Authenticate(userParam.Email, userParam.Password);
-            if (user == null)
-                return BadRequest(new { message = "Kullanici veya şifre hatalı!" });
-            return Ok(user);
+            var response = await _accountService.Authenticate(userParam.Email, userParam.Password);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return BadRequest(new { message = "Wrong Email or Password" });
+            }
+            
+            return Ok(response.Data);
         }
 
         [AllowAnonymous]
         [HttpPost("Register")]
-        public async Task<BaseResponse<RegisterUserResponse>> RegisterAsync(RegisterUserRequest registerModel)
+        public async Task<ActionResult<RegisterUserResponse>> RegisterAsync(RegisterUserRequest registerModel)
         {
-            return await _accountService.RegisterAsync(registerModel);
+            var response = await _accountService.RegisterAsync(registerModel);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(response.Data);
         }
 
         [HttpPost("ConfirmEmail")]
-        public async Task<BaseResponse<LoginResponse>> ConfirmEmailAsync(ConfirmEmailRequest confirmEmailRequest)
+        public async Task<ActionResult<LoginResponse>> ConfirmEmailAsync(ConfirmEmailRequest confirmEmailRequest)
         {
-            return await _accountService.ConfirmEmail(confirmEmailRequest);
+            var response = await _accountService.ConfirmEmail(confirmEmailRequest);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(response.Data);
         }
 
         [HttpPost("UpdateVerificationCode")]
-        public async Task<BaseResponse<bool>> UpdateVerificationCodeAsync(UpdateEmailVerificationCodeRequest updateRequest)
+        public async Task<ActionResult<bool>> UpdateVerificationCodeAsync(UpdateEmailVerificationCodeRequest updateRequest)
         {
-            return await _accountService.UpdateVerificationCodeAsync(updateRequest);
+            var response = await _accountService.UpdateVerificationCodeAsync(updateRequest);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
         
         [HttpPost("Login")]
-        public async Task<BaseResponse<LoginResponse>> LoginAsync(LoginRequest loginRequest)
+        public async Task<ActionResult<LoginResponse>> LoginAsync(LoginRequest loginRequest)
         {
-            return await _accountService.LoginAsync(loginRequest);
+            var response = await _accountService.LoginAsync(loginRequest);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(response.Data);
         }
         
         [HttpPost("LoginWithToken")]
-        public async Task<BaseResponse<LoginResponse>> LoginWithTokenAsync(string token)
+        public async Task<ActionResult<LoginResponse>> LoginWithTokenAsync(string token)
         {
-            return await _accountService.LoginWithTokenAsync(token);
+            var response = await _accountService.LoginWithTokenAsync(token);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(response.Data);
         }
         
         [HttpPost("ControlResetCode")]
-        public async Task<BaseResponse<bool>> ControlResetCodeAsync(string email, string resetCode)
+        public async Task<ActionResult<bool>> ControlResetCodeAsync(string email, string resetCode)
         {
-            return await _accountService.ControlEmailResetCodeAsync(email, resetCode);
+            var response = await _accountService.ControlResetCodeAsync(email, resetCode);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+            
+            return Ok(response.Data);
         }
         
         [HttpPost("ResetPasswordRequest")]
-        public async Task<BaseResponse<bool>> ResetPasswordRequestAsync(string email)
+        public async Task<ActionResult<bool>> ResetPasswordRequestAsync(string email)
         {
-            return await _accountService.SendPasswordResetRequestAsync(email);
+            var response = await _accountService.SendPasswordResetRequestAsync(email);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+            
+            return Ok(response.Data);
+            
         }
         
         [HttpPost("ChangePassword")]
-        public async Task<BaseResponse<bool>> ChangePasswordAsync(ResetPasswordRequest model)
+        public async Task<ActionResult<bool>> ChangePasswordAsync(ResetPasswordRequest model)
         {
-            return await _accountService.ChangePasswordAsync(model);
+            var response = await _accountService.ChangePasswordAsync(model);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+            
+            return Ok(response.Data);
         }
 
     }

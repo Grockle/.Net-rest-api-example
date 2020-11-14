@@ -20,7 +20,7 @@ namespace BackendService.Data.DTOs.Transaction.Request
         public string Description { get; set; }
 
         [Required]
-        public List<int> RelatedUserIds { get; set; }
+        public IEnumerable<int> RelatedUserIds { get; set; }
         
         [Required]
         public string TransactionType { get; set; }

@@ -15,7 +15,7 @@ namespace BackendService.Data.Repository.Implementations
             _groupUsers = dbContext.Set<GroupUsers>();
         }
 
-        public List<GroupUsers> GetByUserId(int userId)
+        public IEnumerable<GroupUsers> GetByUserId(int userId)
         {
             return _groupUsers.Where(x => x.UserId == userId).ToList();
         }

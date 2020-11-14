@@ -22,7 +22,7 @@ namespace BackendService.Data.Repository.Implementations
             _relatedTransactions = dbContext.Set<RelatedTransaction>();
         }
 
-        public async Task<bool> InsertAndUpdateBulkExpenses(Transaction transaction, List<int> relatedUserIds)
+        public async Task<bool> InsertAndUpdateBulkExpenses(Transaction transaction, IEnumerable<int> relatedUserIds)
         {
             var relatedTransactionToAdd = new List<RelatedTransaction>();
             var groupBudgetBalanceToUpdate = new List<GroupBudgetBalance>();

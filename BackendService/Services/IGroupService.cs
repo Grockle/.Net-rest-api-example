@@ -10,10 +10,10 @@ namespace BackendService.Services
     public interface IGroupService
     {
         Task<BaseResponse<bool>> AddGroupAsync(AddGroupRequest model);
-        Task<BaseResponse<List<GetUserGroupsDto>>> GetUserGroupsAsync(int userId);
-        Task<BaseResponse<List<GetGroupJoinRequestsDto>>> GetGroupJoinRequests(string shareCode);
+        Task<BaseResponse<IEnumerable<GetUserGroupsDto>>> GetUserGroupsAsync(int userId);
+        Task<BaseResponse<IEnumerable<GetGroupJoinRequestsDto>>> GetGroupJoinRequests(string shareCode);
         Task<BaseResponse<bool>> SendGroupJoinRequest(int userId, string shareCode);
         Task<BaseResponse<bool>> ReplyGroupJoinRequestAsync(int requestId, int groupId, int adminId, bool isApproved);
-        Task<BaseResponse<List<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId);
+        Task<BaseResponse<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId);
     }
 }

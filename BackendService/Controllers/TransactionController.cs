@@ -19,15 +19,29 @@ namespace BackendService.Controllers
         }
 
         [HttpPost("AddExpense")]
-        public async Task<BaseResponse<bool>> AddExpenseAsync(AddExpenseRequestDto request)
+        public async Task<ActionResult<bool>> AddExpenseAsync(AddExpenseRequestDto request)
         {
-            return await _transactionService.AddExpenseAsync(request);
+            var response = await _transactionService.AddExpenseAsync(request);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
         
         [HttpPost("AddTransfer")]
-        public async Task<BaseResponse<bool>> AddTransferAsync(AddTransferRequestDto request)
+        public async Task<ActionResult<bool>> AddTransferAsync(AddTransferRequestDto request)
         {
-            return await _transactionService.AddTransferAsync(request);
+            var response = await _transactionService.AddTransferAsync(request);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Message);
+            }
+
+            return Ok(response.Data);
         }
     }
 }

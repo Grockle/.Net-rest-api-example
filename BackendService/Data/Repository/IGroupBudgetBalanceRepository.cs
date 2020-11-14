@@ -7,7 +7,7 @@ namespace BackendService.Data.Repository
     public interface IGroupBudgetBalanceRepository : IGenericRepositoryAsync<GroupBudgetBalance>
     {
         IEnumerable<GroupBudgetBalance> GroupBudgetBalancesWithGroupId(int groupId);
-        void UpdateRange(List<GroupBudgetBalance> groupBalances);
-        Task AddRange(List<GroupBudgetBalance> groupBalances);
+        void UpdateRange(IEnumerable<GroupBudgetBalance> groupBalances);
+        Task AddRange(IEnumerable<GroupBudgetBalance> groupBalances);
     }
 }

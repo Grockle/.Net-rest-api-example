@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +8,6 @@ using BackendService.Data.DTOs.User.Request;
 using BackendService.Data.DTOs.User.Response;
 using BackendService.Data.Entities;
 using BackendService.Data.Repository;
-using BackendService.Exceptions;
 using BackendService.Helpers;
 using BackendService.Mappings;
 using BackendService.Models;
@@ -43,7 +41,8 @@ namespace BackendService.Services.Implementations
 
             if (existEmail)
             {
-                return MapBaseResponse(true, "Email is already exist", new RegisterUserResponse{ IsRegistered = false , Email = string.Empty});
+                return new GeneralMapping<RegisterUserResponse>().MapBaseResponse(true, "Email is already exist", 
+                    new RegisterUserResponse{ IsRegistered = false , Email = string.Empty});
             }
             
             var user = new User
@@ -76,10 +75,11 @@ namespace BackendService.Services.Implementations
             catch (Exception)
             {
                 await _userRepository.DeleteAsync(response);
-                return MapBaseResponse(true, "Error occurred during the registration process", new RegisterUserResponse{IsRegistered = false, Email = string.Empty});
+                return new GeneralMapping<RegisterUserResponse>().MapBaseResponse(true, "Error occurred during the registration process", 
+                    new RegisterUserResponse{IsRegistered = false, Email = string.Empty});
             }
             
-            return MapBaseResponse(false, string.Empty,  new RegisterUserResponse
+            return new GeneralMapping<RegisterUserResponse>().MapBaseResponse(false, string.Empty,  new RegisterUserResponse
             {
                 Email = userModel.Email,
                 IsRegistered = true
@@ -103,7 +103,7 @@ namespace BackendService.Services.Implementations
                     Message = "",
                     Data = new LoginResponse
                     {
-                        IsVerified = true,
+                        IsEmailConfirmed = true,
                         IsLoggedIn = true,
                         Email = user.Email,
                         FirstName = user.FirstName,
@@ -116,11 +116,11 @@ namespace BackendService.Services.Implementations
             
             return new BaseResponse<LoginResponse>
             {
-                HasError = false,
+                HasError = true,
                 Message = "Email confirmation failed",
                 Data = new LoginResponse
                 {
-                    IsVerified = false,
+                    IsEmailConfirmed = false,
                     IsLoggedIn = false
                 }
             };
@@ -132,7 +132,7 @@ namespace BackendService.Services.Implementations
 
             if (user == null)
             {
-                return MapBaseResponse(false, "Update email confirmation code failed", false);  
+                return new GeneralMapping<bool>().MapBaseResponse(true, "Update email confirmation code failed", false);  
             }
 
             user.EmailVerificationCode = GenerateCode();
@@ -149,28 +149,27 @@ namespace BackendService.Services.Implementations
                     Subject = "Verification Code"
                 });
                 
-                return MapBaseResponse(false, "Update email confirmation code success", true); 
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Update email confirmation code success", true); 
             }
             catch (Exception)
             {
-                return MapBaseResponse(true, "Error occurred during the updating email verification code", false); 
+                return new GeneralMapping<bool>().MapBaseResponse(true, "Error occurred during the updating email verification code", false); 
             }
         }
-        
-        public async Task<LoginResponse> Authenticate(string email, string password)
+        public async Task<BaseResponse<LoginResponse>> Authenticate(string email, string password)
         {
             var user = await _userRepository.GetUserByEmailAsync(email);
 
             if (user == null)
             {
-                throw new ApiException($"No Accounts Registered with {email}.");
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(true, $"No Accounts Registered with {email}.", null);
             }
             
             var passwordMatched = _hashService.DecryptString(user.PasswordHash) == password;
             
             if (!passwordMatched)
             {
-                throw new ApiException($"Invalid Credentials for '{email}'.");
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(true, $"Invalid Credentials for '{email}'.", null);
             }
             
             // Authentication(Yetkilendirme) başarılı ise JWT token üretilir.
@@ -191,32 +190,33 @@ namespace BackendService.Services.Implementations
             await _userRepository.UpdateAsync(user);
 
 
-            return new LoginResponse
+            return new GeneralMapping<LoginResponse>().MapBaseResponse(false,"",new LoginResponse
             {
-                Email = user.Email, FirstName = user.FirstName, LastName = user.LastName,IsLoggedIn = true, IsVerified = user.EmailConfirmed,UserId = user.Id, Token = user.Token
-            };
+                Email = user.Email, FirstName = user.FirstName, LastName = user.LastName,IsLoggedIn = true, IsEmailConfirmed = user.EmailConfirmed,UserId = user.Id, Token = user.Token
+            });
         }
-
         public async Task<BaseResponse<LoginResponse>> LoginWithTokenAsync(string token)
         {
             if (string.IsNullOrEmpty(token))
             {
-                return MapBaseResponse(false, "Invalid Token", new LoginResponse{IsLoggedIn = false, IsVerified = false});
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Invalid Token", new LoginResponse{IsLoggedIn = false, IsEmailConfirmed = false});
             }
             var user = await _userRepository.GetUserByToken(token);
            
             if (user == null)
             {
-                return MapBaseResponse(false, "Invalid Token", new LoginResponse{IsLoggedIn = false, IsVerified = false});
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Invalid Token", new LoginResponse{IsLoggedIn = false, IsEmailConfirmed = false});
             }
+            
             if (!user.EmailConfirmed)
             {
-                return MapBaseResponse(false, "Email is not confirmed", new LoginResponse{IsLoggedIn = true, IsVerified = false});
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Email is not confirmed", new LoginResponse{IsLoggedIn = true, IsEmailConfirmed = false});
             }
-            return MapBaseResponse(false, "Login Success", new LoginResponse
+            
+            return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Login Success", new LoginResponse
             {
                 IsLoggedIn = true, 
-                IsVerified = true,
+                IsEmailConfirmed = true,
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -224,50 +224,47 @@ namespace BackendService.Services.Implementations
                 UserId = user.Id
             });
         }
-        
         public async Task<BaseResponse<LoginResponse>> LoginAsync(LoginRequest loginModel)
         {
             var user = await _userRepository.GetUserByEmailAsync(loginModel.Email);
            
             if (user == null)
             {
-                return MapBaseResponse(false, "Wrong email or password", new LoginResponse{IsLoggedIn = false, IsVerified = false});
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(true, "Wrong Email or Password", new LoginResponse{IsLoggedIn = false, IsEmailConfirmed = false});
             }
-            else
+            
+            var passwordMatched = _hashService.DecryptString(user.PasswordHash) == loginModel.Password;
+            
+            if (passwordMatched)
             {
-                var passwordMatched = _hashService.DecryptString(user.PasswordHash) == loginModel.Password;
-            
-                if (passwordMatched)
+                if (!user.EmailConfirmed)
                 {
-                    if (!user.EmailConfirmed)
-                    {
-                        return MapBaseResponse(false, "Email is not confirmed", new LoginResponse{IsLoggedIn = true, IsVerified = false});
-                    }
-                    return MapBaseResponse(false, "Login Success", new LoginResponse
-                    {
-                        IsLoggedIn = true, 
-                        IsVerified = true,
-                        Email = user.Email,
-                        FirstName = user.FirstName,
-                        LastName = user.LastName,
-                        ShortName = (user.FirstName.Substring(0, 1) + user.LastName.Substring(0, 1)).ToUpperInvariant(),
-                        UserId = user.Id
-                    });
+                    return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Email is not confirmed", new LoginResponse{IsLoggedIn = true, IsEmailConfirmed = false});
                 }
-            
-                return MapBaseResponse(false, "Wrong email or password", new LoginResponse{IsLoggedIn = false, IsVerified = false});
+                return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Login Success", new LoginResponse
+                {
+                    IsLoggedIn = true, 
+                    IsEmailConfirmed = true,
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    ShortName = (user.FirstName.Substring(0, 1) + user.LastName.Substring(0, 1)).ToUpperInvariant(),
+                    UserId = user.Id
+                });
             }
+            
+            return new GeneralMapping<LoginResponse>().MapBaseResponse(false, "Wrong Email or Password", new LoginResponse{IsLoggedIn = false, IsEmailConfirmed = false});
         }
-        public async Task<BaseResponse<bool>> ControlEmailResetCodeAsync(string email, string resetCode)
+        public async Task<BaseResponse<bool>> ControlResetCodeAsync(string email, string resetCode)
         {
             var resetCodeCorrect = await _userRepository.ControlPasswordResetCodeAsync(email, resetCode);
 
             if (resetCodeCorrect)
             {
-                return MapBaseResponse(false, "Success", true);
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Success", true);
             }
             
-            return MapBaseResponse(false, "Reset code not valid", false);
+            return new GeneralMapping<bool>().MapBaseResponse(false, "Reset code not valid", false);
         }
         public async Task<BaseResponse<bool>> SendPasswordResetRequestAsync(string email)
         {
@@ -275,7 +272,7 @@ namespace BackendService.Services.Implementations
 
             if (user == null)
             {
-                return MapBaseResponse(false, "Reset code request not success", false);
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Reset code request not success", false);
             }
 
             user.ResetCodeEndTime = _dateTimeService.Now.AddHours(1);
@@ -292,11 +289,11 @@ namespace BackendService.Services.Implementations
                     Subject = "Reset Password"
                 });
                 
-                return MapBaseResponse(false, "Password reset code is send your email", true); 
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Password reset code is send your email", true); 
             }
             catch (Exception)
             {
-                return MapBaseResponse(true, "Reset code request not success", false); 
+                return new GeneralMapping<bool>().MapBaseResponse(true, "Reset code request not success", false); 
             }
         }
         public async Task<BaseResponse<bool>> ChangePasswordAsync(ResetPasswordRequest resetRequestModel)
@@ -305,7 +302,7 @@ namespace BackendService.Services.Implementations
 
             if (user == null)
             {
-                return MapBaseResponse(false, "Change password failed", false);
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Change password failed", false);
             }
             
             var resetCodeCorrect = await _userRepository.ControlPasswordResetCodeAsync(resetRequestModel.Email, resetRequestModel.Code);
@@ -316,10 +313,10 @@ namespace BackendService.Services.Implementations
                 user.ResetCodeEndTime = null;
                 user.PasswordResetCode = null;
                 await _userRepository.UpdateAsync(user);
-                return MapBaseResponse(false, "Your password changed successfully", true);
+                return new GeneralMapping<bool>().MapBaseResponse(false, "Your password changed successfully", true);
             }
             
-            return MapBaseResponse(false, "Change password failed", false);
+            return new GeneralMapping<bool>().MapBaseResponse(false, "Change password failed", false);
         }
         #endregion
 
@@ -335,36 +332,7 @@ namespace BackendService.Services.Implementations
             var splits = email.Split("@");
             return splits[0][0] + "***@" + splits[1];
         }
-        private BaseResponse<RegisterUserResponse> MapBaseResponse(bool hasError, string errorMessage, RegisterUserResponse data)
-        {
-            return new BaseResponse<RegisterUserResponse>
-            {
-                HasError = hasError,
-                Message = errorMessage,
-                Data = data
-            };
-        }
         
-        private BaseResponse<LoginResponse> MapBaseResponse(bool hasError, string errorMessage, LoginResponse data)
-        {
-            return new BaseResponse<LoginResponse>
-            {
-                HasError = hasError,
-                Message = errorMessage,
-                Data = data
-            };
-        }
-        
-        private BaseResponse<bool> MapBaseResponse(bool hasError, string errorMessage, bool data)
-        {
-            return new BaseResponse<bool>
-            {
-                HasError = hasError,
-                Message = errorMessage,
-                Data = data
-            };
-        }
-
         #endregion
         
     }
