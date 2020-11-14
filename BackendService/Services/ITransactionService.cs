@@ -6,6 +6,7 @@ namespace BackendService.Services
 {
     public interface ITransactionService
     {
-        Task<BaseResponse<bool>> AddTransactionAsync(AddTransactionRequestDto request);
+        Task<BaseResponse<bool>> AddExpenseAsync(AddExpenseRequestDto request);
+        Task<BaseResponse<bool>> AddTransferAsync(AddTransferRequestDto request);
     }
 }

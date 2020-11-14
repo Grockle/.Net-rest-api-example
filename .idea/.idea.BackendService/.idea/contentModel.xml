@@ -37,7 +37,9 @@
             <e p="TokenOptions.cs" t="Include" />
             <e p="Transaction" t="Include">
               <e p="Request" t="Include">
-                <e p="AddTransactionRequestDto.cs" t="Include" />
+                <e p="AddExpenseRequestDto.cs" t="Include" />
+                <e p="AddTransferRequestDto.cs" t="Include" />
+                <e p="TransferDto.cs" t="Include" />
               </e>
             </e>
             <e p="User" t="Include">
@@ -68,7 +70,9 @@
             <e p="Transaction.cs" t="Include" />
             <e p="User.cs" t="Include" />
           </e>
-          <e p="Enums" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="TransactionType.cs" t="Include" />
+          </e>
           <e p="Repository" t="Include">
             <e p="IGenericRepositoryAsync.cs" t="Include" />
             <e p="IGroupBudgetBalanceRepository.cs" t="Include" />
@@ -81,7 +85,7 @@
               <e p="GroupJoinRequestRepository.cs" t="Include" />
               <e p="GroupRepository.cs" t="Include" />
               <e p="GroupUserRepository.cs" t="Include" />
-              <e p="RelatedTranstionRepository.cs" t="Include" />
+              <e p="RelatedTransactionRepository.cs" t="Include" />
               <e p="TransactionRepository.cs" t="Include" />
               <e p="UserRepository.cs" t="Include" />
             </e>
@@ -124,6 +128,8 @@
           <e p="20201109163346_TransactionsUpdate.Designer.cs" t="Include" />
           <e p="20201109163643_GroupBudgetBalance.cs" t="Include" />
           <e p="20201109163643_GroupBudgetBalance.Designer.cs" t="Include" />
+          <e p="20201114123706_Update-Transactions.cs" t="Include" />
+          <e p="20201114123706_Update-Transactions.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

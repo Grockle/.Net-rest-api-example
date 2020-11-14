@@ -33,6 +33,7 @@ namespace BackendService
                 {
                     builder.AllowAnyMethod().AllowAnyHeader()
                         .WithOrigins("http://localhost:4200")
+                        .WithOrigins("http://localhost:4201")
                         .AllowCredentials();
                 }));
 

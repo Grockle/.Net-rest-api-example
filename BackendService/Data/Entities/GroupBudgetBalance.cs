@@ -4,6 +4,6 @@
     {
         public int UserId { get; set; }
         public int GroupId { get; set; }
-        public decimal Balance { get; set; }
+        public double Balance { get; set; }
     }
 }

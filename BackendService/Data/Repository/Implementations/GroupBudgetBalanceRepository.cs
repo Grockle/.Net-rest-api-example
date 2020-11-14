@@ -1,4 +1,8 @@
-﻿using BackendService.Context;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using BackendService.Context;
 using BackendService.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +15,21 @@ namespace BackendService.Data.Repository.Implementations
         public GroupBudgetBalanceRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _groupBudgetBalances = dbContext.Set<GroupBudgetBalance>();
+        }
+
+        public IEnumerable<GroupBudgetBalance> GroupBudgetBalancesWithGroupId(int groupId)
+        {
+            return _groupBudgetBalances.Where(x => x.GroupId == groupId);
+        }
+
+        public void UpdateRange(List<GroupBudgetBalance> groupBalances)
+        {
+            _groupBudgetBalances.UpdateRange(groupBalances);
+        }
+        
+        public async Task AddRange(List<GroupBudgetBalance> groupBalances)
+        {
+            await _groupBudgetBalances.AddRangeAsync(groupBalances);
         }
     }
 }
