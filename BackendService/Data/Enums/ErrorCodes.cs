@@ -17,14 +17,14 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto UserIdRequired = new ErrorMessageDto {Code = 11, Message = "UserId is required"};
         public static readonly ErrorMessageDto GroupNameExist = new ErrorMessageDto {Code = 12, Message = "Group name already exist"};
         public static readonly ErrorMessageDto AddGroupFailed = new ErrorMessageDto {Code = 13, Message = "Add group failed"};
-        public static readonly ErrorMessageDto ShareCodeRequired = new ErrorMessageDto {Code = 13, Message = "Share code is required"};
-        public static readonly ErrorMessageDto GroupIsNotExist = new ErrorMessageDto {Code = 13, Message = "Group is not exist"};
-        public static readonly ErrorMessageDto ExistGroupJoinRequest = new ErrorMessageDto {Code = 13, Message = "You send request already"};
-        public static readonly ErrorMessageDto UserAlreadyExist = new ErrorMessageDto {Code = 13, Message = "User already exist"};
-        public static readonly ErrorMessageDto GroupIdRequired = new ErrorMessageDto {Code = 13, Message = "GroupId is required"};
-        public static readonly ErrorMessageDto JoinRequestFail = new ErrorMessageDto {Code = 13, Message = "Reply join request failed"};
-        public static readonly ErrorMessageDto NotAuthForOperation = new ErrorMessageDto {Code = 13, Message = "You are not authorized for this operation"};
-        public static readonly ErrorMessageDto EmptyRelatedUsers = new ErrorMessageDto {Code = 13, Message = "You need to choose least one user for this operation"};
-        public static readonly ErrorMessageDto TransactionTypeError = new ErrorMessageDto {Code = 13, Message = "Invalid transaction type"};
+        public static readonly ErrorMessageDto ShareCodeRequired = new ErrorMessageDto {Code = 14, Message = "Share code is required"};
+        public static readonly ErrorMessageDto GroupIsNotExist = new ErrorMessageDto {Code = 15, Message = "Group is not exist"};
+        public static readonly ErrorMessageDto ExistGroupJoinRequest = new ErrorMessageDto {Code = 16, Message = "You send request already"};
+        public static readonly ErrorMessageDto UserAlreadyExist = new ErrorMessageDto {Code = 17, Message = "User already exist"};
+        public static readonly ErrorMessageDto GroupIdRequired = new ErrorMessageDto {Code = 18, Message = "GroupId is required"};
+        public static readonly ErrorMessageDto JoinRequestFail = new ErrorMessageDto {Code = 19, Message = "Reply join request failed"};
+        public static readonly ErrorMessageDto NotAuthForOperation = new ErrorMessageDto {Code = 20, Message = "You are not authorized for this operation"};
+        public static readonly ErrorMessageDto EmptyRelatedUsers = new ErrorMessageDto {Code = 21, Message = "You need to choose least one user for this operation"};
+        public static readonly ErrorMessageDto TransactionTypeError = new ErrorMessageDto {Code = 22, Message = "Invalid transaction type"};
     }
 }
