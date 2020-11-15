@@ -1,46 +1,45 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BackendService.Data.DTOs;
 using BackendService.Data.DTOs.Transaction.Request;
 using BackendService.Data.Entities;
 using BackendService.Data.Enums;
 using BackendService.Data.Repository;
-using BackendService.Helpers;
-using BackendService.Mappings;
 
 namespace BackendService.Services.Implementations
 {
     public class TransactionService : ITransactionService
     {
-        private readonly IUserRepository _userRepository;
         private readonly ITransactionRepository _transactionRepository;
         private readonly IRelatedTransactionRepository _relatedTransactionRepository;
         private readonly IGroupBudgetBalanceRepository _groupBudgetBalanceRepository;
-        private readonly IEmailService _emailService;
-        private readonly IHashService _hashService;
-        private readonly IDateTimeService _dateTimeService;
 
-        public TransactionService(IUserRepository userRepository, ITransactionRepository transactionRepository, IRelatedTransactionRepository relatedTransactionRepository, IEmailService emailService, IHashService hashService, IDateTimeService dateTimeService, IGroupBudgetBalanceRepository groupBudgetBalanceRepository)
+        public TransactionService(ITransactionRepository transactionRepository, IRelatedTransactionRepository relatedTransactionRepository, IGroupBudgetBalanceRepository groupBudgetBalanceRepository)
         {
-            _userRepository = userRepository;
             _transactionRepository = transactionRepository;
             _relatedTransactionRepository = relatedTransactionRepository;
-            _emailService = emailService;
-            _hashService = hashService;
-            _dateTimeService = dateTimeService;
             _groupBudgetBalanceRepository = groupBudgetBalanceRepository;
         }
 
+        #region Services
+        
         public async Task<BaseResponse<bool>> AddExpenseAsync(AddExpenseRequestDto request)
         {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            
             if (request.RelatedUserIds == null || !request.RelatedUserIds.Any())
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Related users can not be empty", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyRelatedUsers;
+                return response;
             }
 
             if (request.TransactionType != TransactionType.Expense.ToString())
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Invalid Transaction Type", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.TransactionTypeError;
+                return response;
             }
             
             var transaction = await _transactionRepository.AddAsync(new Transaction
@@ -55,25 +54,34 @@ namespace BackendService.Services.Implementations
             if (transaction != null)
             {
                 var isSucceed = await _relatedTransactionRepository.InsertAndUpdateBulkExpenses(transaction, request.RelatedUserIds);
+                
                 if (isSucceed)
                 {
-                    return new GeneralMapping<bool>().MapBaseResponse(false, "success", false);
+                    response.Data = true;
+                    return response;
                 }
             }
-            
-            return new GeneralMapping<bool>().MapBaseResponse(true, "Error occuring during adding request", false);
+
+            response.HasError = true;
+            response.Error = ErrorCodes.CommonProcessError;
+            return response;
         }
-        
         public async Task<BaseResponse<bool>> AddTransferAsync(AddTransferRequestDto request)
         {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            
             if (request.RelatedUsers == null || !request.RelatedUsers.Any())
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Related users can not be empty", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyRelatedUsers;
+                return response;
             }
 
             if (request.TransactionType != TransactionType.Transfer.ToString())
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Invalid Transaction Type", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.TransactionTypeError;
+                return response;
             }
 
             var groupBudgetBalances = _groupBudgetBalanceRepository.GroupBudgetBalancesWithGroupId(request.GroupId).ToArray();
@@ -133,7 +141,11 @@ namespace BackendService.Services.Implementations
                     }
                 }
             }
-            return new GeneralMapping<bool>().MapBaseResponse(false, "Success Transfer", true);
+
+            response.Data = true;
+            return response;
         }
+        
+        #endregion
     }
 }

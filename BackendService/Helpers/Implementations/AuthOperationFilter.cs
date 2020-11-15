@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace BackendService.Helpers
+namespace BackendService.Helpers.Implementations
 {
     public class AuthOperationFilter: IOperationFilter
     {

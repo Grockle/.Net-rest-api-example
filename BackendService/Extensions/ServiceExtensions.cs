@@ -1,4 +1,5 @@
-﻿using BackendService.Context;
+﻿using BackendService.Common;
+using BackendService.Context;
 using BackendService.Data.Repository;
 using BackendService.Data.Repository.Implementations;
 using BackendService.Helpers;
@@ -70,6 +71,7 @@ namespace BackendService.Extensions
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IGroupService, GroupService>();
             services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<ICommonHelper, CommonHelper>(); 
             #endregion
 
             #region Repositories

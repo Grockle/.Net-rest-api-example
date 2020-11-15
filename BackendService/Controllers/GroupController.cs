@@ -35,7 +35,7 @@ namespace BackendService.Controllers
 
             if (response.HasError)
             {
-                return BadRequest(response.Message);
+                return BadRequest(response.Error);
             }
 
             if (response.Data == null)
@@ -53,7 +53,7 @@ namespace BackendService.Controllers
 
             if (response.HasError)
             {
-                return BadRequest(response.Message);
+                return BadRequest(response.Error);
             }
 
             if (response.Data == null)
@@ -71,7 +71,7 @@ namespace BackendService.Controllers
 
             if (response.HasError)
             {
-                return BadRequest(response.Message);
+                return BadRequest(response.Error);
             }
 
             return Ok(response.Data);
@@ -84,7 +84,7 @@ namespace BackendService.Controllers
 
             if (response.HasError)
             {
-                return BadRequest(response.Message);
+                return BadRequest(response.Error);
             }
 
             return Ok(response.Data);
@@ -97,7 +97,7 @@ namespace BackendService.Controllers
 
             if (response.HasError)
             {
-                return BadRequest(response.Message);
+                return BadRequest(response.Error);
             }
 
             return Ok(response.Data);

@@ -6,46 +6,50 @@ using BackendService.Data.DTOs.Group.Request;
 using BackendService.Data.DTOs.Group.Response;
 using BackendService.Data.DTOs.User.Response;
 using BackendService.Data.Entities;
+using BackendService.Data.Enums;
 using BackendService.Data.Repository;
 using BackendService.Helpers;
-using BackendService.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackendService.Services.Implementations
 {
     public class GroupService : IGroupService
     {
-        private readonly IEmailService _emailService;
         private readonly IGroupRepository _groupRepository;
         private readonly IGroupUserRepository _groupUserRepository;
         private readonly IGroupJoinRequestRepository _groupJoinRequestRepository;
         private readonly IUserRepository _userRepository;
         private readonly IHashService _hashService;
-        private readonly IDateTimeService _dateTimeService;
 
-        public GroupService(IHashService hashService, IDateTimeService dateTimeService, IGroupRepository groupRepository, IEmailService emailService, IGroupUserRepository groupUserRepository, IGroupJoinRequestRepository groupJoinRequestRepository, IUserRepository userRepository)
+        public GroupService(IHashService hashService, IGroupRepository groupRepository, IGroupUserRepository groupUserRepository, IGroupJoinRequestRepository groupJoinRequestRepository, IUserRepository userRepository)
         {
             _hashService = hashService;
-            _dateTimeService = dateTimeService;
             _groupRepository = groupRepository;
-            _emailService = emailService;
             _groupUserRepository = groupUserRepository;
             _groupJoinRequestRepository = groupJoinRequestRepository;
             _userRepository = userRepository;
         }
 
+        #region Services
+
         public async Task<BaseResponse<bool>> AddGroupAsync(AddGroupRequest model)
         {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            
             if (model.UserId == 0)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "UserId is required", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.UserIdRequired;
+                return response;
             }
             
             var existGroup = await _groupRepository.GetGroupWithSameNameAsync(model.GroupName, model.UserId);
             
             if (existGroup != null)
             {
-               return new GeneralMapping<bool>().MapBaseResponse(true, "Group name already exist", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.GroupNameExist;
+                return response;
             }
 
             var group = await _groupRepository.AddAsync(new Group
@@ -64,36 +68,45 @@ namespace BackendService.Services.Implementations
                     UserId = model.UserId,
                     GroupId = group.Id,
                 });
-                return new GeneralMapping<bool>().MapBaseResponse(false, "", true);
+                response.Data = true;
+                return response;
             }
-            
-            return new GeneralMapping<bool>().MapBaseResponse(true, "Unable to add group", false);
+            response.HasError = true;
+            response.Error = ErrorCodes.AddGroupFailed;
+            return response;
         }
-
         public async Task<BaseResponse<IEnumerable<GetUserGroupsDto>>> GetUserGroupsAsync(int userId)
         {
+            var response = new BaseResponse<IEnumerable<GetUserGroupsDto>> {HasError = false, Data = null};
             if (userId == 0)
             {
-                return new GeneralMapping<IEnumerable<GetUserGroupsDto>>().MapBaseResponse(true, "UserId is required ", null);
+                response.HasError = true;
+                response.Error = ErrorCodes.UserIdRequired;
+                return response;
             }
 
             var groups = _groupRepository.GetGroupsByUserId(userId);
             
-            return new GeneralMapping<IEnumerable<GetUserGroupsDto>>().MapBaseResponse(false, "", groups);
+            response.Data = groups;
+            return response;
         }
-        
         public async Task<BaseResponse<IEnumerable<GetGroupJoinRequestsDto>>> GetGroupJoinRequests(string shareCode)
         {
+            var response = new BaseResponse<IEnumerable<GetGroupJoinRequestsDto>> {HasError = false, Data = null};
             if (string.IsNullOrEmpty(shareCode))
             {
-                return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(true, "Share code is required", null);
+                response.HasError = true;
+                response.Error = ErrorCodes.ShareCodeRequired;
+                return response;
             }
             
             var groupJoinRequests = _groupJoinRequestRepository.GetRequestsByShareCode(shareCode);
             
             if (groupJoinRequests == null)
             {
-                return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "No request", null);
+                response.Data = null;
+                response.HasError = false;
+                return response;
             }
 
             var users = _userRepository.GetUsersById(groupJoinRequests.Select(x => x.FromUserId)).Select(x =>
@@ -105,36 +118,45 @@ namespace BackendService.Services.Implementations
                     Email = x.Email,
                     RequestId = groupJoinRequests.FirstOrDefault(y => y.FromUserId == x.Id).Id
                 }).ToList();
-            
-            return new GeneralMapping<IEnumerable<GetGroupJoinRequestsDto>>().MapBaseResponse(false, "", users);
+
+            response.Data = users;
+            return response;
         }
-        
         public async Task<BaseResponse<bool>>SendGroupJoinRequest(int userId, string shareCode)
         {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
             if (userId == 0)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "UserId is required", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.UserIdRequired;
+                return response;
             }
 
             var group = await _groupRepository.GetGroupByShareCode(shareCode);
 
             if (group == null)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Group is not exist", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.GroupIsNotExist;
+                return response;
             }
 
             var existRequest = await _groupJoinRequestRepository.GetByShareCodeAndUserId(userId, shareCode);
             
             if (existRequest != null)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "You send request already", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.ExistGroupJoinRequest;
+                return response;
             }
             
             var groupExistUser = await _groupUserRepository.GetByGroupId(group.Id).FirstOrDefaultAsync(x => x.UserId == userId);
 
             if (groupExistUser != null)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "User already exist", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.UserAlreadyExist;
+                return response;
             }
             
             var joinRequest = await _groupJoinRequestRepository.AddAsync(new GroupJoinRequest
@@ -143,15 +165,18 @@ namespace BackendService.Services.Implementations
                 GroupShareCode = shareCode,
                 IsActive = true,
             });
-            
-            return new GeneralMapping<bool>().MapBaseResponse(false, "Request send", true);
+            response.Data = true;
+            return response;
         }
-
         public async Task<BaseResponse<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId)
         {
+            var response = new BaseResponse<IEnumerable<GetGroupUsersInfoDto>> {HasError = false, Data = null};
+            
             if (groupId == 0)
             {
-                return new GeneralMapping<IEnumerable<GetGroupUsersInfoDto>>().MapBaseResponse(true, "Group Id is required", null);
+                response.HasError = true;
+                response.Error = ErrorCodes.GroupIdRequired;
+                return response;
             }
 
             var groupUsers = _groupUserRepository.GetByGroupId(groupId);
@@ -163,33 +188,43 @@ namespace BackendService.Services.Implementations
                 LastName = x.LastName
             }).ToList();
             
-            return new GeneralMapping<IEnumerable<GetGroupUsersInfoDto>>().MapBaseResponse(false, "", users);
+            response.Data = users;
+            return response;
         }
-
         public async Task<BaseResponse<bool>> ReplyGroupJoinRequestAsync(int requestId, int groupId, int adminId,bool isApproved)
         {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            
             var joinRequest = await _groupJoinRequestRepository.GetByIdAsync(requestId);
             
             if (joinRequest == null)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Wrong request", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.JoinRequestFail;
+                return response;
             }
 
             if(!joinRequest.IsActive)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Wrong request", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.JoinRequestFail;
+                return response;
             }
             
             var group = await _groupRepository.GetGroupByShareCode(joinRequest.GroupShareCode);
 
             if (group == null)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "Wrong request", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.JoinRequestFail;
+                return response;
             }
 
             if (group.CreatedBy != adminId)
             {
-                return new GeneralMapping<bool>().MapBaseResponse(true, "You are not authorized to approve", false);
+                response.HasError = true;
+                response.Error = ErrorCodes.NotAuthForOperation;
+                return response;
             }
             
             if (isApproved)
@@ -204,8 +239,11 @@ namespace BackendService.Services.Implementations
             
             joinRequest.IsActive = false;
             await _groupJoinRequestRepository.UpdateAsync(joinRequest);
-            
-            return new GeneralMapping<bool>().MapBaseResponse(false, "Operation is success", true);
+
+            response.Data = true;
+            return response;
         }
+
+        #endregion
     }
 }
