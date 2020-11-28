@@ -210,8 +210,8 @@ namespace BackendService.Services.Implementations
             
             if (!user.EmailConfirmed)
             {
-                response.HasError = true;
-                response.Error = ErrorCodes.NotVerifiedEmail;
+                response.Data.IsLoggedIn = false;
+                response.Data.IsEmailConfirmed = false;
                 return response;
             }
 
@@ -245,8 +245,8 @@ namespace BackendService.Services.Implementations
             {
                 if (!user.EmailConfirmed)
                 {
-                    response.Error = ErrorCodes.NotVerifiedEmail;
-                    response.HasError = true;
+                    response.Data.IsLoggedIn = false;
+                    response.Data.IsEmailConfirmed = false;
                     return response;
                 }
 

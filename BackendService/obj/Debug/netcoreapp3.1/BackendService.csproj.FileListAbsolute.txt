@@ -164,6 +164,7 @@ D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Debug\netcoreapp
 D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Debug\netcoreapp3.1\Npgsql.dll
 D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Debug\netcoreapp3.1\Dapper.dll
 D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Debug\netcoreapp3.1\BackendService.csproj.CoreCompileInputs.cache
 D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Debug\netcoreapp3.1\BackendService.MvcApplicationPartsAssemblyInfo.cs
 D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Debug\netcoreapp3.1\BackendService.MvcApplicationPartsAssemblyInfo.cache

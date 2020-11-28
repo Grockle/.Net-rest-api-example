@@ -1,25 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System.Threading.Tasks;
-using BackendService.Data.DTOs;
+﻿using System.Threading.Tasks;
 using BackendService.Data.DTOs.User.Request;
 using BackendService.Data.DTOs.User.Response;
-using BackendService.Data.Entities;
 using BackendService.Services;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 
 namespace BackendService.Controllers
 {
-    [Authorize]
-    [ApiController]
-    [Route("[controller]")]
-    public class AccountController : ControllerBase
+    
+    public class AccountController : BaseApiController
     {
         private readonly IAccountService _accountService;
         private IConfiguration _config;  
@@ -97,29 +87,11 @@ namespace BackendService.Controllers
 
             return Ok(response.Data);
         }
-        
-        [HttpPost("Login")]
-        public async Task<ActionResult<LoginResponse>> LoginAsync(LoginRequest loginRequest)
+
+        [HttpPost("GetUserInfos")]
+        public async Task<ActionResult<LoginResponse>> GetUserInfosAsync()
         {
-            var response = await _accountService.LoginAsync(loginRequest);
-
-            if (response.HasError)
-            {
-                return BadRequest(response.Error);
-            }
-
-            if (response.Data == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(response.Data);
-        }
-        
-        [HttpPost("LoginWithToken")]
-        public async Task<ActionResult<LoginResponse>> LoginWithTokenAsync(string token)
-        {
-            var response = await _accountService.LoginWithTokenAsync(token);
+            var response = await _accountService.LoginWithTokenAsync(Token);
 
             if (response.HasError)
             {

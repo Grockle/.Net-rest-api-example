@@ -18,6 +18,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
+          <e p="BaseApiController.cs" t="Include" />
           <e p="GroupController.cs" t="Include" />
           <e p="TransactionController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
@@ -34,9 +35,13 @@
                 <e p="ReplyGroupJoinRequestDto.cs" t="Include" />
               </e>
               <e p="Response" t="Include">
+                <e p="GetGroupDetailDto.cs" t="Include" />
                 <e p="GetGroupJoinRequestsDto.cs" t="Include" />
                 <e p="GetUserGroupsDto.cs" t="Include" />
               </e>
+            </e>
+            <e p="GroupBudgetBalance" t="Include">
+              <e p="GroupBudgetBalanceDto.cs" t="Include" />
             </e>
             <e p="Response.cs" t="Include" />
             <e p="TokenOptions.cs" t="Include" />
@@ -45,6 +50,10 @@
                 <e p="AddExpenseRequestDto.cs" t="Include" />
                 <e p="AddTransferRequestDto.cs" t="Include" />
                 <e p="TransferDto.cs" t="Include" />
+              </e>
+              <e p="Response" t="Include">
+                <e p="GroupTransactionDto.cs" t="Include" />
+                <e p="TransactionDto.cs" t="Include" />
               </e>
             </e>
             <e p="User" t="Include">
@@ -62,6 +71,8 @@
                 <e p="GetGroupUsersInfoDto.cs" t="Include" />
                 <e p="LoginResponse.cs" t="Include" />
                 <e p="RegisterUserResponse.cs" t="Include" />
+                <e p="RelatedUserDto.cs" t="Include" />
+                <e p="UserDto.cs" t="Include" />
               </e>
             </e>
           </e>

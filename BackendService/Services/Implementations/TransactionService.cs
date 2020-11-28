@@ -145,7 +145,7 @@ namespace BackendService.Services.Implementations
             response.Data = true;
             return response;
         }
-        
+
         #endregion
     }
 }

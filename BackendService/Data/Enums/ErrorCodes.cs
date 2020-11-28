@@ -26,5 +26,6 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto NotAuthForOperation = new ErrorMessageDto {Code = 20, Message = "You are not authorized for this operation"};
         public static readonly ErrorMessageDto EmptyRelatedUsers = new ErrorMessageDto {Code = 21, Message = "You need to choose least one user for this operation"};
         public static readonly ErrorMessageDto TransactionTypeError = new ErrorMessageDto {Code = 22, Message = "Invalid transaction type"};
+        public static readonly ErrorMessageDto UserNotExist = new ErrorMessageDto {Code = 23, Message = "Invalid User"};
     }
 }

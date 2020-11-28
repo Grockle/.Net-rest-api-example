@@ -1,16 +1,11 @@
 ﻿using System.Threading.Tasks;
-using BackendService.Data.DTOs;
 using BackendService.Data.DTOs.Transaction.Request;
 using BackendService.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendService.Controllers
 {
-    [Authorize]
-    [ApiController]
-    [Route("[controller]")]
-    public class TransactionController : ControllerBase
+    public class TransactionController : BaseApiController
     {
         private readonly ITransactionService _transactionService;
         public TransactionController(ITransactionService transactionService)

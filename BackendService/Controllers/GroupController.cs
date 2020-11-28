@@ -5,15 +5,11 @@ using BackendService.Data.DTOs.Group.Request;
 using BackendService.Data.DTOs.Group.Response;
 using BackendService.Data.DTOs.User.Response;
 using BackendService.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendService.Controllers
 {
-    [Authorize]
-    [ApiController]
-    [Route("[controller]")]
-    public class GroupController : ControllerBase
+    public class GroupController : BaseApiController
     {
         private readonly IGroupService _groupService;
 
@@ -32,7 +28,7 @@ namespace BackendService.Controllers
         public async Task<ActionResult<IEnumerable<GetUserGroupsDto>>> GetGroupsAsync(int userId)
         {
             var response = await _groupService.GetUserGroupsAsync(userId);
-
+            
             if (response.HasError)
             {
                 return BadRequest(response.Error);
@@ -100,6 +96,19 @@ namespace BackendService.Controllers
                 return BadRequest(response.Error);
             }
 
+            return Ok(response.Data);
+        }
+
+        [HttpGet("GetGroupDetails")]
+        public async Task<ActionResult<List<GetGroupDetailDto>>> GetGroupDetailsAsync()
+        {
+            var response = await _groupService.GetGroupDetailsAsync(Token);
+           
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+            
             return Ok(response.Data);
         }
     }
