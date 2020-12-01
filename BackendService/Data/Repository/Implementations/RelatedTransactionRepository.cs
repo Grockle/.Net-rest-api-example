@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BackendService.Context;
-using BackendService.Data.DTOs.Transaction.Request;
 using BackendService.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,8 +33,12 @@ namespace BackendService.Data.Repository.Implementations
             
             foreach (var relatedUserId in relatedUserIds)
             {
-                var personBalance =
-                    groupBalance.FirstOrDefault(x => x.UserId == relatedUserId);
+                if (relatedUserId == transaction.CreatedBy)
+                {
+                    continue;
+                }
+                
+                var personBalance = groupBalance.FirstOrDefault(x => x.UserId == relatedUserId);
 
                 relatedTransactionToAdd.Add(new RelatedTransaction
                 {
@@ -45,45 +48,70 @@ namespace BackendService.Data.Repository.Implementations
 
                 if (personBalance != null)
                 {
-                    var amount = (transaction.CreatedBy == relatedUserId)
-                        ? (personBalance.Balance +
-                           (transaction.Amount - sharedAmount))
-                        : (personBalance.Balance - sharedAmount);
-
-                    personBalance.Balance = amount;
+                    personBalance.Balance = personBalance.Balance - sharedAmount;
                     personBalance.UpdateTime = DateTime.Now;
                     personBalance.UpdateBy = transaction.CreatedBy;
                     groupBudgetBalanceToUpdate.Add(personBalance);
                 }
                 else
                 {
-                    var amount = (transaction.CreatedBy == relatedUserId)
-                        ? (transaction.Amount - sharedAmount)
-                        : (-sharedAmount);
-
                     groupBudgetBalanceToAdd.Add(new GroupBudgetBalance
                     {
                         CreatedBy = transaction.CreatedBy,
-                        GroupId = transaction.Id,
-                        Balance = amount,
+                        GroupId = transaction.GroupId,
+                        Balance = -sharedAmount,
                         UserId = relatedUserId
                     });
                 }
             }
+            
+            //ekleyen kişinin hesaplaması
+            var ownerIsIncluded = relatedUserIds.Any(x => x == transaction.CreatedBy);
+            var ownerId = transaction.CreatedBy;
+            
+            var ownerBalance = groupBalance.FirstOrDefault(x => x.UserId == ownerId);
+            if (ownerIsIncluded)
+            {
+                relatedTransactionToAdd.Add(new RelatedTransaction
+                {
+                    RelatedUserId = transaction.CreatedBy,
+                    TransactionId = transaction.Id
+                });
+            }
 
+            var netExpenseAmount = ownerIsIncluded ? (transaction.Amount - sharedAmount) : (transaction.Amount);
+            
+            if (ownerBalance != null)
+            {
+                ownerBalance.Balance = ownerBalance.Balance + netExpenseAmount;
+                ownerBalance.UpdateTime = DateTime.Now;
+                ownerBalance.UpdateBy = ownerId;
+                groupBudgetBalanceToUpdate.Add(ownerBalance);
+            }
+            else
+            {
+                groupBudgetBalanceToAdd.Add(new GroupBudgetBalance
+                {
+                    CreatedBy = ownerId,
+                    GroupId = transaction.GroupId,
+                    Balance = netExpenseAmount,
+                    UserId = transaction.CreatedBy
+                });
+            }
+            
             if (relatedTransactionToAdd.Count > 0)
             {
-                await _relatedTransactions.AddRangeAsync(relatedTransactionToAdd);
+                await AddRangeAsync(relatedTransactionToAdd);
             }
 
             if (groupBudgetBalanceToUpdate.Count > 0)
             {
-                _groupBudgetBalanceRepository.UpdateRange(groupBudgetBalanceToUpdate);
+                await _groupBudgetBalanceRepository.UpdateRangeAsync(groupBudgetBalanceToUpdate);
             }
 
             if (groupBudgetBalanceToAdd.Count > 0)
             {
-                _groupBudgetBalanceRepository.UpdateRange(groupBudgetBalanceToUpdate);
+                await _groupBudgetBalanceRepository.AddRangeAsync(groupBudgetBalanceToAdd);
             }
 
             return true;

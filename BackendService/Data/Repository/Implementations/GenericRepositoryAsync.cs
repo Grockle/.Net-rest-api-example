@@ -11,7 +11,7 @@ namespace BackendService.Data.Repository.Implementations
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public GenericRepositoryAsync(ApplicationDbContext dbContext)
+        protected GenericRepositoryAsync(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -55,6 +55,18 @@ namespace BackendService.Data.Repository.Implementations
             return await _dbContext
                 .Set<T>()
                 .ToListAsync();
+        }
+
+        public async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _dbContext.Set<T>().AddRangeAsync(entities);
+            await _dbContext.SaveChangesAsync();
+        }
+        
+        public async Task UpdateRangeAsync(IEnumerable<T> entities)
+        {
+            _dbContext.UpdateRange(entities);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

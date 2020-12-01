@@ -27,9 +27,5 @@ namespace BackendService.Data.Repository.Implementations
             _groupBudgetBalances.UpdateRange(groupBalances);
         }
         
-        public async Task AddRange(IEnumerable<GroupBudgetBalance> groupBalances)
-        {
-            await _groupBudgetBalances.AddRangeAsync(groupBalances);
-        }
     }
 }

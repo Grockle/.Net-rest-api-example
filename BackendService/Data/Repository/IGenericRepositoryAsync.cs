@@ -11,5 +11,7 @@ namespace BackendService.Data.Repository
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
+        Task UpdateRangeAsync(IEnumerable<T> entities);
     }
 }

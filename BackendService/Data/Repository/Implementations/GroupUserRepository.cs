@@ -29,12 +29,12 @@ namespace BackendService.Data.Repository.Implementations
         public async Task<IEnumerable<UserDto>> GetByGroupId(int groupId)
         {
             var connection = new NpgsqlConnection(ConnectionString);
-            var sqlQuery = $@"Select groupUsers.*, COALESCE(gp.""Balance"", 0) from (
+            var sqlQuery = $@"Select groupUsers.*, gp.""Balance"" from (
                                 SELECT g.""UserId"" as Id, c.""FirstName"", c.""LastName"", c.""Email""
                                 FROM public.""GroupUsers"" g
                                 INNER JOIN public.""Users"" c
                                 ON c.""Id"" = g.""UserId""
-                                WHERE ""GroupId"" = 1 ) as groupUsers
+                                WHERE ""GroupId"" = @groupId ) as groupUsers
                                     Left Join public.""GroupBudgetBalances"" as gp
                                     ON gp.""UserId"" = groupUsers.Id
                                 ";

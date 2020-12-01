@@ -146,6 +146,8 @@
           <e p="20201109163643_GroupBudgetBalance.Designer.cs" t="Include" />
           <e p="20201114123706_Update-Transactions.cs" t="Include" />
           <e p="20201114123706_Update-Transactions.Designer.cs" t="Include" />
+          <e p="20201130192223_NonExistMigrations.cs" t="Include" />
+          <e p="20201130192223_NonExistMigrations.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

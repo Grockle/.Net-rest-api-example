@@ -84,64 +84,72 @@ namespace BackendService.Services.Implementations
                 return response;
             }
 
+            if (request.RelatedUsers.Any(x => x.RelatedUserId == request.WhoAdded))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotValidUserForTransfer;
+                return response;
+            }
+
             var groupBudgetBalances = _groupBudgetBalanceRepository.GroupBudgetBalancesWithGroupId(request.GroupId).ToArray();
 
             foreach (var transferredUser in request.RelatedUsers)
             {
-                if (transferredUser.RelatedUserId != request.WhoAdded)
+                var transaction = await _transactionRepository.AddAsync(new Transaction
                 {
-                    var transaction = await _transactionRepository.AddAsync(new Transaction
-                    {
-                        CreatedBy = request.WhoAdded,
-                        Amount = transferredUser.Amount,
-                        GroupId = request.GroupId,
-                        Description = request.Description,
-                        Type = TransactionType.Transfer.ToString()
-                    });
+                    CreatedBy = request.WhoAdded,
+                    Amount = transferredUser.Amount,
+                    GroupId = request.GroupId,
+                    Description = request.Description,
+                    Type = TransactionType.Transfer.ToString()
+                });
 
-                    var relatedTransaction = await _relatedTransactionRepository.AddAsync(new RelatedTransaction
-                    {
-                        TransactionId = transaction.Id,
-                        RelatedUserId = transferredUser.RelatedUserId
-                    });
+                var relatedTransaction = await _relatedTransactionRepository.AddAsync(new RelatedTransaction
+                {
+                    TransactionId = transaction.Id,
+                    RelatedUserId = transferredUser.RelatedUserId
+                });
                     
-                    var ownerBalance = groupBudgetBalances.FirstOrDefault(x => x.UserId == request.WhoAdded);
-                    var transferredBalance = groupBudgetBalances.FirstOrDefault(x => x.UserId == transferredUser.RelatedUserId);
+                
+                var transferredBalance = groupBudgetBalances.FirstOrDefault(x => x.UserId == transferredUser.RelatedUserId);
 
-                    if (ownerBalance == null)
+                if (transferredBalance == null)
+                {
+                    await _groupBudgetBalanceRepository.AddAsync(new GroupBudgetBalance
                     {
-                        await _groupBudgetBalanceRepository.AddAsync(new GroupBudgetBalance
-                        {
-                            UserId = request.WhoAdded,
-                            Balance = transferredUser.Amount,
-                            GroupId = request.GroupId
-                        });
-                    }
+                        UserId = transferredUser.RelatedUserId,
+                        Balance = -transferredUser.Amount,
+                        GroupId = request.GroupId
+                    });
+                }
 
-                    if (transferredBalance == null)
-                    {
-                        await _groupBudgetBalanceRepository.AddAsync(new GroupBudgetBalance
-                        {
-                            UserId = transferredUser.RelatedUserId,
-                            Balance = -transferredUser.Amount,
-                            GroupId = request.GroupId
-                        });
-                    }
-
-                    if (ownerBalance != null)
-                    {
-                        ownerBalance.Balance = ownerBalance.Balance + transferredUser.Amount;
-                        await _groupBudgetBalanceRepository.UpdateAsync(ownerBalance);
-                    }
-                    
-                    if (transferredBalance != null)
-                    {
-                        transferredBalance.Balance = transferredBalance.Balance - transferredUser.Amount;
-                        await _groupBudgetBalanceRepository.UpdateAsync(ownerBalance);
-                    }
+                if (transferredBalance != null)
+                {
+                    transferredBalance.Balance = transferredBalance.Balance - transferredUser.Amount;
+                    await _groupBudgetBalanceRepository.UpdateAsync(transferredBalance);
                 }
             }
 
+            //ekleyen kişinin hesaplamaları
+            var ownerBalance = groupBudgetBalances.FirstOrDefault(x => x.UserId == request.WhoAdded);
+            var totalAmount = request.RelatedUsers.Sum(x => x.Amount);
+            
+            if (ownerBalance == null)
+            {
+                await _groupBudgetBalanceRepository.AddAsync(new GroupBudgetBalance
+                {
+                    UserId = request.WhoAdded,
+                    Balance = totalAmount,
+                    GroupId = request.GroupId
+                });
+            }
+            else
+            {
+                ownerBalance.Balance += totalAmount ;
+                await _groupBudgetBalanceRepository.UpdateAsync(ownerBalance);
+            }
+            
+            
             response.Data = true;
             return response;
         }

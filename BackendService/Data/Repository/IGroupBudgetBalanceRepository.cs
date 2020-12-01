@@ -8,6 +8,5 @@ namespace BackendService.Data.Repository
     {
         IEnumerable<GroupBudgetBalance> GroupBudgetBalancesWithGroupId(int groupId);
         void UpdateRange(IEnumerable<GroupBudgetBalance> groupBalances);
-        Task AddRange(IEnumerable<GroupBudgetBalance> groupBalances);
     }
 }

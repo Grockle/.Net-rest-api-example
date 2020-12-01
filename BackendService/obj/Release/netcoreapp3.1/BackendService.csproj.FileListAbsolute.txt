@@ -84,3 +84,4 @@ D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Release\netcorea
 D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Release\netcoreapp3.1\BackendService.pdb
 D:\projects\App\git\BackendService\budgetMan\BackendService\obj\Release\netcoreapp3.1\BackendService.genruntimeconfig.cache
 D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Release\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+D:\projects\App\git\BackendService\budgetMan\BackendService\bin\Release\netcoreapp3.1\Dapper.dll
