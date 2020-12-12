@@ -190,9 +190,9 @@ namespace BackendService.Services.Implementations
             };
             return response;
         }
-        public async Task<BaseResponse<LoginResponse>> LoginWithTokenAsync(string token)
+        public async Task<BaseResponse<UserInfoDto>> GetUserInfoAsync(string token)
         {
-            var response = new BaseResponse<LoginResponse> {HasError = false, Data = new LoginResponse()};
+            var response = new BaseResponse<UserInfoDto> {HasError = false, Data = new UserInfoDto()};
             if (string.IsNullOrEmpty(token))
             {
                 response.HasError = true;
@@ -210,15 +210,11 @@ namespace BackendService.Services.Implementations
             
             if (!user.EmailConfirmed)
             {
-                response.Data.IsLoggedIn = false;
-                response.Data.IsEmailConfirmed = false;
                 return response;
             }
 
-            response.Data = new LoginResponse
+            response.Data = new UserInfoDto
             {
-                IsLoggedIn = true,
-                IsEmailConfirmed = true,
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,

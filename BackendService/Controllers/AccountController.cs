@@ -88,10 +88,10 @@ namespace BackendService.Controllers
             return Ok(response.Data);
         }
 
-        [HttpPost("GetUserInfos")]
-        public async Task<ActionResult<LoginResponse>> GetUserInfosAsync()
+        [HttpGet("GetUserInfos")]
+        public async Task<ActionResult<UserInfoDto>> GetUserInfosAsync()
         {
-            var response = await _accountService.LoginWithTokenAsync(Token);
+            var response = await _accountService.GetUserInfoAsync(Token);
 
             if (response.HasError)
             {
@@ -106,6 +106,7 @@ namespace BackendService.Controllers
             return Ok(response.Data);
         }
         
+        [AllowAnonymous]
         [HttpPost("ControlResetCode")]
         public async Task<ActionResult<bool>> ControlResetCodeAsync(string email, string resetCode)
         {
@@ -119,6 +120,7 @@ namespace BackendService.Controllers
             return Ok(response.Data);
         }
         
+        [AllowAnonymous]
         [HttpPost("ResetPasswordRequest")]
         public async Task<ActionResult<bool>> ResetPasswordRequestAsync(string email)
         {
@@ -133,6 +135,7 @@ namespace BackendService.Controllers
             
         }
         
+        [AllowAnonymous]
         [HttpPost("ChangePassword")]
         public async Task<ActionResult<bool>> ChangePasswordAsync(ResetPasswordRequest model)
         {

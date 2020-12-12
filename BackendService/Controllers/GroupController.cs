@@ -111,5 +111,18 @@ namespace BackendService.Controllers
             
             return Ok(response.Data);
         }
+        
+        [HttpGet("GetGroupDetail")]
+        public async Task<ActionResult<GetGroupDetailDto>> GetGroupDetailAsync(string shareCode)
+        {
+            var response = await _groupService.GetGroupDetailAsync(Token, shareCode);
+           
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+            
+            return Ok(response.Data);
+        }
     }
 }

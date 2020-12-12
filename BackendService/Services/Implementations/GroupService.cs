@@ -298,6 +298,45 @@ namespace BackendService.Services.Implementations
             return response;
         }
 
+        public async Task<BaseResponse<GetGroupDetailDto>> GetGroupDetailAsync(string token, string shareCode)
+        {
+            var response = new BaseResponse<GetGroupDetailDto>
+                {HasError = false, Data = new GetGroupDetailDto()};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            var userGroup = await _groupRepository.GetGroupByShareCode(shareCode);
+
+            if (userGroup == null)
+            {
+                return response;
+            }
+            
+            var groupDetail = new GetGroupDetailDto
+            {
+                GroupId = userGroup.Id, AdminId = userGroup.CreatedBy, ShareCode = userGroup.ShareCode,
+                Name = userGroup.GroupName, Description = userGroup.Description
+            };
+
+            var groupUsers = await _groupUserRepository.GetByGroupId(userGroup.Id);
+
+            groupDetail.UserInfos = groupUsers.ToList();
+
+            var groupTransactions = await _transactionRepository.GetGroupTransactions(userGroup.Id);
+
+            groupDetail.TransactionInfos = SetGroupTransactions(groupTransactions, groupUsers);
+
+            response.Data = groupDetail;
+
+            return response;
+        }
+        
         #endregion
 
         #region privateMethods

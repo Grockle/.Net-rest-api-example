@@ -73,6 +73,7 @@
                 <e p="RegisterUserResponse.cs" t="Include" />
                 <e p="RelatedUserDto.cs" t="Include" />
                 <e p="UserDto.cs" t="Include" />
+                <e p="UserInfoDto.cs" t="Include" />
               </e>
             </e>
           </e>

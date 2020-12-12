@@ -16,6 +16,6 @@ namespace BackendService.Services
         Task<BaseResponse<bool>> SendPasswordResetRequestAsync(string email);
         Task<BaseResponse<bool>> ChangePasswordAsync(ResetPasswordRequest resetRequestModel);
         Task<BaseResponse<LoginResponse>> Authenticate(string email, string password);
-        Task<BaseResponse<LoginResponse>> LoginWithTokenAsync(string token);
+        Task<BaseResponse<UserInfoDto>> GetUserInfoAsync(string token);
     }
 }

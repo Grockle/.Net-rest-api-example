@@ -16,5 +16,6 @@ namespace BackendService.Services
         Task<BaseResponse<bool>> ReplyGroupJoinRequestAsync(int requestId, int groupId, int adminId, bool isApproved);
         Task<BaseResponse<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId);
         Task<BaseResponse<List<GetGroupDetailDto>>> GetGroupDetailsAsync(string token);
+        Task<BaseResponse<GetGroupDetailDto>> GetGroupDetailAsync(string token, string shareCode);
     }
 }
