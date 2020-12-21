@@ -366,14 +366,18 @@ namespace BackendService.Services.Implementations
                 };
                 foreach (var item in transaction)
                 {
-                    var relatedUser = new RelatedUserDto
+                    var user = users.FirstOrDefault(x => x.Id == item.RelatedUserId);
+                    if (user != null)
                     {
-                        UserId = item.RelatedUserId,
-                        FirstName = users?.First(x => x.Id == transactionValue.RelatedUserId).FirstName,
-                        LastName = users?.First(x => x.Id == transactionValue.RelatedUserId).LastName,
-                    };
-
-                    transactionDto.RelatedUsers.Add(relatedUser);
+                        var relatedUser = new RelatedUserDto
+                        {
+                            UserId = item.RelatedUserId,
+                            FirstName = user.FirstName,
+                            LastName = user.LastName
+                        };
+                        
+                        transactionDto.RelatedUsers.Add(relatedUser);
+                    }
                 }
 
                 response.Add(transactionDto);

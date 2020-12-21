@@ -60,7 +60,7 @@ namespace BackendService.Controllers
         [HttpPost("ConfirmEmail")]
         public async Task<ActionResult<LoginResponse>> ConfirmEmailAsync(ConfirmEmailRequest confirmEmailRequest)
         {
-            var response = await _accountService.ConfirmEmail(confirmEmailRequest);
+            var response = await _accountService.ConfirmEmail(confirmEmailRequest, Token);
 
             if (response.HasError)
             {

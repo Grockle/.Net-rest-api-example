@@ -9,7 +9,7 @@ namespace BackendService.Services
     public interface IAccountService
     {
         Task<BaseResponse<RegisterUserResponse>> RegisterAsync(RegisterUserRequest userModel);
-        Task<BaseResponse<LoginResponse>> ConfirmEmail(ConfirmEmailRequest confirmModel);
+        Task<BaseResponse<LoginResponse>> ConfirmEmail(ConfirmEmailRequest confirmModel, string token);
         Task<BaseResponse<bool>> UpdateVerificationCodeAsync(UpdateEmailVerificationCodeRequest model);
         Task<BaseResponse<LoginResponse>> LoginAsync(LoginRequest loginModel);
         Task<BaseResponse<bool>> ControlResetCodeAsync(string email, string resetCode);

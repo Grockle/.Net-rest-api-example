@@ -87,34 +87,45 @@ namespace BackendService.Services.Implementations
             
             return response;
         }
-        public async Task<BaseResponse<LoginResponse>> ConfirmEmail(ConfirmEmailRequest confirmModel)
+        public async Task<BaseResponse<LoginResponse>> ConfirmEmail(ConfirmEmailRequest confirmModel, string token)
         {
             var response = new BaseResponse<LoginResponse> {HasError = false, Data = new LoginResponse()};
             
             var user = await _userRepository.GetUserByEmailAsync(confirmModel.Email);
-            
-            var confirmationApproved = await _userRepository.ControlVerification(confirmModel.Email, confirmModel.Code);
 
-            if (confirmationApproved && user != null)
+            if (user != null)
             {
-                user.EmailConfirmed = true;
-                user.EmailVerificationCode = null;
-                user.VerificationEndTime = DateTime.Now;
-                await _userRepository.UpdateAsync(user);
-
-                response.Data = new LoginResponse
+                if (user.Token == null || (user.Token != null && user.Token != token))
                 {
-                    IsEmailConfirmed = true,
-                    IsLoggedIn = true,
-                    Email = user.Email,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    ShortName = (user.FirstName.Substring(0, 1) + user.LastName.Substring(0, 1)).ToUpperInvariant(),
-                    UserId = user.Id
-                };
-                return response;
-            }
+                    response.HasError = true;
+                    response.Error = ErrorCodes.InvalidToken;
+                    return response;
+                }
+                
+                var confirmationApproved = await _userRepository.ControlVerification(confirmModel.Email, confirmModel.Code);
 
+                if (confirmationApproved)
+                {
+                    user.EmailConfirmed = true;
+                    user.EmailVerificationCode = null;
+                    user.VerificationEndTime = DateTime.Now;
+                    await _userRepository.UpdateAsync(user);
+
+                    response.Data = new LoginResponse
+                    {
+                        IsEmailConfirmed = true,
+                        IsLoggedIn = true,
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        ShortName = (user.FirstName.Substring(0, 1) + user.LastName.Substring(0, 1)).ToUpperInvariant(),
+                        UserId = user.Id,
+                        Token = user.Token
+                    };
+                    return response;
+                }
+            }
+            
             response.HasError = true;
             response.Error = ErrorCodes.EmailConfirmFail;
             return response;
