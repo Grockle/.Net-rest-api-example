@@ -12,6 +12,7 @@ namespace BackendService.Data.DTOs.Group.Response
         public string ShareCode { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Currency { get; set; }
         public List<UserDto> UserInfos { get; set; }
         public List<TransactionDto> TransactionInfos { get; set; }
     }

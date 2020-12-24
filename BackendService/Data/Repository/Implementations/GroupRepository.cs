@@ -38,8 +38,8 @@ namespace BackendService.Data.Repository.Implementations
                 GroupName = x.GroupName,
                 GroupShareCode = x.ShareCode,
                 AdminId = x.CreatedBy,
-                Description = x.Description
-                
+                Description = x.Description,
+                Currency = x.MoneyType
             }).ToList();
             
             return groups;

@@ -7,5 +7,6 @@
         public string GroupName { get; set; }
         public int AdminId { get; set; }
         public string Description { get; set; }
+        public string Currency { get; set; }
     }
 }

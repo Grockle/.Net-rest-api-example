@@ -281,7 +281,7 @@ namespace BackendService.Services.Implementations
                 var groupDetail = new GetGroupDetailDto
                 {
                     GroupId = userGroup.GroupId, AdminId = userGroup.AdminId, ShareCode = userGroup.GroupShareCode,
-                    Name = userGroup.GroupName, Description = userGroup.Description
+                    Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.Currency
                 };
 
                 var groupUsers = await _groupUserRepository.GetByGroupId(userGroup.GroupId);
@@ -321,7 +321,7 @@ namespace BackendService.Services.Implementations
             var groupDetail = new GetGroupDetailDto
             {
                 GroupId = userGroup.Id, AdminId = userGroup.CreatedBy, ShareCode = userGroup.ShareCode,
-                Name = userGroup.GroupName, Description = userGroup.Description
+                Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.MoneyType
             };
 
             var groupUsers = await _groupUserRepository.GetByGroupId(userGroup.Id);

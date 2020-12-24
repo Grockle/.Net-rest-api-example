@@ -24,6 +24,10 @@ namespace BackendService.Context
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<RelatedTransaction> RelatedTransactions { get; set; }
         public DbSet<GroupBudgetBalance> GroupBudgetBalances { get; set; }
+        public DbSet<GroupCategory> GroupCategories { get; set; }
+        public DbSet<PersonalAccount> PersonalAccounts { get; set; }
+        public DbSet<PersonalCategory> PersonalCategories { get; set; }
+        public DbSet<PersonalTransaction> PersonalTransactions { get; set; }
         #endregion
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

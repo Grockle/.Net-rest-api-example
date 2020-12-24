@@ -81,14 +81,20 @@
             <e p="AuditableBaseEntity.cs" t="Include" />
             <e p="Group.cs" t="Include" />
             <e p="GroupBudgetBalance.cs" t="Include" />
+            <e p="GroupCategory.cs" t="Include" />
             <e p="GroupJoinRequest.cs" t="Include" />
             <e p="GroupUsers.cs" t="Include" />
+            <e p="PersonalAccount.cs" t="Include" />
+            <e p="PersonalCategory.cs" t="Include" />
+            <e p="PersonalTransaction.cs" t="Include" />
             <e p="RelatedTransaction.cs" t="Include" />
             <e p="Transaction.cs" t="Include" />
             <e p="User.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
             <e p="ErrorCodes.cs" t="Include" />
+            <e p="GroupCategoryType.cs" t="Include" />
+            <e p="PersonalCategoryType.cs" t="Include" />
             <e p="TransactionType.cs" t="Include" />
           </e>
           <e p="Repository" t="Include">
@@ -149,6 +155,8 @@
           <e p="20201114123706_Update-Transactions.Designer.cs" t="Include" />
           <e p="20201130192223_NonExistMigrations.cs" t="Include" />
           <e p="20201130192223_NonExistMigrations.Designer.cs" t="Include" />
+          <e p="20201224194705_PersonalAccountTables.cs" t="Include" />
+          <e p="20201224194705_PersonalAccountTables.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
