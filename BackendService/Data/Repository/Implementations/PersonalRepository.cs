@@ -52,11 +52,16 @@ namespace BackendService.Data.Repository.Implementations
             return personalCategory;
         }
 
-        public async Task<PersonalCategory> GetPersonalCategoryById(UpdatePersonalCategoryRequest model, int userId)
+        public async Task<PersonalCategory> GetPersonalCategoryByModel(UpdatePersonalCategoryRequest model, int userId)
         {
             return await _personalCategories.FirstOrDefaultAsync(x => x.UserId == userId && x.Id == model.Id && x.Type == model.Type);
         }
 
+        public async Task<PersonalCategory> GetPersonalCategoryById(int id, int userId)
+        {
+            return await _personalCategories.FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
+        }
+        
         public async Task<PersonalCategory> UpdatePersonalCategory(PersonalCategory personalCategory, int currentUserId)
         {
             personalCategory.UpdateBy = currentUserId;
@@ -64,6 +69,12 @@ namespace BackendService.Data.Repository.Implementations
             _personalCategories.Update(personalCategory);
             await _dbContext.SaveChangesAsync();
             return personalCategory;
+        }
+        
+        public async Task DeletePersonalCategory(PersonalCategory personalCategory)
+        {
+            _personalCategories.Remove(personalCategory);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

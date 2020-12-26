@@ -17,13 +17,11 @@ namespace BackendService.Services.Implementations
     {
         private readonly IPersonalRepository _personalRepository;
         private readonly IUserRepository _userRepository;
-        private readonly IDateTimeService _dateTimeService;
 
-        public PersonalService(IPersonalRepository personalRepository, IUserRepository userRepository, IDateTimeService dateTimeService)
+        public PersonalService(IPersonalRepository personalRepository, IUserRepository userRepository)
         {
             _personalRepository = personalRepository;
             _userRepository = userRepository;
-            _dateTimeService = dateTimeService;
         }
 
         public async Task<BaseResponse<bool>> AddPersonalCategory(AddPersonalCategoryRequest personalCategoryRequest,string token)
@@ -133,7 +131,7 @@ namespace BackendService.Services.Implementations
                 return response;
             }
 
-            var personalCategory = await _personalRepository.GetPersonalCategoryById(personalCategoryRequest, currentUser.Id);
+            var personalCategory = await _personalRepository.GetPersonalCategoryByModel(personalCategoryRequest, currentUser.Id);
 
             if (personalCategory == null)
             {
@@ -159,6 +157,52 @@ namespace BackendService.Services.Implementations
             
             return response;
         }
+        
+        public async Task<BaseResponse<bool>> DeletePersonalCategory(int personalCategoryId, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (personalCategoryId == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotEditableCategory;
+                return response;
+            }
+
+            var personalCategory = await _personalRepository.GetPersonalCategoryById(personalCategoryId, currentUser.Id);
+
+            if (personalCategory == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.CategoryNotExist;
+                return response;
+            }
+
+            try
+            {
+                await _personalRepository.DeletePersonalCategory(personalCategory);
+                response.Data = true;
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+            
+            return response;
+        }
+        
+        
 
         private static void SetStaticPersonalCategories(GroupedPersonalCategoryDto groupedPersonalCategoryDto)
         {

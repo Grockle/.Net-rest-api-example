@@ -48,6 +48,7 @@
               <e p="PersonalcategoryDto.cs" t="Include" />
               <e p="Request" t="Include">
                 <e p="AddPersonalCategoryRequest.cs" t="Include" />
+                <e p="DeletePersonalCategoryRequest .cs" t="Include" />
                 <e p="UpdatePersonalCategoryRequest.cs" t="Include" />
               </e>
               <e p="Response" t="Include">

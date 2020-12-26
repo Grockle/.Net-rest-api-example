@@ -54,5 +54,18 @@ namespace BackendService.Controllers
 
             return Ok(response.Data);
         }
+        
+        [HttpDelete("DeletePersonalCategory")]
+        public async Task<ActionResult<bool>> DeletePersonalCategoryAsync(int personalCategoryId)
+        {
+            var response = await _personalService.DeletePersonalCategory(personalCategoryId, Token);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

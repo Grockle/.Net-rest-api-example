@@ -12,7 +12,9 @@ namespace BackendService.Data.Repository
         IEnumerable<PersonalCategory> GetPersonalCategoriesByUserId(int userId);
         Task<PersonalAccount> InsertPersonalAccount(PersonalAccount personalAccount);
         Task<PersonalCategory> InsertPersonalCategory(PersonalCategory personalCategory, int currentUserId);
-        Task<PersonalCategory> GetPersonalCategoryById(UpdatePersonalCategoryRequest model, int userId);
+        Task<PersonalCategory> GetPersonalCategoryByModel(UpdatePersonalCategoryRequest model, int userId);
         Task<PersonalCategory> UpdatePersonalCategory(PersonalCategory personalCategory, int currentUserId);
+        Task DeletePersonalCategory(PersonalCategory personalCategory);
+        Task<PersonalCategory> GetPersonalCategoryById(int id, int userId);
     }
 }
