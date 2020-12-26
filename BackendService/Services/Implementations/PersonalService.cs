@@ -49,13 +49,10 @@ namespace BackendService.Services.Implementations
             {
                 await _personalRepository.InsertPersonalCategory(new PersonalCategory
                 {
-                    CreatedBy = currentUser.Id,
-                    CreateTime = _dateTimeService.Now,
-                    UpdateBy = currentUser.Id,
                     UserId = currentUser.Id,
                     Type = personalCategoryRequest.Type,
                     Name = personalCategoryRequest.CategoryName
-                });
+                }, currentUser.Id);
             }
             catch (Exception e)
             {
@@ -113,20 +110,64 @@ namespace BackendService.Services.Implementations
                 response.Data = null;
                 return response;
             }
-
-
+            
             return response;
         }
 
-        private void SetStaticPersonalCategories(GroupedPersonalCategoryDto groupedPersonalCategoryDto)
+        public async Task<BaseResponse<bool>> UpdatePersonalCategory(UpdatePersonalCategoryRequest personalCategoryRequest, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (personalCategoryRequest.Id == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotEditableCategory;
+                return response;
+            }
+
+            var personalCategory = await _personalRepository.GetPersonalCategoryById(personalCategoryRequest, currentUser.Id);
+
+            if (personalCategory == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.CategoryNotExist;
+                return response;
+            }
+
+            personalCategory.Name = personalCategoryRequest.CategoryName;
+            
+            try
+            {
+                await _personalRepository.UpdatePersonalCategory(personalCategory, currentUser.Id);
+                response.Data = true;
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+            
+            return response;
+        }
+
+        private static void SetStaticPersonalCategories(GroupedPersonalCategoryDto groupedPersonalCategoryDto)
         {
             groupedPersonalCategoryDto.ExpenseCategories.AddRange(ConstantCategory.ExpenseCategory.Select(x => new PersonalCategoryDto{Id = 0, CategoryName = x,Type = (int)PersonalCategoryType.Expense}));
             groupedPersonalCategoryDto.IncomeCategories.AddRange(ConstantCategory.IncomeCategory.Select(x => new PersonalCategoryDto{Id = 0, CategoryName = x,Type = (int)PersonalCategoryType.Income}));
             groupedPersonalCategoryDto.AccountCategories.AddRange(ConstantCategory.AccountCategory.Select(x => new PersonalCategoryDto{Id = 0, CategoryName = x,Type = (int)PersonalCategoryType.Account}));
         }
 
-        private IEnumerable<PersonalCategoryDto> GetCategoryByType(IEnumerable<PersonalCategory> categories,
-            PersonalCategoryType type)
+        private IEnumerable<PersonalCategoryDto> GetCategoryByType(IEnumerable<PersonalCategory> categories, PersonalCategoryType type)
         {
             return categories.Where(x => x.Type == (int) type).Select(x => new PersonalCategoryDto
             {

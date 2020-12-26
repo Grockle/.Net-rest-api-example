@@ -41,5 +41,18 @@ namespace BackendService.Controllers
 
             return Ok(response.Data);
         }
+        
+        [HttpPut("UpdatePersonalCategory")]
+        public async Task<ActionResult<bool>> UpdatePersonalCategoryAsync(UpdatePersonalCategoryRequest request)
+        {
+            var response = await _personalService.UpdatePersonalCategory(request, Token);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

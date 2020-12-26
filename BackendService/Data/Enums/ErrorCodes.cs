@@ -30,5 +30,7 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto UserNotExist = new ErrorMessageDto {Code = 23, Message = "Invalid User"};
         public static readonly ErrorMessageDto NotValidUserForTransfer = new ErrorMessageDto {Code = 24, Message = "Person can not transfer yourself"};
         public static readonly ErrorMessageDto NotValidCategoryType = new ErrorMessageDto {Code = 24, Message = "Category type is not valid"};
+        public static readonly ErrorMessageDto NotEditableCategory = new ErrorMessageDto {Code = 24, Message = "You can not edit this category"};
+        public static readonly ErrorMessageDto CategoryNotExist = new ErrorMessageDto {Code = 24, Message = "Category Not Exist"};
     }
 }

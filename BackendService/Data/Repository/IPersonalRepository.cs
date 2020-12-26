@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackendService.Data.DTOs.Personal.Request;
 using BackendService.Data.Entities;
 
 namespace BackendService.Data.Repository
@@ -10,6 +11,8 @@ namespace BackendService.Data.Repository
         IEnumerable<PersonalAccount> GetPersonalAccountsByUserId(int userId);
         IEnumerable<PersonalCategory> GetPersonalCategoriesByUserId(int userId);
         Task<PersonalAccount> InsertPersonalAccount(PersonalAccount personalAccount);
-        Task<PersonalCategory> InsertPersonalCategory(PersonalCategory personalCategory);
+        Task<PersonalCategory> InsertPersonalCategory(PersonalCategory personalCategory, int currentUserId);
+        Task<PersonalCategory> GetPersonalCategoryById(UpdatePersonalCategoryRequest model, int userId);
+        Task<PersonalCategory> UpdatePersonalCategory(PersonalCategory personalCategory, int currentUserId);
     }
 }

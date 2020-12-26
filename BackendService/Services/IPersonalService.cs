@@ -12,5 +12,6 @@ namespace BackendService.Services
     {
         Task<BaseResponse<bool>> AddPersonalCategory(AddPersonalCategoryRequest personalCategory, string token);
         Task<BaseResponse<GroupedPersonalCategoryDto>> GetPersonalCategories(string token);
+        Task<BaseResponse<bool>> UpdatePersonalCategory(UpdatePersonalCategoryRequest personalCategoryRequest, string token);
     }
 }
