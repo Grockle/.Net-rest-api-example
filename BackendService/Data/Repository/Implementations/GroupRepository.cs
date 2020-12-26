@@ -39,7 +39,8 @@ namespace BackendService.Data.Repository.Implementations
                 GroupShareCode = x.ShareCode,
                 AdminId = x.CreatedBy,
                 Description = x.Description,
-                Currency = x.MoneyType
+                Currency = x.MoneyType,
+                Budget = x.Budget
             }).ToList();
             
             return groups;

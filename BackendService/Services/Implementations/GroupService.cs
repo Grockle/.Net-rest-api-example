@@ -63,7 +63,8 @@ namespace BackendService.Services.Implementations
                 ShareCode = _hashService.EncryptString(model.UserId + _hashService.GenerateCode()),
                 GroupName = model.GroupName,
                 Description = model.Description,
-                MoneyType = model.MoneyShortCut
+                MoneyType = model.MoneyShortCut,
+                Budget = model.Budget
             });
 
             if (group != null)
@@ -281,7 +282,7 @@ namespace BackendService.Services.Implementations
                 var groupDetail = new GetGroupDetailDto
                 {
                     GroupId = userGroup.GroupId, AdminId = userGroup.AdminId, ShareCode = userGroup.GroupShareCode,
-                    Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.Currency
+                    Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.Currency, Budget = userGroup.Budget
                 };
 
                 var groupUsers = await _groupUserRepository.GetByGroupId(userGroup.GroupId);
@@ -321,7 +322,7 @@ namespace BackendService.Services.Implementations
             var groupDetail = new GetGroupDetailDto
             {
                 GroupId = userGroup.Id, AdminId = userGroup.CreatedBy, ShareCode = userGroup.ShareCode,
-                Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.MoneyType
+                Name = userGroup.GroupName, Description = userGroup.Description, Currency = userGroup.MoneyType, Budget = userGroup.Budget
             };
 
             var groupUsers = await _groupUserRepository.GetByGroupId(userGroup.Id);

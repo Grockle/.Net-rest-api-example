@@ -23,12 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/Request/DeletePersonalCategoryRequest .cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/PersonalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/PersonalController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IPersonalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IPersonalRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/PersonalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/PersonalRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/IPersonalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/IPersonalService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/PersonalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/PersonalService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetUserGroupsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetUserGroupsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +57,6 @@
         <option value="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/AccountController.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetUserGroupsDto.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/PersonalExpense.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/PersonalExpenseIncome.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Entities/GroupExpenseCategory.cs" />
@@ -85,8 +81,6 @@
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Response/ExpenseGroupInfoDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Response/GroupExpenseDto.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Extensions/ServiceExtensions.cs" />
         <option value="$PROJECT_DIR$/BackendService/Hubs/ConnectHub.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/AddPersonalCategoryRequest.cs" />
@@ -104,6 +98,11 @@
         <option value="$PROJECT_DIR$/BackendService/Services/IPersonalService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/PersonalService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Controllers/PersonalController.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetUserGroupsDto.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" />
       </list>
     </option>
   </component>
@@ -212,7 +211,7 @@
       <workItem from="1608749053956" duration="2014000" />
       <workItem from="1608836994566" duration="2540000" />
       <workItem from="1608840315611" duration="143000" />
-      <workItem from="1608975852657" duration="13172000" />
+      <workItem from="1608975852657" duration="13760000" />
     </task>
     <servers />
   </component>
@@ -245,30 +244,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="525" height="464" key="DebuggerActiveHint/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608986316865" />
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1608989336895">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1608990287162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.bottom/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608989336895" />
-    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1608989336895">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608990287162" />
+    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1608990287162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.center/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608989336895" />
-    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1608989336895">
+    <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608990287162" />
+    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1608990287162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.left/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608989336895" />
-    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1608989336895">
+    <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608990287162" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1608990287162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="171" key="GridCell.Tab.0.right/-1920.0.1919.1040/0.0.1919.1040@0.0.1919.1040" timestamp="1603528832607" />
     <state width="1877" height="375" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1603982958734" />
-    <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608989336895" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608990287162" />
     <state width="1877" height="197" key="GridCell.Tab.1.bottom" timestamp="1608989334826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -456,26 +455,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs</url>
-          <line>333</line>
+          <line>334</line>
           <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="333">
             <startOffsets>
-              <option value="12264" />
+              <option value="12357" />
             </startOffsets>
             <endOffsets>
-              <option value="12346" />
+              <option value="12439" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs</url>
-          <line>392</line>
+          <line>393</line>
           <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="392">
             <startOffsets>
-              <option value="14570" />
+              <option value="14663" />
             </startOffsets>
             <endOffsets>
-              <option value="14607" />
+              <option value="14700" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="17" />

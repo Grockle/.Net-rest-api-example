@@ -13,6 +13,7 @@ namespace BackendService.Data.DTOs.Group.Response
         public string Name { get; set; }
         public string Description { get; set; }
         public string Currency { get; set; }
+        public double Budget { get; set; }
         public List<UserDto> UserInfos { get; set; }
         public List<TransactionDto> TransactionInfos { get; set; }
         public GroupExpenseDto ExpenseGroup { get; set; }

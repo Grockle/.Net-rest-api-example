@@ -19,5 +19,8 @@ namespace BackendService.Data.DTOs.Group.Request
         [MinLength(3)]
         [MaxLength(3)]
         public string MoneyShortCut { get; set; }
+        
+        [Required]
+        public double Budget { get; set; }
     }
 }
