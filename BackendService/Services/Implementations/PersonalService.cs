@@ -9,7 +9,6 @@ using BackendService.Data.DTOs.Personal.Response;
 using BackendService.Data.Entities;
 using BackendService.Data.Enums;
 using BackendService.Data.Repository;
-using BackendService.Helpers;
 
 namespace BackendService.Services.Implementations
 {
@@ -24,6 +23,8 @@ namespace BackendService.Services.Implementations
             _userRepository = userRepository;
         }
 
+        #region Category
+
         public async Task<BaseResponse<bool>> AddPersonalCategory(AddPersonalCategoryRequest personalCategoryRequest,string token)
         {
             var response = new BaseResponse<bool> {HasError = false, Data = false};
@@ -36,6 +37,13 @@ namespace BackendService.Services.Implementations
                 return response;
             }
 
+            if (string.IsNullOrEmpty(personalCategoryRequest.CategoryName))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyCategory;
+                return response;
+            }
+            
             if (!Enum.IsDefined(typeof(PersonalCategoryType), personalCategoryRequest.Type))
             {
                 response.HasError = true;
@@ -47,7 +55,6 @@ namespace BackendService.Services.Implementations
             {
                 await _personalRepository.InsertPersonalCategory(new PersonalCategory
                 {
-                    UserId = currentUser.Id,
                     Type = personalCategoryRequest.Type,
                     Name = personalCategoryRequest.CategoryName
                 }, currentUser.Id);
@@ -67,12 +74,12 @@ namespace BackendService.Services.Implementations
         public async Task<BaseResponse<GroupedPersonalCategoryDto>> GetPersonalCategories(string token)
         {
             var response = new BaseResponse<GroupedPersonalCategoryDto>
-                {HasError = false, Data = new GroupedPersonalCategoryDto
-                {
-                    ExpenseCategories = new List<PersonalCategoryDto>(),
-                    IncomeCategories = new List<PersonalCategoryDto>(),
-                    AccountCategories = new List<PersonalCategoryDto>(),
-                }};
+            {HasError = false, Data = new GroupedPersonalCategoryDto
+            {
+                ExpenseCategories = new List<PersonalCategoryDto>(),
+                IncomeCategories = new List<PersonalCategoryDto>(),
+                AccountCategories = new List<PersonalCategoryDto>(),
+            }};
 
             var currentUser = await _userRepository.GetUserByToken(token);
 
@@ -201,8 +208,150 @@ namespace BackendService.Services.Implementations
             
             return response;
         }
+
+        #endregion
+
+        #region Account
+
+        public async Task<BaseResponse<bool>> AddPersonalAccount(AddPersonalAccountRequest personalAccountRequest, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (string.IsNullOrEmpty(personalAccountRequest.CategoryName))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyCategory;
+                return response;
+            }
+
+            try
+            {
+                var account = await _personalRepository.InsertPersonalAccount(new PersonalAccount
+                {    
+                    CategoryName = personalAccountRequest.CategoryName,
+                    Amount = personalAccountRequest.Amount
+                }, currentUser.Id);
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+
+            response.Data = true;
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> UpdatePersonalAccount(UpdatePersonalAccountRequest personalAccountRequest, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (personalAccountRequest.Id == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotEditableCategory;
+                return response;
+            }
+
+            if (string.IsNullOrEmpty(personalAccountRequest.CategoryName))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyCategory;
+                return response;
+            }
+
+            var personalAccount = await _personalRepository.GetPersonalAccountById(personalAccountRequest.Id, currentUser.Id);
+
+            if (personalAccount == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.CategoryNotExist;
+                return response;
+            }
+
+            try
+            {
+                personalAccount.Amount = personalAccountRequest.Amount;
+                personalAccount.CategoryName = personalAccountRequest.CategoryName;
+                await _personalRepository.UpdatePersonalAccount(personalAccount, currentUser.Id);
+                response.Data = true;
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+            
+            return response;
+        }
         
-        
+        public async Task<BaseResponse<bool>> DeletePersonalAccount(int personalAccountId, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var currentUser = await _userRepository.GetUserByToken(token);
+
+            if (currentUser == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (personalAccountId == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotEditableCategory;
+                return response;
+            }
+
+            var personalAccount = await _personalRepository.GetPersonalAccountById(personalAccountId, currentUser.Id);
+
+            if (personalAccount == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.AccountNotExist;
+                return response;
+            }
+
+            try
+            {
+                await _personalRepository.DeletePersonalAccount(personalAccount);
+                response.Data = true;
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+            
+            return response;
+        }
+
+        #endregion
+
+        #region PrivateMethods
 
         private static void SetStaticPersonalCategories(GroupedPersonalCategoryDto groupedPersonalCategoryDto)
         {
@@ -220,5 +369,7 @@ namespace BackendService.Services.Implementations
                 Type = x.Type
             }).ToList();
         }
+
+        #endregion
     }
 }

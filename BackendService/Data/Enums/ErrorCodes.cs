@@ -29,8 +29,11 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto TransactionTypeError = new ErrorMessageDto {Code = 22, Message = "Invalid transaction type"};
         public static readonly ErrorMessageDto UserNotExist = new ErrorMessageDto {Code = 23, Message = "Invalid User"};
         public static readonly ErrorMessageDto NotValidUserForTransfer = new ErrorMessageDto {Code = 24, Message = "Person can not transfer yourself"};
-        public static readonly ErrorMessageDto NotValidCategoryType = new ErrorMessageDto {Code = 24, Message = "Category type is not valid"};
-        public static readonly ErrorMessageDto NotEditableCategory = new ErrorMessageDto {Code = 24, Message = "You can not edit this category"};
-        public static readonly ErrorMessageDto CategoryNotExist = new ErrorMessageDto {Code = 24, Message = "Category Not Exist"};
+        public static readonly ErrorMessageDto NotValidCategoryType = new ErrorMessageDto {Code = 25, Message = "Category type is not valid"};
+        public static readonly ErrorMessageDto NotEditableCategory = new ErrorMessageDto {Code = 26, Message = "You can not edit this category"};
+        public static readonly ErrorMessageDto CategoryNotExist = new ErrorMessageDto {Code = 27, Message = "Category not exist"};
+        public static readonly ErrorMessageDto EmptyCategory = new ErrorMessageDto {Code = 28, Message = "Category can not be empty"};
+        public static readonly ErrorMessageDto AccountNotExist = new ErrorMessageDto {Code = 29, Message = "Account not exist"};
+        public static readonly ErrorMessageDto NotEditableAccount = new ErrorMessageDto {Code = 25, Message = "You can not edit this account"};
     }
 }

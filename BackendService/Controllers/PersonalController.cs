@@ -67,5 +67,44 @@ namespace BackendService.Controllers
 
             return Ok(response.Data);
         }
+        
+        [HttpPost("AddPersonalAccount")]
+        public async Task<ActionResult<bool>> AddPersonalAccountAsync(AddPersonalAccountRequest request)
+        {
+            var response = await _personalService.AddPersonalAccount(request, Token);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
+        
+        [HttpPut("UpdatePersonalAccount")]
+        public async Task<ActionResult<bool>> UpdatePersonalAccountAsync(UpdatePersonalAccountRequest request)
+        {
+            var response = await _personalService.UpdatePersonalAccount(request, Token);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
+        
+        [HttpDelete("DeletePersonalAccount")]
+        public async Task<ActionResult<bool>> DeletePersonalAccountAsync(int personalAccountId)
+        {
+            var response = await _personalService.DeletePersonalAccount(personalAccountId, Token);
+            
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

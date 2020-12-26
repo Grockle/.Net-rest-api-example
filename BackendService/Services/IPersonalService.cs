@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BackendService.Data.DTOs;
-using BackendService.Data.DTOs.Personal;
 using BackendService.Data.DTOs.Personal.Request;
 using BackendService.Data.DTOs.Personal.Response;
-using BackendService.Data.Entities;
 
 namespace BackendService.Services
 {
@@ -14,5 +11,8 @@ namespace BackendService.Services
         Task<BaseResponse<GroupedPersonalCategoryDto>> GetPersonalCategories(string token);
         Task<BaseResponse<bool>> UpdatePersonalCategory(UpdatePersonalCategoryRequest personalCategoryRequest, string token);
         Task<BaseResponse<bool>> DeletePersonalCategory(int personalCategoryId, string token);
+        Task<BaseResponse<bool>> AddPersonalAccount(AddPersonalAccountRequest personalAccountRequest, string token);
+        Task<BaseResponse<bool>> UpdatePersonalAccount(UpdatePersonalAccountRequest personalAccountRequest, string token);
+        Task<BaseResponse<bool>> DeletePersonalAccount(int personalAccountId, string token);
     }
 }
