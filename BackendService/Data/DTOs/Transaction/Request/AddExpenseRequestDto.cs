@@ -24,5 +24,8 @@ namespace BackendService.Data.DTOs.Transaction.Request
         
         [Required]
         public string TransactionType { get; set; }
+
+        [Required]
+        public string Category { get; set; }
     }
 }

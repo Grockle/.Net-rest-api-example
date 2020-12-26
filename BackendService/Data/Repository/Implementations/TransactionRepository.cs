@@ -22,7 +22,8 @@ namespace BackendService.Data.Repository.Implementations
         public async Task<IEnumerable<GroupTransactionDto>> GetGroupTransactions(int groupId)
         {
             var connection = new NpgsqlConnection(ConnectionString);
-            var sqlQuery = $@"Select T.""Id"" as TransactionId,T.""CreatedBy"" as AddedBy, T.""Amount"", T.""Description"", T.""Type"", RT.""RelatedUserId"", T.""CreateTime""
+            var sqlQuery = $@"Select T.""Id"" as TransactionId,T.""CreatedBy"" as AddedBy, T.""Amount"", T.""Description"", T.""Type"",
+                                RT.""RelatedUserId"", T.""CreateTime"", T.""CategoryName"" as Category
                                             from public.""Transactions"" as T
                                             Inner Join public.""RelatedTransactions"" as RT
                                             On RT.""TransactionId"" = T.""Id""

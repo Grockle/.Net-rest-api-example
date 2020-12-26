@@ -48,7 +48,8 @@ namespace BackendService.Services.Implementations
                 Amount = request.Amount,
                 GroupId = request.GroupId,
                 Description = request.Description,
-                Type = TransactionType.Expense.ToString()
+                Type = TransactionType.Expense.ToString(),
+                CategoryName = request.Category
             });
 
             if (transaction != null)
@@ -101,7 +102,8 @@ namespace BackendService.Services.Implementations
                     Amount = transferredUser.Amount,
                     GroupId = request.GroupId,
                     Description = request.Description,
-                    Type = TransactionType.Transfer.ToString()
+                    Type = TransactionType.Transfer.ToString(),
+                    CategoryName = "Transfer"
                 });
 
                 var relatedTransaction = await _relatedTransactionRepository.AddAsync(new RelatedTransaction

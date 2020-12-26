@@ -291,7 +291,7 @@ namespace BackendService.Services.Implementations
                 var groupTransactions = await _transactionRepository.GetGroupTransactions(userGroup.GroupId);
 
                 groupDetail.TransactionInfos = SetGroupTransactions(groupTransactions, groupUsers);
-
+                groupDetail.ExpenseGroup = CalculateGroupedExpenses(groupDetail.TransactionInfos);
                 response.Data.Add(groupDetail);
             }
 
@@ -331,6 +331,7 @@ namespace BackendService.Services.Implementations
             var groupTransactions = await _transactionRepository.GetGroupTransactions(userGroup.Id);
 
             groupDetail.TransactionInfos = SetGroupTransactions(groupTransactions, groupUsers);
+            groupDetail.ExpenseGroup = CalculateGroupedExpenses(groupDetail.TransactionInfos);
 
             response.Data = groupDetail;
 
@@ -362,6 +363,7 @@ namespace BackendService.Services.Implementations
                     AdderId = transactionValue.AddedBy,
                     AdderName = users?.First(x => x.Id == transactionValue.AddedBy).FirstName,
                     AdderSurname = users?.First(x => x.Id == transactionValue.AddedBy).LastName,
+                    Category = transactionValue.Category,
                     RelatedUsers = new List<RelatedUserDto>()
                 };
                 foreach (var item in transaction)
@@ -383,6 +385,39 @@ namespace BackendService.Services.Implementations
                 response.Add(transactionDto);
             }
 
+            return response;
+        }
+
+        private static GroupExpenseDto CalculateGroupedExpenses(List<TransactionDto> groupDetailTransactions)
+        {
+            var response = new GroupExpenseDto();
+            
+            if (groupDetailTransactions ==null)
+            {
+                return null;
+            }
+            
+            var expenses = groupDetailTransactions.Where(x => x.Type == TransactionType.Expense.ToString()).ToList();
+
+            if (expenses.Count == 0)
+            {
+                return null;
+            }
+            
+            response.Total = expenses.Sum(x => x.Amount);
+            response.GroupedExpenses = new List<ExpenseGroupInfoDto>();
+            
+            foreach (var expenseGroup in expenses.GroupBy(x => x.Category))
+            {
+                var categoryTotal = expenseGroup.Sum(y => y.Amount);
+                response.GroupedExpenses.Add(new ExpenseGroupInfoDto
+                {
+                    Category = expenseGroup.Key,
+                    CategoryTotal = categoryTotal,
+                    Percentage = response.Total == 0 ? 0 : (categoryTotal/response.Total) * 100
+                });
+            }
+            
             return response;
         }
         

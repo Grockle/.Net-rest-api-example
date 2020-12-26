@@ -52,6 +52,8 @@
                 <e p="TransferDto.cs" t="Include" />
               </e>
               <e p="Response" t="Include">
+                <e p="ExpenseGroupInfoDto.cs" t="Include" />
+                <e p="GroupExpenseDto.cs" t="Include" />
                 <e p="GroupTransactionDto.cs" t="Include" />
                 <e p="TransactionDto.cs" t="Include" />
               </e>
