@@ -72,6 +72,7 @@ namespace BackendService.Extensions
             services.AddTransient<IGroupService, GroupService>();
             services.AddTransient<ITransactionService, TransactionService>();
             services.AddTransient<ICommonHelper, CommonHelper>(); 
+            services.AddTransient<IPersonalService, PersonalService>(); 
             #endregion
 
             #region Repositories
@@ -83,6 +84,7 @@ namespace BackendService.Extensions
             services.AddTransient<ITransactionRepository, TransactionRepository>();
             services.AddTransient<IRelatedTransactionRepository, RelatedTransactionRepository>();
             services.AddTransient<IGroupBudgetBalanceRepository, GroupBudgetBalanceRepository>();
+            services.AddTransient<IPersonalRepository, PersonalRepository>();
             #endregion
             
         }

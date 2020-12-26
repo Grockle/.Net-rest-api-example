@@ -4,6 +4,7 @@ namespace BackendService.Data.Enums
 {
     public static class ErrorCodes
     {
+        public static readonly ErrorMessageDto Error = new ErrorMessageDto {Code = 0, Message = ""};
         public static readonly ErrorMessageDto EmailExist = new ErrorMessageDto {Code = 1, Message = "Email is already exist"};
         public static readonly ErrorMessageDto WrongEmailPassword = new ErrorMessageDto {Code = 2, Message = "Wrong email or password"};
         public static readonly ErrorMessageDto NotVerifiedEmail = new ErrorMessageDto {Code = 3, Message = "Email is not confirmed"};
@@ -28,5 +29,6 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto TransactionTypeError = new ErrorMessageDto {Code = 22, Message = "Invalid transaction type"};
         public static readonly ErrorMessageDto UserNotExist = new ErrorMessageDto {Code = 23, Message = "Invalid User"};
         public static readonly ErrorMessageDto NotValidUserForTransfer = new ErrorMessageDto {Code = 24, Message = "Person can not transfer yourself"};
+        public static readonly ErrorMessageDto NotValidCategoryType = new ErrorMessageDto {Code = 24, Message = "Category type is not valid"};
     }
 }

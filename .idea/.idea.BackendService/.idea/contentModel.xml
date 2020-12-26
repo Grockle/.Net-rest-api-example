@@ -20,6 +20,7 @@
           <e p="AccountController.cs" t="Include" />
           <e p="BaseApiController.cs" t="Include" />
           <e p="GroupController.cs" t="Include" />
+          <e p="PersonalController.cs" t="Include" />
           <e p="TransactionController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
@@ -42,6 +43,15 @@
             </e>
             <e p="GroupBudgetBalance" t="Include">
               <e p="GroupBudgetBalanceDto.cs" t="Include" />
+            </e>
+            <e p="Personal" t="Include">
+              <e p="PersonalcategoryDto.cs" t="Include" />
+              <e p="Request" t="Include">
+                <e p="AddPersonalCategoryRequest.cs" t="Include" />
+              </e>
+              <e p="Response" t="Include">
+                <e p="GroupedPersonalCategoryDto.cs" t="Include" />
+              </e>
             </e>
             <e p="Response.cs" t="Include" />
             <e p="TokenOptions.cs" t="Include" />
@@ -94,6 +104,7 @@
             <e p="User.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="ConstantCategory.cs" t="Include" />
             <e p="ErrorCodes.cs" t="Include" />
             <e p="GroupCategoryType.cs" t="Include" />
             <e p="PersonalCategoryType.cs" t="Include" />
@@ -111,10 +122,12 @@
               <e p="GroupJoinRequestRepository.cs" t="Include" />
               <e p="GroupRepository.cs" t="Include" />
               <e p="GroupUserRepository.cs" t="Include" />
+              <e p="PersonalRepository.cs" t="Include" />
               <e p="RelatedTransactionRepository.cs" t="Include" />
               <e p="TransactionRepository.cs" t="Include" />
               <e p="UserRepository.cs" t="Include" />
             </e>
+            <e p="IPersonalRepository.cs" t="Include" />
             <e p="IRelatedTransactionRepository.cs" t="Include" />
             <e p="ITransactionRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
@@ -181,8 +194,10 @@
           <e p="Implementations" t="Include">
             <e p="AccountService.cs" t="Include" />
             <e p="GroupService.cs" t="Include" />
+            <e p="PersonalService.cs" t="Include" />
             <e p="TransactionService.cs" t="Include" />
           </e>
+          <e p="IPersonalService.cs" t="Include" />
           <e p="ITransactionService.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">

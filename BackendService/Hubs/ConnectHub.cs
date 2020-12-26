@@ -24,7 +24,7 @@ namespace BackendService.Hubs
 
         public Task TriggerFunction(string groupName, string function)
         {
-            return Clients.Group(groupName).SendAsync(function);
+            return Clients.Group(groupName).SendAsync(function, groupName);
         }
         
         
