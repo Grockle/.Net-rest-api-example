@@ -15,7 +15,8 @@ namespace BackendService.Data.Repository.Implementations
     {
         private readonly DbSet<GroupUsers> _groupUsers;
 
-        private readonly string ConnectionString = "User ID=postgres;Password=Bears1234!;Server=34.78.184.211;Port=5432;Database=bears;Integrated Security=true;Pooling=true;";
+        private readonly string ConnectionString =
+            "User ID=bahprdjtyanqoq;Password=67d5ff9be3ca216e1df2c5202a6f6621e486d67d878acac3f6a14a1d12827ec6;Server=ec2-52-212-157-46.eu-west-1.compute.amazonaws.com;Port=5432;Database=dfomtj8il10drd;Integrated Security=true;Pooling=true;SSL Mode=Require;TrustServerCertificate=True;";
         public GroupUserRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _groupUsers = dbContext.Set<GroupUsers>();
