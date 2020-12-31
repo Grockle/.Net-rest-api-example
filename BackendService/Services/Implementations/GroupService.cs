@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BackendService.Data.DTOs;
@@ -10,7 +11,7 @@ using BackendService.Data.Entities;
 using BackendService.Data.Enums;
 using BackendService.Data.Repository;
 using BackendService.Helpers;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace BackendService.Services.Implementations
 {
@@ -294,6 +295,21 @@ namespace BackendService.Services.Implementations
                 groupDetail.TransactionInfos = SetGroupTransactions(groupTransactions, groupUsers);
                 groupDetail.ExpenseGroup = CalculateGroupedExpenses(groupDetail.TransactionInfos);
                 response.Data.Add(groupDetail);
+
+                //static group category add
+                groupDetail.ExpenseCategories = new List<GroupCategoryDto>();
+                groupDetail.ExpenseCategories.AddRange(ConstantCategory.GroupExpenseCategory.Select(x => new GroupCategoryDto{Id = 0, Name = x, Type = (int)GroupCategoryType.Expense}));
+                
+                //dynamic group category add
+                var groupCategories = _groupRepository.GetGroupCategories(userGroup.GroupId, (int) GroupCategoryType.Expense);
+                groupDetail.ExpenseCategories.AddRange(groupCategories.Select(x => new GroupCategoryDto
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = (int)GroupCategoryType.Expense
+                }));
+
+                groupDetail.ExpenseCategories = groupDetail.ExpenseCategories.OrderBy(x => x.Name).ToList();
             }
 
             return response;
@@ -334,8 +350,88 @@ namespace BackendService.Services.Implementations
             groupDetail.TransactionInfos = SetGroupTransactions(groupTransactions, groupUsers);
             groupDetail.ExpenseGroup = CalculateGroupedExpenses(groupDetail.TransactionInfos);
 
+            //static group category add
+            groupDetail.ExpenseCategories = new List<GroupCategoryDto>();
+            groupDetail.ExpenseCategories.AddRange(ConstantCategory.GroupExpenseCategory.Select(x => new GroupCategoryDto{Id = 0, Name = x, Type = (int)GroupCategoryType.Expense}));
+                
+            //dynamic group category add
+            var groupCategories = _groupRepository.GetGroupCategories(userGroup.Id, (int) GroupCategoryType.Expense);
+            groupDetail.ExpenseCategories.AddRange(groupCategories.Select(x => new GroupCategoryDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Type = (int)GroupCategoryType.Expense
+            }));
+
+            groupDetail.ExpenseCategories = groupDetail.ExpenseCategories.OrderBy(x => x.Name).ToList();
+            
             response.Data = groupDetail;
 
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> AddGroupCategory(AddGroupCategoryDto groupCategory, string token)
+        {
+            var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var user = await _userRepository.GetUserByToken(token);
+            var group = await _groupRepository.GetGroupByShareCode(groupCategory.GroupShareCode);
+
+            if (user == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+            
+            if (group == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.GroupIsNotExist;
+                return response;
+            }
+
+            if (string.IsNullOrEmpty(groupCategory.Name))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyCategory;
+                return response;
+            }
+            
+            if (!Enum.IsDefined(typeof(GroupCategoryType), groupCategory.Type))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotValidCategoryType;
+                return response;
+            }
+            
+            var categories = _groupRepository.GetGroupCategories(group.Id, groupCategory.Type);
+            var isCategoryExist = categories.Any(x => x.Name == groupCategory.Name) ||
+                                  ConstantCategory.GroupExpenseCategory.Any(x => x == groupCategory.Name);
+            if (isCategoryExist)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.CategoryExist;
+                return response;
+            }
+            
+            try
+            {
+                await _groupRepository.InsertGroupCategory(new GroupCategory
+                {
+                    Type = groupCategory.Type,
+                    Name = groupCategory.Name,
+                    GroupId = group.Id
+                }, user.Id);
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+
+            response.Data = true;
             return response;
         }
         
@@ -343,8 +439,7 @@ namespace BackendService.Services.Implementations
 
         #region privateMethods
 
-        private List<TransactionDto> SetGroupTransactions(IEnumerable<GroupTransactionDto> groupTransactions,
-            IEnumerable<UserDto> users)
+        private List<TransactionDto> SetGroupTransactions(IEnumerable<GroupTransactionDto> groupTransactions, IEnumerable<UserDto> users)
         {
             if (groupTransactions == null)
             {
@@ -421,7 +516,7 @@ namespace BackendService.Services.Implementations
             
             return response;
         }
-        
+
         #endregion
     }
 }

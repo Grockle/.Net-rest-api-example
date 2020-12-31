@@ -34,6 +34,9 @@ namespace BackendService.Data.Enums
         public static readonly ErrorMessageDto CategoryNotExist = new ErrorMessageDto {Code = 27, Message = "Category not exist"};
         public static readonly ErrorMessageDto EmptyCategory = new ErrorMessageDto {Code = 28, Message = "Category can not be empty"};
         public static readonly ErrorMessageDto AccountNotExist = new ErrorMessageDto {Code = 29, Message = "Account not exist"};
-        public static readonly ErrorMessageDto NotEditableAccount = new ErrorMessageDto {Code = 25, Message = "You can not edit this account"};
+        public static readonly ErrorMessageDto NotEditableAccount = new ErrorMessageDto {Code = 30, Message = "You can not edit this account"};
+        public static readonly ErrorMessageDto NotPermission = new ErrorMessageDto {Code = 31, Message = "You have not permission for this operation"};
+        public static readonly ErrorMessageDto CategoryExist = new ErrorMessageDto {Code = 32, Message = "Category is already exist"};
+        
     }
 }

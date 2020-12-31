@@ -35,13 +35,6 @@ namespace BackendService.Services.Implementations
                 return response;
             }
 
-            if (request.TransactionType != TransactionType.Expense.ToString())
-            {
-                response.HasError = true;
-                response.Error = ErrorCodes.TransactionTypeError;
-                return response;
-            }
-            
             var transaction = await _transactionRepository.AddAsync(new Transaction
             {
                 CreatedBy = request.WhoAdded,
@@ -75,13 +68,6 @@ namespace BackendService.Services.Implementations
             {
                 response.HasError = true;
                 response.Error = ErrorCodes.EmptyRelatedUsers;
-                return response;
-            }
-
-            if (request.TransactionType != TransactionType.Transfer.ToString())
-            {
-                response.HasError = true;
-                response.Error = ErrorCodes.TransactionTypeError;
                 return response;
             }
 

@@ -31,6 +31,7 @@
             <e p="ErrorMessageDto.cs" t="Include" />
             <e p="Group" t="Include">
               <e p="Request" t="Include">
+                <e p="AddGroupCategoryDto.cs" t="Include" />
                 <e p="AddGroupRequest.cs" t="Include" />
                 <e p="GroupJoinRequestDto.cs" t="Include" />
                 <e p="ReplyGroupJoinRequestDto.cs" t="Include" />
@@ -39,6 +40,7 @@
                 <e p="GetGroupDetailDto.cs" t="Include" />
                 <e p="GetGroupJoinRequestsDto.cs" t="Include" />
                 <e p="GetUserGroupsDto.cs" t="Include" />
+                <e p="GroupCategoryDto.cs" t="Include" />
               </e>
             </e>
             <e p="GroupBudgetBalance" t="Include">

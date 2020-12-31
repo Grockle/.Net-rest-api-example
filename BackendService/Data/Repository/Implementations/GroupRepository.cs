@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BackendService.Context;
 using BackendService.Data.DTOs.Group.Response;
 using BackendService.Data.Entities;
+using BackendService.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackendService.Data.Repository.Implementations
@@ -11,12 +12,17 @@ namespace BackendService.Data.Repository.Implementations
     public class GroupRepository : GenericRepositoryAsync<Group>, IGroupRepository
     {
         private readonly DbSet<Group> _groups;
+        private readonly DbSet<GroupCategory> _groupCategories;
         private readonly IGroupUserRepository _groupUserRepository;
-
-        public GroupRepository(ApplicationDbContext dbContext, IGroupUserRepository groupUserRepository) : base(dbContext)
+        private readonly IDateTimeService _dateTimeService;
+        private readonly ApplicationDbContext _dbContext;
+        public GroupRepository(ApplicationDbContext dbContext, IGroupUserRepository groupUserRepository, IDateTimeService dateTimeService) : base(dbContext)
         {
+            _dbContext = dbContext;
             _groupUserRepository = groupUserRepository;
+            _dateTimeService = dateTimeService;
             _groups = dbContext.Set<Group>();
+            _groupCategories = dbContext.Set<GroupCategory>();
         }
 
         public async Task<Group> GetGroupWithSameNameAsync(string groupName, int userId)
@@ -44,6 +50,21 @@ namespace BackendService.Data.Repository.Implementations
             }).ToList();
             
             return groups;
+        }
+
+        public IEnumerable<GroupCategory> GetGroupCategories(int groupId, int type)
+        {
+            return _groupCategories.Where(x => x.GroupId == groupId && x.Type == type);
+        }
+
+        public async Task<GroupCategory> InsertGroupCategory(GroupCategory groupCategory, int currentUserId)
+        {
+            groupCategory.CreatedBy = currentUserId;
+            groupCategory.UpdateBy = currentUserId;
+            groupCategory.CreateTime = _dateTimeService.Now;
+            await _groupCategories.AddAsync(groupCategory);
+            await _dbContext.SaveChangesAsync();
+            return groupCategory;
         }
     }
 }

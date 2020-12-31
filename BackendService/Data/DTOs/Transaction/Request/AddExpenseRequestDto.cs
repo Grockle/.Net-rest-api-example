@@ -21,9 +21,6 @@ namespace BackendService.Data.DTOs.Transaction.Request
 
         [Required]
         public IEnumerable<int> RelatedUserIds { get; set; }
-        
-        [Required]
-        public string TransactionType { get; set; }
 
         [Required]
         public string Category { get; set; }

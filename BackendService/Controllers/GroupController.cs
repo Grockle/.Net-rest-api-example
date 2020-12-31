@@ -124,5 +124,18 @@ namespace BackendService.Controllers
             
             return Ok(response.Data);
         }
+        
+        [HttpPost("AddGroupCategory")]
+        public async Task<ActionResult<bool>> AddGroupCategoryAsync(AddGroupCategoryDto model)
+        {
+            var response = await _groupService.AddGroupCategory(model, Token);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

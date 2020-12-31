@@ -17,5 +17,6 @@ namespace BackendService.Services
         Task<BaseResponse<IEnumerable<GetGroupUsersInfoDto>>> GetGroupUsers(int groupId);
         Task<BaseResponse<List<GetGroupDetailDto>>> GetGroupDetailsAsync(string token);
         Task<BaseResponse<GetGroupDetailDto>> GetGroupDetailAsync(string token, string shareCode);
+        Task<BaseResponse<bool>> AddGroupCategory(AddGroupCategoryDto groupCategory, string token);
     }
 }

@@ -17,5 +17,6 @@ namespace BackendService.Data.DTOs.Group.Response
         public List<UserDto> UserInfos { get; set; }
         public List<TransactionDto> TransactionInfos { get; set; }
         public GroupExpenseDto ExpenseGroup { get; set; }
+        public List<GroupCategoryDto> ExpenseCategories { get; set; }
     }
 }
