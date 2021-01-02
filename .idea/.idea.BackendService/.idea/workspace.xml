@@ -23,33 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupCategoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GroupCategoryDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Enums/ConstantCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Enums/ConstantCategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Enums/ErrorCodes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Enums/ErrorCodes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/IGroupRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Data/Repository/Implementations/GroupRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +79,6 @@
         <option value="$PROJECT_DIR$/BackendService/Data/Enums/ConstantPersonalCategory.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/Request/DeletePersonalCategoryRequest .cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/Request/UpdatePersonalCategoryRequest.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetUserGroupsDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/Request/AddPersonalAccountRequest.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Personal/Request/UpdatePersonalAccountRequest.cs" />
@@ -113,8 +89,6 @@
         <option value="$PROJECT_DIR$/BackendService/Controllers/PersonalController.cs" />
         <option value="$PROJECT_DIR$/BackendService/appsettings.Development.json" />
         <option value="$PROJECT_DIR$/BackendService/appsettings.json" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" />
-        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Repository/IGroupRepository.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Response/GetGroupDetailDto.cs" />
@@ -126,6 +100,9 @@
         <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupCategoryDto.cs" />
         <option value="$PROJECT_DIR$/BackendService/Data/Enums/ErrorCodes.cs" />
         <option value="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddExpenseRequestDto.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Transaction/Request/AddTransferRequestDto.cs" />
+        <option value="$PROJECT_DIR$/BackendService/Data/DTOs/Group/Request/AddGroupRequest.cs" />
       </list>
     </option>
   </component>
@@ -237,6 +214,7 @@
       <workItem from="1608975852657" duration="16482000" />
       <workItem from="1609347778882" duration="759000" />
       <workItem from="1609432134781" duration="4799000" />
+      <workItem from="1609595231320" duration="974000" />
     </task>
     <servers />
   </component>

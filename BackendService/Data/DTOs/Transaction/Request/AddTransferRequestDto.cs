@@ -15,8 +15,6 @@ namespace BackendService.Data.DTOs.Transaction.Request
         public IEnumerable<TransferDto> RelatedUsers { get; set; }
 
         [Required]
-        [MinLength(6)]
-        [MaxLength(20)]
         public string Description { get; set; }
     }
 }

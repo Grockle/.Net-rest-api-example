@@ -12,7 +12,6 @@ namespace BackendService.Data.DTOs.Group.Request
         public string GroupName { get; set; }
         
         [Required]
-        [MinLength(20)]
         public string Description { get; set; }
         
         [Required]
