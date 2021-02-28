@@ -24,20 +24,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackendService.Application/ServiceRegistration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/BackendService.Infrastructure.Data.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/ServiceRegistration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Interface/IAccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/IGroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Interface/IGroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/IPersonalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Interface/IPersonalService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/ITransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Interface/ITransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Service/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/PersonalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Service/PersonalService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Services/Implementations/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Service/TransactionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Domain/Model/GroupTransactionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Domain/Model/GroupTransactionDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Domain/Model/PersonalCategoryDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Domain/Model/PersonalCategoryDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Domain/Model/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Domain/Model/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Domain/Model/UserGroupDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Domain/Model/UserGroupDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Infrastructure.Data/BackendService.Infrastructure.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/BackendService.Infrastructure.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Context/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Context/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.WebApi/BackendService.WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.WebApi/BackendService.WebApi.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +47,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BackendService.Application/Interface/IGroupService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F423A09D-18AD-41DA-973D-AA418BC06C2C/6/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BackendService/Data/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/1F/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F680C866-D120-4163-9634-EBD842255BE9/17F/ApiConventionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/47002240-EC38-46FD-BE4F-E63419744E68/3/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C324B3BF-601C-4E0D-B96A-2B4F7BA798A1/cc/8a91a165/IGroupManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BackendService/Controllers/GroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D5EDF430-AB5A-4412-A0B9-E75F3C32EB0A/12/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -131,7 +125,7 @@
     <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BackendService">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BackendService.WebApi">
     <configuration name="BackendService" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BackendService/BackendService.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -259,6 +253,7 @@
       <workItem from="1611475798903" duration="2250000" />
       <workItem from="1614409804278" duration="3754000" />
       <workItem from="1614504822707" duration="549000" />
+      <workItem from="1614524903695" duration="673000" />
     </task>
     <servers />
   </component>
@@ -426,14 +421,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs</url>
           <line>350</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="333">
-            <startOffsets>
-              <option value="13255" />
-            </startOffsets>
-            <endOffsets>
-              <option value="13337" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="333" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
@@ -452,27 +440,13 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs</url>
           <line>300</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="298">
-            <startOffsets>
-              <option value="11066" />
-            </startOffsets>
-            <endOffsets>
-              <option value="11235" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="298" />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs</url>
           <line>303</line>
-          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="301">
-            <startOffsets>
-              <option value="11314" />
-            </startOffsets>
-            <endOffsets>
-              <option value="11424" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\projects\App\git\BackendService\budgetMan\BackendService\Services\Implementations\GroupService.cs" initialLine="301" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>

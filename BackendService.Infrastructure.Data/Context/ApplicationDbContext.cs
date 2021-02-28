@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using BackendService.Application.Interface.Helper;
 using BackendService.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
-using Group = System.Text.RegularExpressions.Group;
-using Transaction = System.Transactions.Transaction;
 
 namespace BackendService.IoC.Data.Context
 {

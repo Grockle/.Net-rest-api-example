@@ -4,217 +4,111 @@
     <e p="C:\Users\tugay\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\tugay\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_BackendService.941957942.00" t="ExcludeRecursive" />
     <e p="D:\projects\App\git\BackendService\budgetMan" t="IncludeFlat">
-      <e p="BackendService" t="IncludeRecursive">
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
-        <e p="BackendService.csproj" t="IncludeRecursive" />
+      <e p="BackendService.Application" t="IncludeRecursive">
+        <e p="BackendService.Application.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Common" t="Include">
           <e p="CommonHelper.cs" t="Include" />
           <e p="ICommonHelper.cs" t="Include" />
         </e>
-        <e p="Context" t="Include">
-          <e p="ApplicationDbContext.cs" t="Include" />
+        <e p="Constants" t="Include">
+          <e p="ConstantCategory.cs" t="Include" />
+          <e p="ErrorCodes.cs" t="Include" />
+          <e p="GroupCategoryType.cs" t="Include" />
+          <e p="PersonalCategoryType.cs" t="Include" />
+          <e p="TransactionType.cs" t="Include" />
         </e>
-        <e p="Controllers" t="Include">
-          <e p="AccountController.cs" t="Include" />
-          <e p="BaseApiController.cs" t="Include" />
-          <e p="GroupController.cs" t="Include" />
-          <e p="PersonalController.cs" t="Include" />
-          <e p="TransactionController.cs" t="Include" />
-          <e p="WeatherForecastController.cs" t="Include" />
-        </e>
-        <e p="Data" t="Include">
-          <e p="DTOs" t="Include">
-            <e p="AccessToken.cs" t="Include" />
-            <e p="BaseResponse.cs" t="Include" />
-            <e p="ErrorMessageDto.cs" t="Include" />
-            <e p="Group" t="Include">
-              <e p="Request" t="Include">
-                <e p="AddGroupCategoryDto.cs" t="Include" />
-                <e p="AddGroupRequest.cs" t="Include" />
-                <e p="GroupJoinRequestDto.cs" t="Include" />
-                <e p="ReplyGroupJoinRequestDto.cs" t="Include" />
-              </e>
-              <e p="Response" t="Include">
-                <e p="GetGroupDetailDto.cs" t="Include" />
-                <e p="GetGroupJoinRequestsDto.cs" t="Include" />
-                <e p="GetUserGroupsDto.cs" t="Include" />
-                <e p="GroupCategoryDto.cs" t="Include" />
-              </e>
-            </e>
-            <e p="GroupBudgetBalance" t="Include">
-              <e p="GroupBudgetBalanceDto.cs" t="Include" />
-            </e>
-            <e p="Personal" t="Include">
-              <e p="PersonalcategoryDto.cs" t="Include" />
-              <e p="Request" t="Include">
-                <e p="AddPersonalAccountRequest.cs" t="Include" />
-                <e p="AddPersonalCategoryRequest.cs" t="Include" />
-                <e p="DeletePersonalCategoryRequest .cs" t="Include" />
-                <e p="UpdatePersonalAccountRequest.cs" t="Include" />
-                <e p="UpdatePersonalCategoryRequest.cs" t="Include" />
-              </e>
-              <e p="Response" t="Include">
-                <e p="GroupedPersonalCategoryDto.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Response.cs" t="Include" />
-            <e p="TokenOptions.cs" t="Include" />
-            <e p="Transaction" t="Include">
-              <e p="Request" t="Include">
-                <e p="AddExpenseRequestDto.cs" t="Include" />
-                <e p="AddTransferRequestDto.cs" t="Include" />
-                <e p="TransferDto.cs" t="Include" />
-              </e>
-              <e p="Response" t="Include">
-                <e p="ExpenseGroupInfoDto.cs" t="Include" />
-                <e p="GroupExpenseDto.cs" t="Include" />
-                <e p="GroupTransactionDto.cs" t="Include" />
-                <e p="TransactionDto.cs" t="Include" />
-              </e>
-            </e>
-            <e p="User" t="Include">
-              <e p="RefreshToken.cs" t="Include" />
-              <e p="Request" t="Include">
-                <e p="AuthenticateRequestDto.cs" t="Include" />
-                <e p="ConfirmEmailRequest.cs" t="Include" />
-                <e p="LoginRequest.cs" t="Include" />
-                <e p="RegisterUserRequest.cs" t="Include" />
-                <e p="ResetPasswordRequest.cs" t="Include" />
-                <e p="UpdateEmailVerificationCodeRequest.cs" t="Include" />
-              </e>
-              <e p="Response" t="Include">
-                <e p="AuthenticateResponse.cs" t="Include" />
-                <e p="GetGroupUsersInfoDto.cs" t="Include" />
-                <e p="LoginResponse.cs" t="Include" />
-                <e p="RegisterUserResponse.cs" t="Include" />
-                <e p="RelatedUserDto.cs" t="Include" />
-                <e p="UserDto.cs" t="Include" />
-                <e p="UserInfoDto.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="Entities" t="Include">
-            <e p="AuditableBaseEntity.cs" t="Include" />
-            <e p="Group.cs" t="Include" />
-            <e p="GroupBudgetBalance.cs" t="Include" />
-            <e p="GroupCategory.cs" t="Include" />
-            <e p="GroupJoinRequest.cs" t="Include" />
-            <e p="GroupUsers.cs" t="Include" />
-            <e p="PersonalAccount.cs" t="Include" />
-            <e p="PersonalCategory.cs" t="Include" />
-            <e p="PersonalTransaction.cs" t="Include" />
-            <e p="RelatedTransaction.cs" t="Include" />
-            <e p="Transaction.cs" t="Include" />
-            <e p="User.cs" t="Include" />
-          </e>
-          <e p="Enums" t="Include">
-            <e p="ConstantCategory.cs" t="Include" />
-            <e p="ErrorCodes.cs" t="Include" />
-            <e p="GroupCategoryType.cs" t="Include" />
-            <e p="PersonalCategoryType.cs" t="Include" />
-            <e p="TransactionType.cs" t="Include" />
-          </e>
-          <e p="Repository" t="Include">
-            <e p="IGenericRepositoryAsync.cs" t="Include" />
-            <e p="IGroupBudgetBalanceRepository.cs" t="Include" />
-            <e p="IGroupJoinRequestRepository.cs" t="Include" />
-            <e p="IGroupRepository.cs" t="Include" />
-            <e p="IGroupUserRepository.cs" t="Include" />
-            <e p="Implementations" t="Include">
-              <e p="GenericRepositoryAsync.cs" t="Include" />
-              <e p="GroupBudgetBalanceRepository.cs" t="Include" />
-              <e p="GroupJoinRequestRepository.cs" t="Include" />
-              <e p="GroupRepository.cs" t="Include" />
-              <e p="GroupUserRepository.cs" t="Include" />
-              <e p="PersonalRepository.cs" t="Include" />
-              <e p="RelatedTransactionRepository.cs" t="Include" />
-              <e p="TransactionRepository.cs" t="Include" />
-              <e p="UserRepository.cs" t="Include" />
-            </e>
-            <e p="IPersonalRepository.cs" t="Include" />
-            <e p="IRelatedTransactionRepository.cs" t="Include" />
-            <e p="ITransactionRepository.cs" t="Include" />
-            <e p="IUserRepository.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Dockerfile" t="Include" />
         <e p="Exceptions" t="Include">
           <e p="ApiException.cs" t="Include" />
-        </e>
-        <e p="Extensions" t="Include">
-          <e p="ServiceExtensions.cs" t="Include" />
-        </e>
-        <e p="Helpers" t="Include">
-          <e p="IDateTimeService.cs" t="Include" />
-          <e p="IEmailService.cs" t="Include" />
-          <e p="IHashService.cs" t="Include" />
-          <e p="Implementations" t="Include">
-            <e p="AuthOperationFilter.cs" t="Include" />
-            <e p="DateTimeService.cs" t="Include" />
-            <e p="EmailService.cs" t="Include" />
-            <e p="HashService.cs" t="Include" />
-          </e>
         </e>
         <e p="Hubs" t="Include">
           <e p="ConnectHub.cs" t="Include" />
         </e>
-        <e p="Mappings" t="Include">
-          <e p="GeneralMapping.cs" t="Include" />
-          <e p="GeneralProfile.cs" t="Include" />
-        </e>
-        <e p="Middlewares" t="Include" />
-        <e p="Migrations" t="Include">
-          <e p="20201109163109_Initial.cs" t="Include" />
-          <e p="20201109163109_Initial.Designer.cs" t="Include" />
-          <e p="20201109163346_TransactionsUpdate.cs" t="Include" />
-          <e p="20201109163346_TransactionsUpdate.Designer.cs" t="Include" />
-          <e p="20201109163643_GroupBudgetBalance.cs" t="Include" />
-          <e p="20201109163643_GroupBudgetBalance.Designer.cs" t="Include" />
-          <e p="20201114123706_Update-Transactions.cs" t="Include" />
-          <e p="20201114123706_Update-Transactions.Designer.cs" t="Include" />
-          <e p="20201130192223_NonExistMigrations.cs" t="Include" />
-          <e p="20201130192223_NonExistMigrations.Designer.cs" t="Include" />
-          <e p="20201224194705_PersonalAccountTables.cs" t="Include" />
-          <e p="20201224194705_PersonalAccountTables.Designer.cs" t="Include" />
-          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
-        </e>
-        <e p="Models" t="Include">
-          <e p="EmailRequest.cs" t="Include" />
-        </e>
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.1" t="Include">
-              <e p="BackendService.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="Settings" t="Include">
-          <e p="JwtSettings.cs" t="Include" />
-          <e p="MailSettings.cs" t="Include" />
-        </e>
-        <e p="Startup.cs" t="Include" />
-        <e p="WeatherForecast.cs" t="Include" />
-      </e>
-      <e p="BackendService.Application" t="IncludeRecursive">
-        <e p="BackendService.Application.csproj" t="IncludeRecursive" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Constants" t="Include" />
         <e p="Interface" t="Include">
+          <e p="Helper" t="Include">
+            <e p="IDateTimeService.cs" t="Include" />
+            <e p="IEmailService.cs" t="Include" />
+            <e p="IHashService.cs" t="Include" />
+          </e>
           <e p="IAccountService.cs" t="Include" />
+          <e p="IEmailVerificationService.cs" t="Include" />
+          <e p="IGroupCategoryService.cs" t="Include" />
           <e p="IGroupService.cs" t="Include" />
+          <e p="IJoinRequestService.cs" t="Include" />
+          <e p="IPasswordService.cs" t="Include" />
           <e p="IPersonalService.cs" t="Include" />
           <e p="ITransactionService.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
         </e>
-        <e p="Mapper" t="Include" />
         <e p="Models" t="Include">
-          <e p="Request" t="Include" />
-          <e p="Response" t="Include" />
+          <e p="Requests" t="Include">
+            <e p="General" t="Include">
+              <e p="AccessToken.cs" t="Include" />
+              <e p="EmailRequest.cs" t="Include" />
+              <e p="TokenOptions.cs" t="Include" />
+            </e>
+            <e p="Group" t="Include">
+              <e p="AddGroupCategoryRequest.cs" t="Include" />
+              <e p="AddGroupRequest.cs" t="Include" />
+              <e p="GroupJoinRequest.cs" t="Include" />
+              <e p="ReplyGroupJoinRequest.cs" t="Include" />
+            </e>
+            <e p="GroupBudgetBalance" t="Include" />
+            <e p="Personal" t="Include">
+              <e p="AddPersonalAccountRequest.cs" t="Include" />
+              <e p="AddPersonalCategoryRequest.cs" t="Include" />
+              <e p="DeletePersonalCategoryRequest .cs" t="Include" />
+              <e p="UpdatePersonalAccountRequest.cs" t="Include" />
+              <e p="UpdatePersonalCategoryRequest.cs" t="Include" />
+            </e>
+            <e p="Transaction" t="Include">
+              <e p="AddExpenseRequest.cs" t="Include" />
+              <e p="AddTransferRequest.cs" t="Include" />
+              <e p="AddTransferRequestItem.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="AuthenticateRequest.cs" t="Include" />
+              <e p="ConfirmEmailRequest.cs" t="Include" />
+              <e p="LoginRequest.cs" t="Include" />
+              <e p="RegisterUserRequest.cs" t="Include" />
+              <e p="ResetPasswordRequest.cs" t="Include" />
+              <e p="UpdateEmailVerificationCodeRequest.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Responses" t="Include">
+            <e p="General" t="Include">
+              <e p="BaseResponse.cs" t="Include" />
+              <e p="BaseResponseErrorItem.cs" t="Include" />
+            </e>
+            <e p="Group" t="Include">
+              <e p="GetGroupDetailResponse.cs" t="Include" />
+              <e p="GetGroupDetailResponseGroupItem.cs" t="Include" />
+              <e p="GetGroupDetailResponseTransactionItem.cs" t="Include" />
+              <e p="GetGroupJoinResponse.cs" t="Include" />
+              <e p="GetUserGroupsResponse.cs" t="Include" />
+            </e>
+            <e p="GroupBudgetBalance" t="Include">
+              <e p="GroupBudgetBalanceResponse.cs" t="Include" />
+            </e>
+            <e p="Personal" t="Include">
+              <e p="GroupedPersonalCategoryResponse.cs" t="Include" />
+              <e p="GroupedPersonalCategoryResponseItem.cs" t="Include" />
+            </e>
+            <e p="Transaction" t="Include">
+              <e p="GroupExpenseResponse.cs" t="Include" />
+              <e p="GroupExpenseResponseItem.cs" t="Include" />
+              <e p="GroupTransactionResponse.cs" t="Include" />
+              <e p="TransactionResponseItem.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="AuthenticateResponse.cs" t="Include" />
+              <e p="GetGroupDetailResponseUserItem.cs" t="Include" />
+              <e p="GetGroupUsersInfoResponse.cs" t="Include" />
+              <e p="LoginResponse.cs" t="Include" />
+              <e p="RegisterUserResponse.cs" t="Include" />
+              <e p="UserInfoResponse.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -225,17 +119,54 @@
         </e>
         <e p="Service" t="Include">
           <e p="AccountService.cs" t="Include" />
+          <e p="EmailVerificationService.cs" t="Include" />
+          <e p="GroupCategoryService.cs" t="Include" />
           <e p="GroupService.cs" t="Include" />
+          <e p="JoinRequestService.cs" t="Include" />
+          <e p="PasswordService.cs" t="Include" />
           <e p="PersonalService.cs" t="Include" />
           <e p="TransactionService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
         </e>
         <e p="ServiceRegistration.cs" t="Include" />
+        <e p="Settings" t="Include">
+          <e p="JwtSettings.cs" t="Include" />
+        </e>
       </e>
       <e p="BackendService.Domain" t="IncludeRecursive">
         <e p="BackendService.Domain.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Entity" t="Include" />
-        <e p="IRepository" t="Include" />
+        <e p="Entity" t="Include">
+          <e p="AuditableBaseEntity.cs" t="Include" />
+          <e p="Group.cs" t="Include" />
+          <e p="GroupBudgetBalance.cs" t="Include" />
+          <e p="GroupCategory.cs" t="Include" />
+          <e p="GroupJoinRequest.cs" t="Include" />
+          <e p="GroupUsers.cs" t="Include" />
+          <e p="PersonalAccount.cs" t="Include" />
+          <e p="PersonalCategory.cs" t="Include" />
+          <e p="PersonalTransaction.cs" t="Include" />
+          <e p="RelatedTransaction.cs" t="Include" />
+          <e p="Transaction.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="IRepository" t="Include">
+          <e p="IGenericRepositoryAsync.cs" t="Include" />
+          <e p="IGroupBudgetBalanceRepository.cs" t="Include" />
+          <e p="IGroupJoinRequestRepository.cs" t="Include" />
+          <e p="IGroupRepository.cs" t="Include" />
+          <e p="IGroupUserRepository.cs" t="Include" />
+          <e p="IPersonalRepository.cs" t="Include" />
+          <e p="IRelatedTransactionRepository.cs" t="Include" />
+          <e p="ITransactionRepository.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+        </e>
+        <e p="Model" t="Include">
+          <e p="GroupTransactionDto.cs" t="Include" />
+          <e p="PersonalcategoryDto.cs" t="Include" />
+          <e p="UserDto.cs" t="Include" />
+          <e p="UserGroupDto.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -243,11 +174,21 @@
             </e>
           </e>
         </e>
+        <e p="Settings" t="Include">
+          <e p="MailSettings.cs" t="Include" />
+        </e>
       </e>
       <e p="BackendService.Infrastructure.Data" t="IncludeRecursive">
         <e p="BackendService.Infrastructure.Data.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Context" t="Include" />
+        <e p="Context" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20210228152015_initial.cs" t="Include" />
+          <e p="20210228152015_initial.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -255,7 +196,35 @@
             </e>
           </e>
         </e>
-        <e p="Repository" t="Include" />
+        <e p="Repository" t="Include">
+          <e p="GenericRepositoryAsync.cs" t="Include" />
+          <e p="GroupBudgetBalanceRepository.cs" t="Include" />
+          <e p="GroupJoinRequestRepository.cs" t="Include" />
+          <e p="GroupRepository.cs" t="Include" />
+          <e p="GroupUserRepository.cs" t="Include" />
+          <e p="PersonalRepository.cs" t="Include" />
+          <e p="RelatedTransactionRepository.cs" t="Include" />
+          <e p="TransactionRepository.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+        </e>
+        <e p="ServiceRegistration.cs" t="Include" />
+      </e>
+      <e p="BackendService.Infrastructure.Shared" t="IncludeRecursive">
+        <e p="BackendService.Infrastructure.Shared.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.Infrastructure.Shared.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Service" t="Include">
+          <e p="AuthOperationFilter.cs" t="Include" />
+          <e p="DateTimeService.cs" t="Include" />
+          <e p="EmailService.cs" t="Include" />
+          <e p="HashService.cs" t="Include" />
+        </e>
         <e p="ServiceRegistration.cs" t="Include" />
       </e>
       <e p="BackendService.sln" t="IncludeFlat" />
@@ -265,9 +234,21 @@
         <e p="BackendService.WebApi.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="AccountController.cs" t="Include" />
+          <e p="BaseApiController.cs" t="Include" />
+          <e p="EmailVerificationController.cs" t="Include" />
+          <e p="GroupCategoryController.cs" t="Include" />
+          <e p="GroupController.cs" t="Include" />
+          <e p="JoinRequestController.cs" t="Include" />
+          <e p="PasswordController.cs" t="Include" />
+          <e p="PersonalController.cs" t="Include" />
+          <e p="TransactionController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
         </e>
-        <e p="Extensions" t="Include" />
+        <e p="Dockerfile" t="Include" />
+        <e p="Extensions" t="Include">
+          <e p="ServiceExtensions.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -280,7 +261,6 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

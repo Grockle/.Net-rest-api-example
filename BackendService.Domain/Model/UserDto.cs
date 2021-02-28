@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BackendService.Domain.Model
+﻿namespace BackendService.Domain.Model
 {
     public class UserDto
     {
