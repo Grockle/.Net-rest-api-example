@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>BackendService.IoC.Data</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.78" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.2" />
+      <PackageReference Include="Npgsql" Version="5.0.0" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BackendService.Application\BackendService.Application.csproj" />
+      <ProjectReference Include="..\BackendService.Domain\BackendService.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

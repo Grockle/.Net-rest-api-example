@@ -194,18 +194,6 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="Services" t="Include">
-          <e p="IAccountService.cs" t="Include" />
-          <e p="IGroupService.cs" t="Include" />
-          <e p="Implementations" t="Include">
-            <e p="AccountService.cs" t="Include" />
-            <e p="GroupService.cs" t="Include" />
-            <e p="PersonalService.cs" t="Include" />
-            <e p="TransactionService.cs" t="Include" />
-          </e>
-          <e p="IPersonalService.cs" t="Include" />
-          <e p="ITransactionService.cs" t="Include" />
-        </e>
         <e p="Settings" t="Include">
           <e p="JwtSettings.cs" t="Include" />
           <e p="MailSettings.cs" t="Include" />
@@ -213,7 +201,87 @@
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
       </e>
+      <e p="BackendService.Application" t="IncludeRecursive">
+        <e p="BackendService.Application.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Constants" t="Include" />
+        <e p="Interface" t="Include">
+          <e p="IAccountService.cs" t="Include" />
+          <e p="IGroupService.cs" t="Include" />
+          <e p="IPersonalService.cs" t="Include" />
+          <e p="ITransactionService.cs" t="Include" />
+        </e>
+        <e p="Mapper" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Request" t="Include" />
+          <e p="Response" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.Application.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Service" t="Include">
+          <e p="AccountService.cs" t="Include" />
+          <e p="GroupService.cs" t="Include" />
+          <e p="PersonalService.cs" t="Include" />
+          <e p="TransactionService.cs" t="Include" />
+        </e>
+        <e p="ServiceRegistration.cs" t="Include" />
+      </e>
+      <e p="BackendService.Domain" t="IncludeRecursive">
+        <e p="BackendService.Domain.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Entity" t="Include" />
+        <e p="IRepository" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="BackendService.Infrastructure.Data" t="IncludeRecursive">
+        <e p="BackendService.Infrastructure.Data.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Context" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.Infrastructure.Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repository" t="Include" />
+        <e p="ServiceRegistration.cs" t="Include" />
+      </e>
       <e p="BackendService.sln" t="IncludeFlat" />
+      <e p="BackendService.WebApi" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="BackendService.WebApi.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BackendService.WebApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
