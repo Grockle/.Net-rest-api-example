@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using BackendService.Data.DTOs;
 using BackendService.Data.DTOs.Transaction.Request;
@@ -14,12 +13,14 @@ namespace BackendService.Services.Implementations
         private readonly ITransactionRepository _transactionRepository;
         private readonly IRelatedTransactionRepository _relatedTransactionRepository;
         private readonly IGroupBudgetBalanceRepository _groupBudgetBalanceRepository;
+        private readonly IGroupRepository _groupRepository;
 
-        public TransactionService(ITransactionRepository transactionRepository, IRelatedTransactionRepository relatedTransactionRepository, IGroupBudgetBalanceRepository groupBudgetBalanceRepository)
+        public TransactionService(ITransactionRepository transactionRepository, IRelatedTransactionRepository relatedTransactionRepository, IGroupBudgetBalanceRepository groupBudgetBalanceRepository, IGroupRepository groupRepository)
         {
             _transactionRepository = transactionRepository;
             _relatedTransactionRepository = relatedTransactionRepository;
             _groupBudgetBalanceRepository = groupBudgetBalanceRepository;
+            _groupRepository = groupRepository;
         }
 
         #region Services
@@ -27,11 +28,26 @@ namespace BackendService.Services.Implementations
         public async Task<BaseResponse<bool>> AddExpenseAsync(AddExpenseRequestDto request)
         {
             var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var group = await _groupRepository.GetByIdAsync(request.GroupId);
+            
+            if (request.GroupId == 0 || group == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.ZeroGroup;
+                return response;
+            }
             
             if (request.RelatedUserIds == null || !request.RelatedUserIds.Any())
             {
                 response.HasError = true;
                 response.Error = ErrorCodes.EmptyRelatedUsers;
+                return response;
+            }
+            
+            if (request.RelatedUserIds.Any(x => x == 0) || request.WhoAdded == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotValidUser;
                 return response;
             }
 
@@ -63,24 +79,46 @@ namespace BackendService.Services.Implementations
         public async Task<BaseResponse<bool>> AddTransferAsync(AddTransferRequestDto request)
         {
             var response = new BaseResponse<bool> {HasError = false, Data = false};
+            var group = await _groupRepository.GetByIdAsync(request.GroupId);
             
-            if (request.RelatedUsers == null || !request.RelatedUsers.Any())
+            if (request.GroupId == 0 || group == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.ZeroGroup;
+                return response;
+            }
+            
+            if (request.TransactionRelatedUsers == null || !request.TransactionRelatedUsers.Any())
             {
                 response.HasError = true;
                 response.Error = ErrorCodes.EmptyRelatedUsers;
                 return response;
             }
 
-            if (request.RelatedUsers.Any(x => x.RelatedUserId == request.WhoAdded))
+            if (request.TransactionRelatedUsers.Any(x => x.RelatedUserId == request.WhoAdded))
             {
                 response.HasError = true;
                 response.Error = ErrorCodes.NotValidUserForTransfer;
                 return response;
             }
 
+            if (request.TransactionRelatedUsers.Any(x => x.RelatedUserId == 0) || request.WhoAdded == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotValidUser;
+                return response;
+            }
+            
+            if (request.GroupId == 0)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.ZeroGroup;
+                return response;
+            }
+
             var groupBudgetBalances = _groupBudgetBalanceRepository.GroupBudgetBalancesWithGroupId(request.GroupId).ToArray();
 
-            foreach (var transferredUser in request.RelatedUsers)
+            foreach (var transferredUser in request.TransactionRelatedUsers)
             {
                 var transaction = await _transactionRepository.AddAsync(new Transaction
                 {
@@ -120,7 +158,7 @@ namespace BackendService.Services.Implementations
 
             //ekleyen kişinin hesaplamaları
             var ownerBalance = groupBudgetBalances.FirstOrDefault(x => x.UserId == request.WhoAdded);
-            var totalAmount = request.RelatedUsers.Sum(x => x.Amount);
+            var totalAmount = request.TransactionRelatedUsers.Sum(x => x.Amount);
             
             if (ownerBalance == null)
             {

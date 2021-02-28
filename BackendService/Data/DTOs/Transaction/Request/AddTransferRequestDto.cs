@@ -12,7 +12,7 @@ namespace BackendService.Data.DTOs.Transaction.Request
         public int GroupId { get; set; }
 
         [Required]
-        public IEnumerable<TransferDto> RelatedUsers { get; set; }
+        public IEnumerable<TransferDto> TransactionRelatedUsers { get; set; }
 
         [Required]
         public string Description { get; set; }
