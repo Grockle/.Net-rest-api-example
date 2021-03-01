@@ -80,5 +80,18 @@ namespace BackendService.WebApi.Controllers
         {
             return await _groupService.AddAsync(model);
         }
+        
+        [HttpPost("Category/Add")]
+        public async Task<ActionResult<bool>> AddCategoryAsync(AddGroupCategoryRequest model)
+        {
+            var response = await _groupService.AddCategoryAsync(model, Token);
+
+            if (response.HasError)
+            {
+                return BadRequest(response.Error);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

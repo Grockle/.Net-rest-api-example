@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackendService.WebApi.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class PersonalController : BaseApiController
     {
         private readonly IPersonalService _personalService;

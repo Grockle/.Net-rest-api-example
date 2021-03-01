@@ -19,7 +19,6 @@ namespace BackendService.Application
             services.AddTransient<ICommonHelper, CommonHelper>();
             services.AddTransient<IPersonalService, PersonalService>();
             services.AddTransient<IEmailVerificationService, EmailVerificationService>();
-            services.AddTransient<IGroupCategoryService, GroupCategoryService>();
             services.AddTransient<IJoinRequestService, JoinRequestService>();
             services.AddTransient<IPasswordService, PasswordService>();
             services.AddTransient<IUserService, UserService>();

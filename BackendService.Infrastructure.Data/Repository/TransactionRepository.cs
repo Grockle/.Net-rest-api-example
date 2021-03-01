@@ -6,6 +6,7 @@ using BackendService.Domain.Model;
 using BackendService.IoC.Data.Context;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Npgsql;
 
 namespace BackendService.IoC.Data.Repository
@@ -13,19 +14,17 @@ namespace BackendService.IoC.Data.Repository
     public class TransactionRepository : GenericRepositoryAsync<Transaction>, ITransactionRepository
     {
         private readonly DbSet<Transaction> _transactions;
+        private readonly IConfiguration _configuration;
 
-        private readonly string ConnectionString =
-            "User ID=bahprdjtyanqoq;Password=67d5ff9be3ca216e1df2c5202a6f6621e486d67d878acac3f6a14a1d12827ec6;Server=ec2-52-212-157-46.eu-west-1.compute.amazonaws.com;Port=5432;Database=dfomtj8il10drd;Integrated Security=true;Pooling=true;SSL Mode=Require;TrustServerCertificate=True;";
-
-
-        public TransactionRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public TransactionRepository(ApplicationDbContext dbContext, IConfiguration configuration) : base(dbContext)
         {
+            _configuration = configuration;
             _transactions = dbContext.Set<Transaction>();
         }
 
         public async Task<IEnumerable<GroupTransactionDto>> GetGroupTransactions(int groupId)
         {
-            var connection = new NpgsqlConnection(ConnectionString);
+            var connection = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var sqlQuery = $@"Select T.""Id"" as TransactionId,T.""CreatedBy"" as AddedBy, T.""Amount"", T.""Description"", T.""Type"",
                                 RT.""RelatedUserId"", T.""CreateTime"", T.""CategoryName"" as Category
                                             from public.""Transactions"" as T

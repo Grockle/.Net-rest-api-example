@@ -7,6 +7,7 @@ using BackendService.Domain.Model;
 using BackendService.IoC.Data.Context;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Npgsql;
 
 namespace BackendService.IoC.Data.Repository
@@ -14,12 +15,10 @@ namespace BackendService.IoC.Data.Repository
     public class GroupUserRepository : GenericRepositoryAsync<GroupUsers>, IGroupUserRepository
     {
         private readonly DbSet<GroupUsers> _groupUsers;
-
-        private readonly string ConnectionString =
-            "User ID=bahprdjtyanqoq;Password=67d5ff9be3ca216e1df2c5202a6f6621e486d67d878acac3f6a14a1d12827ec6;Server=ec2-52-212-157-46.eu-west-1.compute.amazonaws.com;Port=5432;Database=dfomtj8il10drd;Integrated Security=true;Pooling=true;SSL Mode=Require;TrustServerCertificate=True;";
-
-        public GroupUserRepository(ApplicationDbContext dbContext) : base(dbContext)
+        private readonly IConfiguration _configuration;
+        public GroupUserRepository(ApplicationDbContext dbContext, IConfiguration configuration) : base(dbContext)
         {
+            _configuration = configuration;
             _groupUsers = dbContext.Set<GroupUsers>();
         }
 
@@ -30,7 +29,7 @@ namespace BackendService.IoC.Data.Repository
 
         public async Task<IEnumerable<UserDto>> GetByGroupId(int groupId)
         {
-            var connection = new NpgsqlConnection(ConnectionString);
+            var connection = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var sqlQuery = $@"Select groupUsers.*, gp.""Balance"" from (
                                 SELECT g.""UserId"" as Id, c.""FirstName"", c.""LastName"", c.""Email""
                                 FROM public.""GroupUsers"" g

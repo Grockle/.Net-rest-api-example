@@ -32,7 +32,6 @@
           </e>
           <e p="IAccountService.cs" t="Include" />
           <e p="IEmailVerificationService.cs" t="Include" />
-          <e p="IGroupCategoryService.cs" t="Include" />
           <e p="IGroupService.cs" t="Include" />
           <e p="IJoinRequestService.cs" t="Include" />
           <e p="IPasswordService.cs" t="Include" />
@@ -120,7 +119,6 @@
         <e p="Service" t="Include">
           <e p="AccountService.cs" t="Include" />
           <e p="EmailVerificationService.cs" t="Include" />
-          <e p="GroupCategoryService.cs" t="Include" />
           <e p="GroupService.cs" t="Include" />
           <e p="JoinRequestService.cs" t="Include" />
           <e p="PasswordService.cs" t="Include" />
@@ -237,7 +235,6 @@
           <e p="AccountController.cs" t="Include" />
           <e p="BaseApiController.cs" t="Include" />
           <e p="EmailVerificationController.cs" t="Include" />
-          <e p="GroupCategoryController.cs" t="Include" />
           <e p="GroupController.cs" t="Include" />
           <e p="JoinRequestController.cs" t="Include" />
           <e p="PasswordController.cs" t="Include" />

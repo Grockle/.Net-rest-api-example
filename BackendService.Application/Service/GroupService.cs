@@ -26,7 +26,6 @@ namespace BackendService.Application.Service
         private readonly IHashService _hashService;
         private readonly ITransactionRepository _transactionRepository;
 
-
         public GroupService(IHashService hashService, IGroupRepository groupRepository,
             IGroupUserRepository groupUserRepository, IGroupJoinRequestRepository groupJoinRequestRepository,
             IUserRepository userRepository, ITransactionRepository transactionRepository)
@@ -44,6 +43,7 @@ namespace BackendService.Application.Service
         public async Task<BaseResponse<IEnumerable<GetGroupJoinResponse>>> JoinRequestsAsync(string shareCode)
         {
             var response = new BaseResponse<IEnumerable<GetGroupJoinResponse>> { HasError = false, Data = null };
+            
             if (string.IsNullOrEmpty(shareCode))
             {
                 response.HasError = true;
@@ -100,8 +100,8 @@ namespace BackendService.Application.Service
 
         public async Task<BaseResponse<List<GetGroupDetailResponse>>> DetailsAsync(string token)
         {
-            var response = new BaseResponse<List<GetGroupDetailResponse>>
-            { HasError = false, Data = new List<GetGroupDetailResponse>() };
+            var response = new BaseResponse<List<GetGroupDetailResponse>> { HasError = false, Data = new List<GetGroupDetailResponse>() };
+            
             var currentUser = await _userRepository.GetUserByToken(token);
 
             if (currentUser == null)
@@ -263,6 +263,71 @@ namespace BackendService.Application.Service
 
             response.HasError = true;
             response.Error = ErrorCodes.AddGroupFailed;
+            return response;
+        }
+        
+        public async Task<BaseResponse<bool>> AddCategoryAsync(AddGroupCategoryRequest groupCategory, string token)
+        {
+            var response = new BaseResponse<bool> { HasError = false, Data = false };
+            var user = await _userRepository.GetUserByToken(token);
+            var group = await _groupRepository.GetGroupByShareCode(groupCategory.GroupShareCode);
+
+            if (user == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.UserNotExist;
+                return response;
+            }
+
+            if (group == null)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.GroupIsNotExist;
+                return response;
+            }
+
+            if (string.IsNullOrEmpty(groupCategory.Name))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.EmptyCategory;
+                return response;
+            }
+
+            if (!Enum.IsDefined(typeof(GroupCategoryType), groupCategory.Type))
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.NotValidCategoryType;
+                return response;
+            }
+
+            var categories = _groupRepository.GetGroupCategories(group.Id, groupCategory.Type);
+            var isCategoryExist = categories.Any(x => x.Name == groupCategory.Name) ||
+                                  ConstantCategory.GroupExpenseCategory.Any(x => x == groupCategory.Name);
+            if (isCategoryExist)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.CategoryExist;
+                return response;
+            }
+
+            try
+            {
+                await _groupRepository.InsertGroupCategory(new GroupCategory
+                {
+                    Type = groupCategory.Type,
+                    Name = groupCategory.Name,
+                    GroupId = group.Id
+                }, user.Id);
+            }
+            catch (Exception e)
+            {
+                response.HasError = true;
+                response.Error = ErrorCodes.Error;
+                response.Error.Message = e.Message;
+                return response;
+            }
+
+            response.Data = true;
             return response;
         }
 

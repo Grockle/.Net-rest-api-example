@@ -14,5 +14,6 @@ namespace BackendService.Application.Interface
         Task<BaseResponse<List<GetGroupDetailResponse>>> DetailsAsync(string token);
         Task<BaseResponse<GetGroupDetailResponse>> DetailAsync(string token, string shareCode);
         Task<BaseResponse<bool>> AddAsync(AddGroupRequest model);
+        Task<BaseResponse<bool>> AddCategoryAsync(AddGroupCategoryRequest groupCategory, string token);
     }
 }
