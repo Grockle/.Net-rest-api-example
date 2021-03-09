@@ -36,7 +36,7 @@ namespace BackendService.IoC.Data.Repository
             return await _groups.FirstOrDefaultAsync(x => x.ShareCode == shareCode);
         }
 
-        public IEnumerable<UserGroupDto> GetGroupsByUserId(int userId)
+        public IEnumerable<UserGroupDto> GetUserGroups(int userId)
         {
             var groupUserIds = _groupUserRepository.GetByUserId(userId).Select(x => x.GroupId);
             var groups = _groups.Where(x => groupUserIds.Contains(x.Id)).Select(x => new UserGroupDto

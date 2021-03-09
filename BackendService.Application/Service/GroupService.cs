@@ -111,7 +111,7 @@ namespace BackendService.Application.Service
                 return response;
             }
 
-            var userGroups = _groupRepository.GetGroupsByUserId(currentUser.Id);
+            var userGroups = _groupRepository.GetUserGroups(currentUser.Id);
 
             if (userGroups == null)
             {

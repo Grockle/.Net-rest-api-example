@@ -24,289 +24,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e945095c-03e1-4cb8-8e42-f71dee3ca9b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackendService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BackendService/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/BackendService/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/BackendService/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Application/Interface/IGroupCategoryService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Application/Interface/IGroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Interface/IGroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Application/Service/GroupCategoryService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/Service/GroupService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Application/ServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Application/ServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/GroupUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/GroupUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/TransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/TransactionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.WebApi/Controllers/GroupCategoryController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.WebApi/Controllers/GroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.WebApi/Controllers/GroupController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.WebApi/Controllers/PersonalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.WebApi/Controllers/PersonalController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService.WebApi/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.WebApi/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/BackendService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/BackendService.csproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/Startup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/AutoMapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.runtimeconfig.dev.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BackendService.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/BouncyCastle.Crypto.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Dapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/FluentValidation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/MailKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Razor.Host.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.DotNet.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Globalization.CultureInfoCache.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/MimeKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Net.WebSockets.WebSocketProtocol.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/Vonage.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/jose-jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/AutoMapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.runtimeconfig.dev.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BackendService.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/BouncyCastle.Crypto.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Dapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/FluentValidation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/MailKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Razor.Host.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Bcl.HashCode.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.DotNet.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Globalization.CultureInfoCache.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/MimeKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Collections.Immutable.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Net.WebSockets.WebSocketProtocol.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/Vonage.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/jose-jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/AutoMapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BackendService.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/BouncyCastle.Crypto.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Dapper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/FluentValidation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/MailKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.AspNetCore.Mvc.Razor.Host.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Bcl.HashCode.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.DotNet.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Globalization.CultureInfoCache.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.PlatformAbstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/MimeKit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Npgsql.EntityFrameworkCore.PostgreSQL.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Collections.Immutable.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Net.WebSockets.WebSocketProtocol.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/Vonage.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/jose-jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win-arm64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win-x64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win-x86/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/publish/web.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win-arm64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win-x64/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win-x86/native/sni.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/BackendService.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/BackendService.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/BackendService.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.RazorTargetAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/staticwebassets/BackendService.StaticWebAssets.Manifest.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Debug/netcoreapp3.1/staticwebassets/BackendService.StaticWebAssets.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.RazorTargetAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/BackendService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/staticwebassets/BackendService.StaticWebAssets.Manifest.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/Release/netcoreapp3.1/staticwebassets/BackendService.StaticWebAssets.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackendService/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Domain/IRepository/IGroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Domain/IRepository/IGroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/GroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackendService.Infrastructure.Data/Repository/GroupRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -527,7 +248,8 @@
       <workItem from="1614409804278" duration="3754000" />
       <workItem from="1614504822707" duration="549000" />
       <workItem from="1614524903695" duration="1555000" />
-      <workItem from="1614624580386" duration="2792000" />
+      <workItem from="1614624580386" duration="3686000" />
+      <workItem from="1614941682353" duration="33000" />
     </task>
     <servers />
   </component>
@@ -560,26 +282,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="525" height="464" key="DebuggerActiveHint/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1608986316865" />
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1614627245310">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1614629231949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1611481596936" />
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614627245310" />
-    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1614627245309">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614629231949" />
+    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1614629231949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1611481596936" />
-    <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614627245309" />
-    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1614627245309">
+    <state width="1877" height="168" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614629231949" />
+    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1614629231949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1611481596936" />
-    <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614627245309" />
-    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1614627245309">
+    <state width="1877" height="168" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614629231949" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1614629231949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1611481596936" />
-    <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614627245309" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614629231949" />
     <state width="1877" height="197" key="GridCell.Tab.1.bottom" timestamp="1609614010623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
